@@ -1,0 +1,338 @@
+schema_version: 1
+world_id: crimson_velvet_1897
+events:
+  - id: event_victoria_title_copy
+    title: La copia nella cassaforte
+    summary: Victoria apre la cassaforte e mostra una copia incompleta dell'atto che potrebbe invalidare la proprietà del Crimson Velvet.
+    player_hook: Puoi esaminarla con lei, chiedere chi l'ha alterata, proporre un avvocato o rifiutare di essere coinvolto.
+    day_range: [1, 9999]
+    phases: [pomeriggio, sera, notte]
+    location_id: loc_victoria_office
+    npc_ids: [victoria]
+    trigger: {mission_active: mission_victoria_house}
+    adult_component: private_tension_and_trust
+    consent_exit_required: true
+    choices: [examine_copy, ask_about_forgery, offer_legal_help, refuse_involvement]
+    completion_flag: victoria_copy_examined
+
+  - id: event_archive_broken_seal
+    title: Il sigillo spezzato
+    summary: Maria trova una cassa d'archivio aperta e un vuoto esatto dove avrebbe dovuto trovarsi il registro notarile originale.
+    player_hook: Puoi aiutarla a inventariare, cercare impronte e fibre, interrogare il personale o lasciare l'archivio intatto.
+    day_range: [1, 9999]
+    phases: [mattina, pomeriggio, notte]
+    location_id: loc_archive
+    npc_ids: [maria]
+    trigger: {flag: resort_intro_completed, expected: true}
+    adult_component: close_private_investigation
+    consent_exit_required: true
+    choices: [inventory_with_maria, inspect_room, question_staff, preserve_scene]
+    completion_flag: title_dispute_discovered
+
+  - id: event_maria_inventory
+    title: Inventario a porte chiuse
+    summary: Maria propone di passare ore nell'archivio con il protagonista per ricostruire cosa manca e cosa è stato spostato.
+    player_hook: Puoi lavorare con lei, delegare, concentrarti sulle lettere private o cercare solo il registro.
+    day_range: [1, 9999]
+    phases: [pomeriggio, sera, notte]
+    location_id: loc_archive
+    npc_ids: [maria]
+    trigger: {mission_active: mission_maria_letters}
+    adult_component: prolonged_private_closeness
+    consent_exit_required: true
+    choices: [work_together, delegate, examine_letters, focus_register]
+    completion_flag: maria_archive_inventory_complete
+
+  - id: event_stella_rehearsal
+    title: Prova generale senza pubblico
+    summary: Stella invita il protagonista nel teatro vuoto per provare il nuovo numero destinato agli impresari europei.
+    player_hook: Puoi darle feedback, provocarla artisticamente, suggerire un numero più audace o restare semplice spettatore.
+    day_range: [1, 9999]
+    phases: [pomeriggio, sera]
+    location_id: loc_theatre
+    npc_ids: [stella]
+    trigger: {mission_active: mission_stella_stage}
+    adult_component: sensual_stage_performance
+    consent_exit_required: true
+    choices: [support_rehearsal, challenge_artistically, suggest_bolder_number, observe_only]
+    completion_flag: stella_rehearsal_supported
+    visual_outfit: stella_stage_rehearsal
+
+  - id: event_casino_high_table
+    title: Il tavolo dei cento luigi
+    summary: Un banchiere, un impresario e un giornalista giocano una somma enorme; ognuno possiede una parte del problema del Crimson Velvet.
+    player_hook: Puoi sederti, osservare, usare il tuo status per ottenere informazioni o lasciare che Victoria gestisca il tavolo.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_casino
+    npc_ids: [victoria, stella]
+    trigger: {flag: resort_intro_completed, expected: true}
+    adult_component: decadent_high_society
+    consent_exit_required: true
+    choices: [join_table, observe_players, pressure_with_status, defer_to_victoria]
+    completion_flag: creditor_circle_identified
+
+  - id: event_stella_critic_letter
+    title: La lettera del critico
+    summary: Stella rivela che un critico parigino conserva una sua lettera privata e minaccia di usarla per controllare il tono di una recensione.
+    player_hook: Puoi negoziare, comprare la lettera senza condizioni, smascherare il ricatto o lasciare che Stella affronti il rischio da sola.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_winter_garden
+    npc_ids: [stella]
+    trigger: {flag: stella_rehearsal_supported, expected: true}
+    adult_component: intimate_confession_and_reputation
+    consent_exit_required: true
+    choices: [negotiate_return, buy_without_conditions, expose_blackmail, respect_stella_choice]
+    completion_flag: stella_critic_letter_resolved
+
+  - id: event_luna_hidden_stairs
+    title: La scala dietro il muro
+    summary: Luna mostra un accesso nascosto dai corridoi di servizio al sentiero della scogliera, usato da chi vuole evitare il Grand Hall.
+    player_hook: Puoi seguirla, segnare il percorso, chiedere chi lo usa o tornare indietro.
+    day_range: [1, 9999]
+    phases: [pomeriggio, sera, notte]
+    location_id: loc_service_corridor
+    npc_ids: [luna]
+    trigger: {mission_active: mission_luna_smugglers}
+    adult_component: secretive_private_excursion
+    consent_exit_required: true
+    choices: [follow_luna, map_route, ask_names, turn_back]
+    completion_flag: luna_hidden_route_revealed
+
+  - id: event_cove_lanterns
+    title: Tre lanterne nella cala
+    summary: Dalla scogliera Luna riconosce il segnale di una barca che non dovrebbe essere lì. Una cassa porta ancora il vecchio sigillo del Crimson Velvet.
+    player_hook: Puoi osservare, avvicinarti con Luna, preparare un diversivo o chiamare le autorità rischiando una retata.
+    day_range: [1, 9999]
+    phases: [notte]
+    location_id: loc_private_cove
+    npc_ids: [luna]
+    trigger: {flag: luna_hidden_route_revealed, expected: true}
+    adult_component: dangerous_night_closeness
+    consent_exit_required: true
+    choices: [observe_exchange, approach_with_luna, create_diversion, call_authorities]
+    completion_flag: luna_cove_network_identified
+
+  - id: event_register_exchange
+    title: Il registro nella cassa del quadro
+    summary: Il registro mancante è nascosto sotto la tela di un dipinto destinato a lasciare l'Italia clandestinamente.
+    player_hook: Puoi recuperare solo il registro, sequestrare anche il quadro, lasciare una copia falsa o seguire la cassa per scoprire il compratore.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_private_cove
+    npc_ids: [luna]
+    trigger: {flag: luna_cove_network_identified, expected: true}
+    adult_component: high_risk_shared_secret
+    consent_exit_required: true
+    choices: [take_register, take_everything, plant_false_copy, follow_buyer]
+    completion_flag: missing_register_recovered
+
+  - id: event_maria_creditor_letter
+    title: La lettera che cambia il debito
+    summary: Maria mostra una lettera autentica che collega uno dei principali creditori alla frode con cui la villa cambiò proprietario anni prima.
+    player_hook: Puoi conservarla come prova, offrirla a Victoria, restituirla alla famiglia coinvolta o distruggerla davanti a Maria.
+    day_range: [1, 9999]
+    phases: [pomeriggio, sera, notte]
+    location_id: loc_archive
+    npc_ids: [maria]
+    trigger: {flag: missing_register_recovered, expected: true}
+    adult_component: confidential_moral_intimacy
+    consent_exit_required: true
+    choices: [keep_as_evidence, give_to_victoria, return_to_family, destroy_letter]
+    completion_flag: maria_creditor_letter_revealed
+
+  - id: event_letters_judgement
+    title: Cosa merita di sopravvivere
+    summary: Maria chiede al protagonista di decidere con lei il destino di un gruppo di lettere che possono distruggere reputazioni senza aiutare la causa legale.
+    player_hook: Puoi sigillarle, restituirle, distruggerle o conservarle come leva politica.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_archive
+    npc_ids: [maria]
+    trigger: {flag: maria_creditor_letter_revealed, expected: true}
+    adult_component: private_ethics_and_trust
+    consent_exit_required: true
+    choices: [seal_letters, return_letters, destroy_letters, keep_as_leverage]
+    completion_flag: maria_letters_fate_decided
+
+  - id: event_stella_contract
+    title: Parigi o il Crimson Velvet
+    summary: Un impresario offre a Stella una tournée europea, ma pretende una clausola che la leghi per anni alla sua compagnia.
+    player_hook: Puoi finanziare un contratto indipendente, negoziare la clausola, consigliarle di firmare o lasciarle piena libertà di scelta.
+    day_range: [1, 9999]
+    phases: [pomeriggio, sera]
+    location_id: loc_theatre
+    npc_ids: [stella]
+    trigger: {flag: stella_critic_letter_resolved, expected: true}
+    adult_component: ambition_desire_and_independence
+    consent_exit_required: true
+    choices: [fund_independent_tour, negotiate_clause, advise_signing, let_stella_decide]
+    completion_flag: stella_europe_contract_decided
+
+  - id: event_victoria_terms
+    title: Contratto dopo mezzanotte
+    summary: Victoria propone di discutere in privato le forme possibili di proprietà: acquisto, società, trust indipendente o difesa legale senza investimento.
+    player_hook: Puoi proporre una partnership, un acquisto, un prestito, un trust o nessun accordo economico.
+    day_range: [1, 9999]
+    phases: [notte]
+    location_id: loc_victoria_office
+    npc_ids: [victoria]
+    trigger: {flag: missing_register_recovered, expected: true}
+    adult_component: charged_private_negotiation
+    consent_exit_required: true
+    choices: [propose_partnership, propose_purchase, offer_loan, propose_trust, no_financial_deal]
+    completion_flag: victoria_private_terms_discussed
+
+  - id: event_victoria_autonomy
+    title: Il prezzo che Victoria non accetta
+    summary: Victoria rende esplicito che la casa può essere negoziata, la sua autonomia no. Chiede al protagonista quali condizioni personali considera parte dell'accordo.
+    player_hook: Puoi separare nettamente affari e relazione, chiedere un legame personale senza condizioni economiche, restare solo partner d'affari o interrompere la trattativa.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_winter_garden
+    npc_ids: [victoria]
+    trigger: {flag: victoria_private_terms_discussed, expected: true}
+    adult_component: explicit_boundaries_and_attraction
+    consent_exit_required: true
+    choices: [separate_business_and_desire, ask_personal_relationship, business_only, end_talk]
+    completion_flag: victoria_autonomy_choice_respected
+
+  - id: event_luna_fishermen
+    title: I nomi che Luna non consegnerà
+    summary: Luna distingue i contrabbandieri professionisti dai pescatori che li aiutano per debiti o paura e chiede di non trattarli come un unico gruppo.
+    player_hook: Puoi proteggere i pescatori, consegnare tutti alle autorità, creare un accordo di immunità o lasciare decidere Luna.
+    day_range: [1, 9999]
+    phases: [mattina, pomeriggio, sera]
+    location_id: loc_cliff_path
+    npc_ids: [luna]
+    trigger: {flag: missing_register_recovered, expected: true}
+    adult_component: trust_under_pressure
+    consent_exit_required: true
+    choices: [protect_fishermen, report_everyone, negotiate_immunity, let_luna_decide]
+    completion_flag: luna_fishermen_choice_respected
+
+  - id: event_maria_authority
+    title: Le chiavi dell'archivio
+    summary: Dopo la crisi, Maria chiede che il suo ruolo venga riconosciuto formalmente: non più domestica fidata, ma amministratrice con autorità sull'archivio.
+    player_hook: Puoi sostenerla davanti a Victoria, proporre un ruolo ancora più ampio, restare neutrale o contestare la richiesta.
+    day_range: [1, 9999]
+    phases: [pomeriggio, sera]
+    location_id: loc_victoria_office
+    npc_ids: [maria, victoria]
+    trigger: {flag: maria_letters_fate_decided, expected: true}
+    adult_component: status_and_personal_recognition
+    consent_exit_required: true
+    choices: [support_maria, expand_role, stay_neutral, oppose_request]
+    completion_flag: maria_authority_recognized
+
+  - id: event_stella_private_choice
+    title: Dopo l'ultimo applauso
+    summary: Stella invita il protagonista nel teatro vuoto dopo lo spettacolo e chiarisce cosa vuole separatamente da carriera, contratto e pubblico.
+    player_hook: Puoi ascoltare, ricambiare l'attrazione, rallentare o mantenere il rapporto soltanto professionale.
+    day_range: [1, 9999]
+    phases: [notte]
+    location_id: loc_theatre
+    npc_ids: [stella]
+    trigger: {flag: stella_europe_contract_decided, expected: true}
+    adult_component: voluntary_private_desire
+    consent_exit_required: true
+    choices: [listen_closely, reciprocate_attraction, slow_down, remain_professional]
+    completion_flag: stella_private_choice_complete
+
+  - id: event_crimson_judgement
+    title: Chi deve possedere il Crimson Velvet
+    summary: Registro e lettera rendono possibile una decisione definitiva sul futuro legale della casa.
+    player_hook: Puoi sostenere Victoria, acquistare con un accordo equo, creare un trust, restituire quote agli eredi o portare tutto in tribunale.
+    day_range: [1, 9999]
+    phases: [pomeriggio, sera, notte]
+    location_id: loc_grand_hall
+    npc_ids: [victoria, stella, maria, luna]
+    trigger: {flag: maria_creditor_letter_revealed, expected: true}
+    adult_component: public_power_private_consequences
+    consent_exit_required: true
+    choices: [back_victoria, fair_purchase, independent_trust, restore_heir_shares, go_to_court]
+    completion_flag: crimson_ownership_decision
+
+  - id: event_creditor_resolution
+    title: Il creditore senza maschera
+    summary: Le prove consentono di affrontare il creditore collegato alla frode originale e decidere se negoziare, denunciarlo o usarlo per stabilizzare la casa.
+    player_hook: Puoi denunciarlo, costringerlo a rinunciare al credito, negoziare una restituzione o renderlo testimone.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_casino
+    npc_ids: [victoria, maria]
+    trigger: {flag: crimson_ownership_decision, expected: true}
+    adult_component: power_and_consequence
+    consent_exit_required: true
+    choices: [expose_creditor, cancel_debt, negotiate_restitution, turn_witness]
+    completion_flag: creditor_connection_resolved
+
+  - id: event_victoria_bond
+    title: Victoria senza contratto sul tavolo
+    summary: Risolto il destino della casa e rispettata la sua autonomia, Victoria propone un incontro privato in cui non esistono più clausole economiche da negoziare.
+    player_hook: Puoi accettare, rallentare, ridefinire i limiti o restare soltanto alleati.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_presidential_suite
+    npc_ids: [victoria]
+    trigger: {flag: victoria_intimate_milestone_unlocked, expected: true}
+    adult_component: consensual_private_consumation
+    consent_exit_required: true
+    choices: [accept_victoria, slow_down, redefine_boundaries, allies_only]
+    completion_flag: victoria_bond_complete
+
+  - id: event_stella_bond
+    title: Stella dopo il sipario
+    summary: Con carriera e scelta personale ormai separate, Stella può trasformare l'attrazione in un incontro adulto privato scelto per sé stessa.
+    player_hook: Puoi accettare, scegliere un altro momento, rallentare o restare amici.
+    day_range: [1, 9999]
+    phases: [notte]
+    location_id: loc_theatre
+    npc_ids: [stella]
+    trigger: {flag: stella_intimate_milestone_unlocked, expected: true}
+    adult_component: consensual_private_consumation
+    consent_exit_required: true
+    choices: [accept_stella, choose_later, slow_down, friends_only]
+    completion_flag: stella_bond_complete
+
+  - id: event_maria_bond
+    title: Maria chiude l'archivio
+    summary: Riconosciuta come amministratrice e libera dal ruolo di servizio, Maria sceglie se aprire uno spazio personale e adulto con il protagonista.
+    player_hook: Puoi accettare, chiederle tempo, rallentare o mantenere una relazione di fiducia non romantica.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_presidential_suite
+    npc_ids: [maria]
+    trigger: {flag: maria_intimate_milestone_unlocked, expected: true}
+    adult_component: consensual_private_consumation
+    consent_exit_required: true
+    choices: [accept_maria, ask_time, slow_down, trusted_allies]
+    completion_flag: maria_bond_complete
+
+  - id: event_luna_bond
+    title: Luna resta per scelta
+    summary: Dopo la crisi della cala, Luna decide se restare al Crimson Velvet e se il protagonista fa parte della vita che vuole scegliere.
+    player_hook: Puoi ricambiare, lasciarle piena libertà, rallentare o restare compagni d'avventura.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_private_cove
+    npc_ids: [luna]
+    trigger: {flag: luna_intimate_milestone_unlocked, expected: true}
+    adult_component: consensual_private_consumation
+    consent_exit_required: true
+    choices: [reciprocate_luna, give_freedom, slow_down, companions_only]
+    completion_flag: luna_bond_complete
+
+  - id: event_crimson_epilogue
+    title: Il Crimson Velvet dopo la verità
+    summary: Il destino della casa è risolto e i quattro legami personali sono completi. La campagna può chiudersi oppure continuare liberamente nella nuova realtà del Crimson Velvet.
+    player_hook: Puoi concludere formalmente la campagna o continuare in freeplay.
+    day_range: [1, 9999]
+    phases: [mattina, pomeriggio, sera, notte]
+    location_id: loc_grand_hall
+    npc_ids: [victoria, stella, maria, luna]
+    trigger: {flag: campaign_complete, expected: true}
+    adult_component: established_adult_relationships
+    consent_exit_required: true
+    choices: [finish_campaign, continue_freeplay]
