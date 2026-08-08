@@ -55,7 +55,9 @@ class WorldpackGameplay:
             if isinstance(location_id, str) and loaded.world.player.location_id != location_id:
                 continue
             trigger = event.get("trigger", {})
-            if isinstance(trigger, Mapping) and not self._trigger_matches(loaded, trigger, phase, player_request):
+            if isinstance(trigger, Mapping) and not self._trigger_matches(
+                loaded, trigger, phase, player_request
+            ):
                 continue
             result.append(dict(event))
         return result
@@ -91,16 +93,20 @@ class WorldpackGameplay:
             result.append(normalized)
         return result
 
-    def _mission_unlocked_state(self, state: WorldState, row: Mapping[object, object]) -> bool:
-        """Execute the mission unlocked state operation."""
+    def _mission_unlocked_state(
+        self, state: WorldState, row: Mapping[object, object]
+    ) -> bool:
+        """Return whether a mission's authored unlock rule currently matches."""
         reveal = row.get("reveal")
         if reveal == "initial":
             return True
         condition = row.get("unlock_when")
         return isinstance(condition, Mapping) and self._condition_matches_state(state, condition)
 
-    def _condition_matches_state(self, state: WorldState, condition: Mapping[object, object]) -> bool:
-        """Execute the condition matches state operation."""
+    def _condition_matches_state(
+        self, state: WorldState, condition: Mapping[object, object]
+    ) -> bool:
+        """Evaluate one authored mission unlock condition."""
         event_id = condition.get("event_completed")
         if isinstance(event_id, str):
             return bool(state.global_flags.get(f"{event_id}_completed", False))
@@ -117,7 +123,7 @@ class WorldpackGameplay:
         return False
 
     def _mission_unlocked(self, loaded: LoadedWorldpack, row: Mapping[object, object]) -> bool:
-        """Execute the mission unlocked operation."""
+        """Return whether a loaded mission's authored unlock rule matches."""
         reveal = row.get("reveal")
         if reveal == "initial":
             return True
@@ -126,16 +132,22 @@ class WorldpackGameplay:
             return False
         return self._condition_matches(loaded, condition)
 
-    def _condition_matches(self, loaded: LoadedWorldpack, condition: Mapping[object, object]) -> bool:
-        """Execute the condition matches operation."""
+    def _condition_matches(
+        self, loaded: LoadedWorldpack, condition: Mapping[object, object]
+    ) -> bool:
+        """Evaluate a loaded-world mission unlock condition."""
         return self._condition_matches_state(loaded.world, condition)
 
-    def _clock_matches(self, loaded: LoadedWorldpack, event: Mapping[str, object], phase: str) -> bool:
-        """Execute the clock matches operation."""
+    def _clock_matches(
+        self, loaded: LoadedWorldpack, event: Mapping[str, object], phase: str
+    ) -> bool:
+        """Return whether an event matches the current day and phase."""
         return self._clock_matches_state(loaded.world, event, phase)
 
-    def _clock_matches_state(self, state: WorldState, event: Mapping[str, object], phase: str) -> bool:
-        """Execute the clock matches state operation."""
+    def _clock_matches_state(
+        self, state: WorldState, event: Mapping[str, object], phase: str
+    ) -> bool:
+        """Return whether an event matches one authoritative state clock."""
         day_range = event.get("day_range")
         if isinstance(day_range, list) and len(day_range) == 2:
             start, end = day_range
@@ -154,7 +166,7 @@ class WorldpackGameplay:
         phase: str,
         player_request: bool,
     ) -> bool:
-        """Execute the trigger matches operation."""
+        """Evaluate a trigger against a loaded Worldpack."""
         return self._trigger_matches_state(loaded.world, trigger, phase, player_request)
 
     def _trigger_matches_state(
@@ -164,19 +176,40 @@ class WorldpackGameplay:
         phase: str,
         player_request: bool,
     ) -> bool:
-        """Execute the trigger matches state operation."""
+        """Evaluate only trigger forms explicitly supported by the Worldpack schema."""
         flag_missing = trigger.get("flag_missing")
         if isinstance(flag_missing, str):
             return not bool(state.global_flags.get(flag_missing, False))
+
         mission_id = trigger.get("mission_active")
         if isinstance(mission_id, str):
             mission = state.missions.get(mission_id)
             return bool(mission and mission.is_active and not mission.is_completed and not mission.is_failed)
+
         flag = trigger.get("flag")
         if isinstance(flag, str):
             return state.global_flags.get(flag) == trigger.get("expected", True)
+
         if trigger.get("player_request") is True:
             return player_request
+
+        relationship_id = trigger.get("relationship")
+        relationship_field = trigger.get("field")
+        if not isinstance(relationship_field, str):
+            legacy_field = trigger.get("relationship_field")
+            relationship_field = legacy_field if isinstance(legacy_field, str) else None
+        minimum = trigger.get("minimum")
+        if isinstance(relationship_field, str) and isinstance(minimum, int):
+            if isinstance(relationship_id, str):
+                relationship = state.player.relationships.get(relationship_id, Relationship())
+                value = getattr(relationship, relationship_field, None)
+                return isinstance(value, int) and value >= minimum
+            return any(
+                isinstance((value := getattr(relationship, relationship_field, None)), int)
+                and value >= minimum
+                for relationship in state.player.relationships.values()
+            )
+
         day = trigger.get("day")
         trigger_phase = trigger.get("phase")
         if isinstance(day, int) and state.day != day:
@@ -189,18 +222,18 @@ class WorldpackGameplay:
 
     @staticmethod
     def _mark_failed(mission: Mission) -> None:
-        """Execute the mark failed operation."""
+        """Mark a mission failed without mutating unrelated state."""
         mission.is_failed = True
         mission.is_active = False
 
     @staticmethod
     def _mark_completed(loaded: LoadedWorldpack, mission: Mission) -> None:
-        """Execute the mark completed operation."""
+        """Mark a loaded-world mission completed."""
         WorldpackGameplay._mark_completed_state(loaded.world, mission)
 
     @staticmethod
     def _mark_completed_state(state: WorldState, mission: Mission) -> None:
-        """Execute the mark completed state operation."""
+        """Mark a mission completed in one authoritative WorldState."""
         mission.is_completed = True
         mission.is_active = False
         mission.turn_completed = state.turn_number
@@ -209,19 +242,19 @@ class WorldpackGameplay:
 
 
 def _list_of_mappings(value: object) -> list[Mapping[object, object]]:
-    """Execute the list of mappings operation."""
+    """Return only mapping rows from authored list data."""
     if not isinstance(value, list):
         return []
     return [item for item in value if isinstance(item, Mapping)]
 
 
 def _string_list(value: object) -> list[str]:
-    """Execute the string list operation."""
+    """Return only strings from authored list data."""
     if not isinstance(value, list):
         return []
     return [item for item in value if isinstance(item, str)]
 
 
 def _any_true(flags: Mapping[str, object], names: list[str]) -> bool:
-    """Execute the any true operation."""
+    """Return whether any named authoritative flag is truthy."""
     return any(bool(flags.get(name, False)) for name in names)
