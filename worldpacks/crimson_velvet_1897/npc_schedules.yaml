@@ -1,0 +1,36 @@
+schema_version: 1
+world_id: crimson_velvet_1897
+phases: [mattina, pomeriggio, sera, notte]
+schedules:
+  victoria:
+    1: {mattina: loc_victoria_office, pomeriggio: loc_archive, sera: loc_grand_hall, notte: loc_casino}
+    2: {mattina: loc_dining_room, pomeriggio: loc_victoria_office, sera: loc_theatre, notte: loc_winter_garden}
+    3: {mattina: loc_archive, pomeriggio: loc_victoria_office, sera: loc_casino, notte: loc_presidential_suite}
+    4: {mattina: loc_grand_hall, pomeriggio: loc_archive, sera: loc_dining_room, notte: loc_victoria_office}
+    5: {mattina: loc_winter_garden, pomeriggio: loc_victoria_office, sera: loc_theatre, notte: loc_casino}
+    6: {mattina: loc_dining_room, pomeriggio: loc_archive, sera: loc_grand_hall, notte: loc_winter_garden}
+    7: {mattina: loc_victoria_office, pomeriggio: loc_grand_hall, sera: loc_casino, notte: loc_presidential_suite}
+  stella:
+    1: {mattina: loc_winter_garden, pomeriggio: loc_theatre, sera: loc_theatre, notte: loc_casino}
+    2: {mattina: loc_dining_room, pomeriggio: loc_theatre, sera: loc_casino, notte: loc_winter_garden}
+    3: {mattina: loc_presidential_suite, pomeriggio: loc_theatre, sera: loc_theatre, notte: loc_casino}
+    4: {mattina: loc_grand_hall, pomeriggio: loc_winter_garden, sera: loc_theatre, notte: loc_presidential_suite}
+    5: {mattina: loc_dining_room, pomeriggio: loc_theatre, sera: loc_casino, notte: loc_winter_garden}
+    6: {mattina: loc_winter_garden, pomeriggio: loc_theatre, sera: loc_theatre, notte: loc_casino}
+    7: {mattina: loc_grand_hall, pomeriggio: loc_theatre, sera: loc_casino, notte: loc_presidential_suite}
+  maria:
+    1: {mattina: loc_archive, pomeriggio: loc_service_corridor, sera: loc_dining_room, notte: loc_presidential_suite}
+    2: {mattina: loc_dining_room, pomeriggio: loc_archive, sera: loc_grand_hall, notte: loc_service_corridor}
+    3: {mattina: loc_archive, pomeriggio: loc_presidential_suite, sera: loc_dining_room, notte: loc_archive}
+    4: {mattina: loc_service_corridor, pomeriggio: loc_archive, sera: loc_dining_room, notte: loc_presidential_suite}
+    5: {mattina: loc_archive, pomeriggio: loc_dining_room, sera: loc_grand_hall, notte: loc_service_corridor}
+    6: {mattina: loc_presidential_suite, pomeriggio: loc_archive, sera: loc_dining_room, notte: loc_archive}
+    7: {mattina: loc_service_corridor, pomeriggio: loc_victoria_office, sera: loc_dining_room, notte: loc_presidential_suite}
+  luna:
+    1: {mattina: loc_cliff_path, pomeriggio: loc_private_cove, sera: loc_winter_garden, notte: loc_private_cove}
+    2: {mattina: loc_grand_hall, pomeriggio: loc_cliff_path, sera: loc_casino, notte: loc_private_cove}
+    3: {mattina: loc_private_cove, pomeriggio: loc_service_corridor, sera: loc_winter_garden, notte: loc_cliff_path}
+    4: {mattina: loc_cliff_path, pomeriggio: loc_archive, sera: loc_casino, notte: loc_private_cove}
+    5: {mattina: loc_private_cove, pomeriggio: loc_winter_garden, sera: loc_grand_hall, notte: loc_cliff_path}
+    6: {mattina: loc_service_corridor, pomeriggio: loc_private_cove, sera: loc_casino, notte: loc_cliff_path}
+    7: {mattina: loc_cliff_path, pomeriggio: loc_grand_hall, sera: loc_winter_garden, notte: loc_private_cove}
