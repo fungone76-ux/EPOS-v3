@@ -1,0 +1,30 @@
+schema_version: 1
+world_id: crimson_velvet_1897
+library_type: outfit
+aliases:
+  "*":
+    guanti: long gloves
+    guanti lunghi: long gloves
+    stivali: leather boots
+    vestaglia: silk dressing gown
+    abito da sera: evening gown
+    corsetto: corset bodice
+    senza scarpe: "@footwear"
+    scalza: "@footwear"
+categories:
+  footwear:
+    keywords: [boot, boots, heel, heels, shoe, shoes, slipper, slippers]
+  hosiery:
+    keywords: [stocking, stockings, hosiery]
+  gloves:
+    keywords: [glove, gloves]
+  garment:
+    keywords: [dress, gown, robe, blouse, skirt, corset, waistcoat, jacket, cloak, nightdress, chemise]
+  accessory:
+    keywords: [earring, earrings, necklace, pendant, brooch, bracelet, hat, fan, choker, cameo]
+period_rules:
+  year: 1897
+  reject_modern_items: true
+  notes:
+    - Prefer late Victorian and Belle Epoque silhouettes.
+    - Modern swimwear, minidresses, zippers and synthetic sportswear are not canonical.
