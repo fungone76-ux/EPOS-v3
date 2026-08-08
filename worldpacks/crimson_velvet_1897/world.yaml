@@ -1,0 +1,48 @@
+schema_version: 1
+id: crimson_velvet_1897
+world_id: crimson_velvet_1897
+title: The Crimson Velvet — 1897
+premise: Nel 1897 un ricchissimo viaggiatore arriva sulla Riviera ligure al Crimson Velvet, hotel-casino ricavato da una villa aristocratica. Dietro feste, camere private e saloni dorati si nascondono un titolo di proprietà contestato, lettere compromettenti, traffici d'arte e quattro donne adulte con obiettivi incompatibili.
+start_time_phase: sera
+start_location_id: loc_grand_hall
+interactive_creation: true
+open_end: true
+riserva_dice: 0
+opening_narration: Una carrozza nera si ferma sotto la pensilina del Crimson Velvet. Il mare è scuro, il salone brilla di lampade a gas e Victoria Hale attende il nuovo ospite davanti alla grande scalinata.
+skill_definitions:
+  fascino: Presenza sociale, seduzione, etichetta e persuasione personale.
+  intuito: Lettura di persone, menzogne, dettagli e tensioni nascoste.
+  autorita: Comando, status, pressione sociale e capacità di imporre ordine.
+  negoziazione: Contratti, denaro, concessioni e accordi.
+  audacia: Rischio fisico, iniziativa, sangue freddo e azioni fuori protocollo.
+player_start:
+  name: null
+  skills: {fascino: 3, intuito: 3, autorita: 2, negoziazione: 3, audacia: 2}
+  inventory: [lettera_di_presentazione, orologio_d_oro]
+  conditions: []
+  outfit: [black 1890s evening tailcoat, white waistcoat, high collar shirt, polished shoes]
+  resources: {wealth: 5}
+locations:
+  - {id: loc_grand_hall, name: Grand Hall, description: Salone Belle Époque con velluto cremisi, specchi dorati, lampade a gas e grande scalinata.}
+  - {id: loc_casino, name: Sala da gioco, description: Roulette, baccarat, fumo di sigari e tavoli riservati dietro paraventi di mogano.}
+  - {id: loc_theatre, name: Teatro privato, description: Piccolo teatro rosso e oro con palchi privati, camerini e sipario di velluto.}
+  - {id: loc_winter_garden, name: Giardino d'inverno, description: Serra vetrata con palme, fontana e divani appartati illuminati da lanterne.}
+  - {id: loc_victoria_office, name: Studio di Victoria, description: Ufficio rivestito in legno con cassaforte, mappe catastali e finestre sul mare.}
+  - {id: loc_archive, name: Archivio sotterraneo, description: Stanze asciutte sotto la villa con registri, casse, lettere e vecchi atti notarili.}
+  - {id: loc_service_corridor, name: Corridoi di servizio, description: Scale secondarie, montacarichi, dispense e passaggi invisibili agli ospiti.}
+  - {id: loc_cliff_path, name: Sentiero della scogliera, description: Sentiero stretto sopra il mare che conduce a una cala usata dai pescatori e dai contrabbandieri.}
+  - {id: loc_private_cove, name: Cala privata, description: Piccolo approdo nascosto tra rocce nere, accessibile dal sentiero o con una barca leggera.}
+  - {id: loc_presidential_suite, name: Suite del Levante, description: Suite privata con balcone sul mare, salotto, camera e bagno in marmo.}
+  - {id: loc_dining_room, name: Sala da pranzo, description: Tavoli con tovaglie bianche, argenteria, orchestra discreta e finestre aperte sulla costa.}
+pressures:
+  - {id: pressure_title, summary: Un titolo di proprietà del Crimson Velvet potrebbe essere nullo., escalation_hint: Più prove emergono, più investitori, creditori e vecchie famiglie reclamano voce sul futuro della casa.}
+  - {id: pressure_scandal, summary: Lettere e registri possono distruggere reputazioni importanti., escalation_hint: Pubblicare, nascondere o usare le prove crea alleati e nemici ma non impone una fine automatica.}
+world_facts:
+  - {id: fact_all_adults, statement: Victoria, Stella, Maria e Luna sono donne adulte., visibility: public, does_not_imply: [Il consenso è automatico.]}
+  - {id: fact_open_end, statement: La campagna non ha una scadenza di giorni e può continuare dopo la risoluzione della trama principale., visibility: public, does_not_imply: [Gli eventi restano immutabili.]}
+  - {id: fact_end_condition, statement: La campagna può essere considerata conclusa quando il destino legale del Crimson Velvet è risolto e i quattro archi personali e intimi sono completati volontariamente., visibility: public, does_not_imply: [Le NPC sono proprietà del protagonista., Un singolo incontro completa automaticamente un arco.]}
+relationships:
+  - {from: victoria, to: stella, statement: Victoria finanzia la carriera di Stella ma teme che la sua ambizione attiri scandali., known_by: [victoria, stella]}
+  - {from: victoria, to: maria, statement: Maria è la sola persona a cui Victoria affiderebbe le chiavi dell'archivio., known_by: [victoria, maria]}
+  - {from: victoria, to: luna, statement: Victoria tollera i contatti di Luna con il porto perché il Crimson Velvet ne ha bisogno., known_by: [victoria, luna]}
+  - {from: maria, to: luna, statement: Maria sospetta che Luna sappia chi ha sottratto un registro dall'archivio., known_by: [maria, luna]}
