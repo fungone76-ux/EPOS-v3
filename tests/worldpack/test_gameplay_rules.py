@@ -49,6 +49,8 @@ def test_mission_objectives_and_terminal_success_follow_flags() -> None:
 
 def test_event_is_available_only_at_matching_clock_location_and_trigger() -> None:
     loaded = _loaded()
+    loaded.world.global_flags["resort_intro_completed"] = True
+    loaded.world.global_flags["resort_intro_active"] = False
     loaded.apply_clock(day=1, phase="sera")
     loaded.world.player.location_id = "loc_suite"
 
