@@ -5,18 +5,51 @@ from __future__ import annotations
 import copy
 import time
 
+from epos_v3.domain.types import JSONObject
 from epos_v3.domain.world import WorldState
 
+from .npc_policy import LongTermMemoryProviderPort
 from .orchestrator import TurnOrchestrator
+from .ports import (
+    EventBusPort,
+    LLMPort,
+    PlayerDecisionPort,
+    RendererPort,
+    SnapshotCompressorPort,
+    StorePort,
+    VisualCompilerPort,
+    WorldRulesPort,
+)
 from .world_intro import IntroResult, WorldIntroService
 
 
 class IntroTurnOrchestrator(TurnOrchestrator):
     """Run a Worldpack-authored intro before delegating to normal LLM gameplay."""
 
-    def __init__(self, *args: object, **kwargs: object) -> None:
+    def __init__(
+        self,
+        llm: LLMPort,
+        renderer: RendererPort,
+        store: StorePort,
+        event_bus: EventBusPort,
+        decision_port: PlayerDecisionPort | None = None,
+        world_rules: WorldRulesPort | None = None,
+        visual_compiler: VisualCompilerPort | None = None,
+        memory_provider: LongTermMemoryProviderPort | None = None,
+        snapshot_compressor: SnapshotCompressorPort | None = None,
+    ) -> None:
         """Create the normal orchestrator plus the deterministic intro service."""
-        super().__init__(*args, **kwargs)
+        super().__init__(
+            llm=llm,
+            renderer=renderer,
+            store=store,
+            event_bus=event_bus,
+            decision_port=decision_port,
+            world_rules=world_rules,
+            visual_compiler=visual_compiler,
+            memory_provider=memory_provider,
+            snapshot_compressor=snapshot_compressor,
+        )
         self.intro_service = WorldIntroService()
 
     async def play_turn(self, session_id: str, player_input: str) -> dict[str, object]:
@@ -84,7 +117,7 @@ class IntroTurnOrchestrator(TurnOrchestrator):
         self,
         resolved: IntroResult,
         state: WorldState,
-    ) -> tuple[dict[str, object], str | None]:
+    ) -> tuple[JSONObject, str | None]:
         """Compile only structured intro VST; never ask the LLM for a prompt."""
         if not resolved.vst:
             return {}, None
