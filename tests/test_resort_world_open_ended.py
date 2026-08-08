@@ -29,12 +29,24 @@ def test_resort_has_no_fixed_campaign_deadline() -> None:
     assert "deadline" not in rules["mission_resort_future"]
 
 
+def test_arrival_intro_is_the_only_initial_campaign_mission() -> None:
+    """Freeplay and endgame remain gated until the canonical introductions finish."""
+    rules = _mission_rules()
+
+    assert rules["mission_resort_arrival"]["reveal"] == "initial"
+    assert rules["mission_resort_future"]["reveal"] == "progressive"
+    assert rules["mission_four_bonds"]["reveal"] == "progressive"
+    assert rules["mission_four_bonds"]["unlock_when"] == {
+        "flag": "resort_intro_completed",
+        "expected": True,
+    }
+
+
 def test_four_bonds_is_the_campaign_completion_mission() -> None:
     """Campaign completion requires all four distinct consensual adult bonds."""
     rules = _mission_rules()
     mission = rules["mission_four_bonds"]
 
-    assert mission["reveal"] == "initial"
     assert mission["required_flags"] == [
         "victoria_intimate_bond_complete",
         "stella_intimate_bond_complete",
@@ -48,6 +60,7 @@ def test_four_bonds_is_the_campaign_completion_mission() -> None:
 def test_four_bonds_completion_is_python_deterministic() -> None:
     """Python, not the LLM, marks the campaign complete when all four bonds exist."""
     state = _load_state()
+    state.global_flags["resort_intro_completed"] = True
     for flag in (
         "victoria_intimate_bond_complete",
         "stella_intimate_bond_complete",
