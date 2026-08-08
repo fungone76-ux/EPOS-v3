@@ -52,7 +52,7 @@ class WorldIntroService:
         state.global_flags.setdefault(self.PRESENTED_FLAG, [])
 
     def current_step(self, state: WorldState) -> IntroStep | None:
-        """Return the current authored step, or None once the intro is complete."""
+        """Return the current input-gating step, or None once the intro is complete."""
         self.initialise(state)
         if not bool(state.global_flags.get(self.ACTIVE_FLAG, False)):
             return None
@@ -62,7 +62,51 @@ class WorldIntroService:
         index = int(state.global_flags.get(self.INDEX_FLAG, 0))
         if index < 0 or index >= len(steps):
             return None
-        row = steps[index]
+        return self._step_from_row(steps[index], index)
+
+    def resolve(self, state: WorldState, player_text: str) -> IntroResult | None:
+        """Consume one input and reveal exactly one NPC introduction."""
+        step = self.current_step(state)
+        if step is None:
+            return None
+        steps = self._steps(state)
+        current_index = int(state.global_flags.get(self.INDEX_FLAG, 0))
+
+        if step.kind == "player_intro":
+            state.global_flags["player_intro_text"] = player_text.strip()
+            output_index = current_index + 1
+        else:
+            output_index = current_index
+
+        if output_index >= len(steps):
+            self._mark_complete(state, len(steps))
+            return None
+
+        output_step = self._step_from_row(steps[output_index], output_index)
+        presented = self._string_list(state.global_flags.get(self.PRESENTED_FLAG, []))
+        if output_step.target_npc_id and output_step.target_npc_id not in presented:
+            presented.append(output_step.target_npc_id)
+        state.global_flags[self.PRESENTED_FLAG] = presented
+
+        next_index = output_index + 1
+        completed = next_index >= len(steps)
+        if completed:
+            self._mark_complete(state, next_index)
+        else:
+            state.global_flags[self.INDEX_FLAG] = next_index
+            state.global_flags[self.COMPLETE_FLAG] = False
+            state.global_flags[self.ACTIVE_FLAG] = True
+
+        return IntroResult(
+            step_id=output_step.step_id,
+            narration=self._compose_narration(output_step),
+            focus_npc_id=output_step.target_npc_id,
+            vst=self._build_vst(state, output_step),
+            completed=completed,
+        )
+
+    @staticmethod
+    def _step_from_row(row: Mapping[object, object], index: int) -> IntroStep:
         return IntroStep(
             step_id=str(row.get("id", f"step_{index}")),
             kind=str(row.get("kind", "npc_intro")),
@@ -72,36 +116,11 @@ class WorldIntroService:
             action_id=str(row.get("action_id", "speaking_gesture")),
         )
 
-    def resolve(self, state: WorldState, player_text: str) -> IntroResult | None:
-        """Consume exactly one player input and advance exactly one intro step."""
-        step = self.current_step(state)
-        if step is None:
-            return None
-        if step.kind == "player_intro":
-            state.global_flags["player_intro_text"] = player_text.strip()
-        else:
-            presented = self._string_list(state.global_flags.get(self.PRESENTED_FLAG, []))
-            if step.target_npc_id and step.target_npc_id not in presented:
-                presented.append(step.target_npc_id)
-            state.global_flags[self.PRESENTED_FLAG] = presented
-
-        steps = self._steps(state)
-        next_index = int(state.global_flags.get(self.INDEX_FLAG, 0)) + 1
-        completed = next_index >= len(steps)
+    def _mark_complete(self, state: WorldState, next_index: int) -> None:
         state.global_flags[self.INDEX_FLAG] = next_index
-        state.global_flags[self.COMPLETE_FLAG] = completed
-        state.global_flags[self.ACTIVE_FLAG] = not completed
-        if completed:
-            state.global_flags["resort_freeplay_unlocked"] = True
-
-        narration = self._compose_narration(step)
-        return IntroResult(
-            step_id=step.step_id,
-            narration=narration,
-            focus_npc_id=step.target_npc_id,
-            vst=self._build_vst(state, step),
-            completed=completed,
-        )
+        state.global_flags[self.COMPLETE_FLAG] = True
+        state.global_flags[self.ACTIVE_FLAG] = False
+        state.global_flags["resort_freeplay_unlocked"] = True
 
     @staticmethod
     def _compose_narration(step: IntroStep) -> str:
