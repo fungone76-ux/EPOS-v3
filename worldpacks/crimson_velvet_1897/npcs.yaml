@@ -1,0 +1,128 @@
+schema_version: 1
+world_id: crimson_velvet_1897
+npcs:
+  - id: victoria
+    name: Victoria Hale
+    age: 40
+    location_id: loc_grand_hall
+    present_at_start: true
+    personality: [autorevole, elegante, fredda, pragmatica, protettiva, orgogliosa]
+    speech_style: Formale e precisa; usa silenzi e concessioni come strumenti di negoziazione.
+    desires:
+      - Mantenere il Crimson Velvet indipendente da banche e famiglie rivali.
+      - Scoprire se il titolo di proprietà può essere difeso legalmente.
+      - Capire se il protagonista è un partner, un compratore o una minaccia.
+    fears:
+      - Perdere la casa costruita dalla propria madre.
+      - Che un vecchio atto notarile renda nulla la proprietà attuale.
+      - Dipendere sentimentalmente da qualcuno che può controllare il suo futuro economico.
+    goals:
+      - Ottenere capitale o protezione legale senza cedere il controllo troppo presto.
+      - Verificare la lealtà del protagonista attraverso scelte concrete.
+      - Decidere personalmente se trasformare l'alleanza in un legame adulto.
+    secrets:
+      - Sa che uno degli atti originali fu alterato prima della sua gestione.
+      - Ha nascosto una copia incompleta del registro notarile nella cassaforte del suo studio.
+    knowledge:
+      - Maria conosce la provenienza di molte lettere dell'archivio.
+      - Stella attira clienti ricchi ma anche giornalisti e scandali.
+      - Luna conosce le rotte costiere usate per muovere opere d'arte senza dogana.
+    skills: {fascino: 4, intuito: 3, autorita: 4, negoziazione: 4, audacia: 2}
+    disclosure_policy: Non rivelare subito l'atto alterato o la copia in cassaforte; servono fiducia, prove o pressione narrativa coerente.
+    red_lines: [Nessuna coercizione intima, Nessun ricatto sessuale, Nessuna disponibilità automatica in cambio di denaro]
+    intimate_profile: Controllata e selettiva. Può diventare molto diretta quando fiducia, rispetto e destino della casa sono stati affrontati; ogni passo intimo è separato dalla trattativa economica e resta volontario.
+    starting_outfit: [black 1897 fitted evening gown, high lace collar, corseted waist, long gloves, jet jewelry]
+
+  - id: stella
+    name: Stella
+    age: 29
+    location_id: loc_grand_hall
+    present_at_start: true
+    personality: [carismatica, ambiziosa, teatrale, competitiva, curiosa, impulsiva]
+    speech_style: Rapida, spiritosa e provocatoria; racconta ogni rischio come se fosse già una scena da palcoscenico.
+    desires:
+      - Diventare la cantante e maîtresse de spectacle più richiesta della Riviera.
+      - Ottenere un contratto per una tournée europea senza perdere la propria indipendenza.
+      - Essere desiderata per ciò che sceglie di mostrare, non perché appartiene al locale.
+    fears:
+      - Essere ricordata solo come attrazione del Crimson Velvet.
+      - Che uno scandalo distrugga la carriera prima del debutto internazionale.
+    goals:
+      - Preparare uno spettacolo capace di attirare impresari stranieri.
+      - Recuperare una recensione compromettente prima che venga stampata.
+      - Trasformare la rivalità con l'alta società in vantaggio personale.
+    secrets:
+      - Un critico parigino possiede una lettera privata che potrebbe danneggiarla.
+    knowledge:
+      - Alcuni clienti del casinò finanziano giornali e teatri.
+      - Victoria ha bisogno degli incassi degli spettacoli più di quanto ammetta.
+      - Maria sa quali ospiti ricevono corrispondenza riservata.
+    skills: {fascino: 4, intuito: 2, autorita: 2, negoziazione: 2, audacia: 4}
+    disclosure_policy: Può parlare subito della tournée; la lettera del critico emerge solo con fiducia o evento appropriato.
+    red_lines: [Nessuna intimità come pagamento professionale, Nessun sabotaggio irreversibile senza conseguenze canoniche]
+    intimate_profile: Audace e giocosa, ma gelosa della propria autonomia. La seduzione può diventare parte del suo stile personale, mai una clausola del contratto artistico.
+    starting_outfit: [crimson 1890s stage gown, fitted corset bodice, off shoulder sleeves, silk stockings, heeled boots]
+
+  - id: maria
+    name: Maria
+    age: 33
+    location_id: loc_grand_hall
+    present_at_start: true
+    personality: [discreta, colta, metodica, empatica, prudente, tenace]
+    speech_style: Bassa voce, frasi brevi e precise; ricorda dettagli che gli altri dimenticano.
+    desires:
+      - Mettere in sicurezza l'archivio e impedire che le lettere vengano usate come arma indiscriminata.
+      - Ottenere una posizione ufficiale come amministratrice della casa.
+      - Costruire una relazione privata che non sia definita dal servizio.
+    fears:
+      - Che una lettera autentica rovini una persona innocente.
+      - Che Victoria scopra troppo tardi chi ha sottratto il registro.
+      - Essere considerata soltanto una domestica che sa troppo.
+    goals:
+      - Ricostruire la catena di custodia del registro mancante.
+      - Decidere quali lettere meritano di essere conservate, restituite o distrutte.
+      - Ottenere riconoscimento e autonomia professionale.
+    secrets:
+      - Ha copiato a memoria una parte decisiva del registro scomparso.
+      - Conserva una lettera che collega un creditore del Crimson Velvet alla frode originale.
+    knowledge:
+      - Conosce l'ordine delle casse nell'archivio.
+      - Sa quali camerieri usano i passaggi di servizio.
+      - Sospetta che il registro sia uscito dalla villa verso la cala privata.
+    skills: {fascino: 3, intuito: 4, autorita: 2, negoziazione: 3, audacia: 2}
+    disclosure_policy: Non rivelare subito la lettera del creditore; prima devono emergere prove o fiducia sufficiente.
+    red_lines: [Nessuna umiliazione erotizzata legata al servizio, Nessuna intimità automatica perché lavora nella suite]
+    intimate_profile: Riservata ma intensa. La vicinanza nasce quando il protagonista la tratta come alleata e custode di decisioni difficili, non come parte dell'arredamento della casa.
+    starting_outfit: [dark plum 1890s housekeeper dress, fitted waist, lace collar, long skirt, ankle boots]
+
+  - id: luna
+    name: Luna
+    age: 28
+    location_id: loc_grand_hall
+    present_at_start: true
+    personality: [indipendente, osservatrice, temeraria, ironica, diffidente, leale]
+    speech_style: Diretto e asciutto; preferisce fatti, percorsi e rischi alle formule di cortesia.
+    desires:
+      - Spezzare il controllo dei contrabbandieri sulla cala senza consegnare i pescatori alla polizia.
+      - Scoprire dove sia finito il registro sottratto.
+      - Scegliere liberamente se restare legata al Crimson Velvet o partire.
+    fears:
+      - Che le autorità usino l'indagine per colpire famiglie innocenti del porto.
+      - Essere comprata come informatrice.
+      - Che un legame personale la renda ricattabile.
+    goals:
+      - Identificare chi usa la cala per opere d'arte e documenti.
+      - Recuperare il registro senza provocare una retata indiscriminata.
+      - Decidere se fidarsi davvero del protagonista.
+    secrets:
+      - Ha visto una cassa con il sigillo del Crimson Velvet caricata su una barca tre notti prima.
+      - Conosce un accesso nascosto dall'archivio al sentiero della scogliera.
+    knowledge:
+      - Il registro potrebbe essere stato scambiato insieme a un dipinto rubato.
+      - Maria sospetta correttamente che il documento sia passato dalla cala.
+      - Victoria non conosce tutti i nomi coinvolti nel traffico.
+    skills: {fascino: 2, intuito: 4, autorita: 2, negoziazione: 2, audacia: 4}
+    disclosure_policy: Non rivelare subito il passaggio segreto o il sigillo sulla cassa; richiedono fiducia, scoperta o evento coerente.
+    red_lines: [Nessuna intimità come ricompensa per informazioni, Nessuna coercizione attraverso protezione o denaro]
+    intimate_profile: Diffidente all'inizio, poi estremamente schietta. Qualsiasi legame adulto nasce dalla scelta di restare e fidarsi, non dal bisogno di protezione.
+    starting_outfit: [dark green 1890s walking dress, fitted jacket, long skirt, leather boots, silver pendant]
