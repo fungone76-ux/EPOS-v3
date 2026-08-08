@@ -33,15 +33,17 @@ def test_intro_order_is_victoria_luna_maria_stella_after_player_input() -> None:
     state = _state()
     intro = WorldIntroService()
     assert intro.current_step(state).kind == "player_intro"  # type: ignore[union-attr]
+
     expected = ["victoria", "luna", "maria", "stella"]
     seen: list[str] = []
-    for text in ("Mi presento.", "Victoria.", "Luna.", "Maria.", "Stella."):
+    for text in ("Mi presento.", "Piacere Luna.", "Piacere Maria.", "Piacere Stella."):
         result = intro.resolve(state, text)
         assert result is not None
-        if result.focus_npc_id:
-            seen.append(result.focus_npc_id)
+        seen.append(result.focus_npc_id)
+
     assert seen == expected
     assert state.global_flags["resort_intro_completed"] is True
+    assert state.global_flags["resort_intro_active"] is False
 
 
 def test_final_mission_requires_main_plot_and_four_personal_bonds() -> None:
