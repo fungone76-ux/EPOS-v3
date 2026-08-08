@@ -7,6 +7,7 @@ from epos_v3.domain.types import JSONObject
 from epos_v3.domain.world import WorldState
 from .common import retry_async
 from .check_contract import CHECK_PROPOSAL_INSTRUCTIONS
+from .narration_contract import NARRATION_INSTRUCTIONS
 from .vst_contract import VST_INSTRUCTIONS
 
 
@@ -44,22 +45,9 @@ class GeminiAdapter(LLMPort):
         """Generate narrative text."""
         import json
         data = json.loads(await self._generate(
-            "Return JSON with narration. Treat the snapshot as authoritative. "
-            "Narrate only characters present in the local scene. Never invent player actions, "
-            "choices, thoughts, companions, groups, missions, secrets, remote NPC activity, "
-            "or outfit details not present in the snapshot. The narration must visibly reflect "
-            "authoritative_player_action when that field is present and must not replace it with "
-            "an NPC initiative or unrelated scene. If narration_mode is brief_social, "
-            "obey narration_policy strictly: answer the greeting directly, use at most two "
-            "sentences, omit environment/outfit exposition, and allow at most one short NPC "
-            "question. If narration_mode is direct_social, obey narration_policy strictly: reply "
-            "directly to the player's line, use at most two sentences, keep the exchange concise, avoid repeating the full "
-            "scene setup, and avoid long monologues about unrelated NPC goals. If narration_mode is "
-            "focused_interaction, obey narration_policy strictly: describe only the immediate observable action "
-            "and NPC reaction in at most two sentences. Never reveal private NPC goals, desires, intentions, "
-            "memories, emotional-state data, or internal reasoning. If outfit_request_resolution is present, address that exact request directly and narrate "
-            "compliance only when accepted=true. When accepted=false, acknowledge the request "
-            "without pretending the outfit changed. Do not ask what the player should do next.\n"
+            "Return JSON with narration. "
+            + NARRATION_INSTRUCTIONS
+            + "\nSnapshot:\n"
             + snapshot
             + "\nOutcome: "
             + resolved_outcome
