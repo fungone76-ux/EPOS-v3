@@ -1,0 +1,87 @@
+schema_version: 2
+world_id: crimson_velvet_1897
+library_type: pose
+defaults: {fallback_pose_id: standing_neutral, strict_unknown_pose: true}
+poses:
+  standing_neutral:
+    label: Formal standing
+    aliases: [standing, in piedi]
+    tags: [standing, balanced posture, period formal stance]
+    body_regions_visible: [face, chest, hands, legs]
+  standing_hand_on_hip:
+    label: Confident standing
+    aliases: [hand on hip, posa sicura]
+    tags: [standing, one hand on hip, confident posture]
+    body_regions_visible: [face, chest, hips, legs]
+  standing_with_fan:
+    label: Standing with fan
+    aliases: [fan, ventaglio]
+    tags: [standing, holding folding fan, elegant period gesture]
+    body_regions_visible: [face, hands, chest]
+  seated_settee:
+    label: Seated on settee
+    aliases: [seated, divano, settee]
+    tags: [seated on velvet settee, composed posture]
+    body_regions_visible: [face, chest, hands, hips, legs]
+  seated_card_table:
+    label: Seated at card table
+    aliases: [cards, tavolo da gioco]
+    tags: [seated at card table, one hand near playing cards]
+    body_regions_visible: [face, hands, chest]
+  leaning_balustrade:
+    label: Leaning on balustrade
+    aliases: [balustrade, balcone, railing]
+    tags: [leaning lightly on stone balustrade, relaxed posture]
+    body_regions_visible: [face, chest, hips]
+  walking_corridor:
+    label: Walking corridor
+    aliases: [walking, cammina]
+    tags: [walking through ornate corridor, natural stride, long skirt movement]
+    body_regions_visible: [full_body, legs]
+  reading_letter:
+    label: Reading a letter
+    aliases: [letter, lettera, reading]
+    tags: [standing or seated, holding unfolded letter with both hands]
+    body_regions_visible: [face, hands, chest]
+  archive_search:
+    label: Searching archive
+    aliases: [archive, archivio, search]
+    tags: [standing beside archive shelves, reaching toward documents]
+    body_regions_visible: [face, hands, full_body]
+  stage_performance:
+    label: Stage performance
+    aliases: [stage, palco, performance, singing]
+    tags: [standing center stage, theatrical arm gesture, poised performance stance]
+    body_regions_visible: [full_body, face, chest, hands, legs]
+  coastal_watch:
+    label: Watching the coast
+    aliases: [coast, costa, scogliera]
+    tags: [standing on cliff path, coat or skirt moved by sea wind]
+    body_regions_visible: [full_body, face, legs]
+  intimate_seated:
+    label: Private seated conversation
+    aliases: [private talk, conversazione privata]
+    tags: [seated close on upholstered settee, relaxed private posture]
+    body_regions_visible: [face, chest, hands, hips]
+focus_sets:
+  face: [standing_neutral, seated_settee]
+  eyes: [standing_neutral, seated_settee]
+  hands: [reading_letter, archive_search, seated_card_table]
+  chest: [standing_neutral, seated_settee]
+  back: [walking_corridor, leaning_balustrade]
+  hips: [standing_hand_on_hip, seated_settee]
+  buttocks: [walking_corridor, leaning_balustrade]
+  legs: [walking_corridor, stage_performance]
+  feet: [walking_corridor, stage_performance]
+  outfit: [standing_neutral, standing_hand_on_hip, stage_performance]
+  full_body: [standing_neutral, walking_corridor, stage_performance, coastal_watch]
+  interaction: [seated_settee, intimate_seated, seated_card_table]
+action_compatibility:
+  idle_neutral: [standing_neutral, seated_settee]
+  speaking_gesture: [standing_neutral, standing_with_fan, seated_settee]
+  reading: [reading_letter, seated_settee]
+  writing: [seated_card_table]
+  searching_documents: [archive_search]
+  performing: [stage_performance]
+  walking: [walking_corridor, coastal_watch]
+  drinking: [seated_settee, standing_neutral]
