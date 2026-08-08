@@ -113,6 +113,7 @@ class NPCEntity(BaseModel):
     fears: list[str]
     goals: list[str]
     secrets: list[Secret]
+    disclosure_policy: str = ""
     red_lines: list[str]
     intimate_profile: str
     stats: dict[str, int]
