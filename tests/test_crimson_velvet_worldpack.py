@@ -65,6 +65,7 @@ def test_final_mission_requires_main_plot_and_four_personal_bonds() -> None:
 
 def test_events_are_hidden_during_intro() -> None:
     state = _state()
+    WorldIntroService().initialise(state)
     gameplay = WorldpackGameplay()
     assert gameplay.available_state_events(state) == []
 
