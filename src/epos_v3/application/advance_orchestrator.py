@@ -7,7 +7,6 @@ from .initiative_narration import InitiativeNarrationPort, InitiativeNarrationSe
 from .initiative_integration import InitiativeIntegrationService
 from .ports import StorePort, WorldRulesPort
 from .time_advance import TimeAdvanceService
-from .world_intro import WorldIntroService
 
 
 class TimeAdvanceOrchestrator:
@@ -29,22 +28,23 @@ class TimeAdvanceOrchestrator:
         self.initiative_narrator = (
             InitiativeNarrationService(initiative_llm) if initiative_llm is not None else None
         )
-        self.intro_service = WorldIntroService()
 
     async def advance(self, session_id: str) -> dict[str, object]:
-        """Advance exactly one phase unless an authored introduction is still active."""
+        """Advance exactly one phase unless an initialized introduction is active."""
         state = await self.store.load(session_id)
         if state is None:
             raise ValueError(f"Session not found: {session_id}")
 
-        if self.intro_service.current_step(state) is not None:
+        if bool(state.global_flags.get("resort_intro_active", False)) and not bool(
+            state.global_flags.get("resort_intro_completed", False)
+        ):
             return {
                 "turn_number": state.turn_number,
                 "day": state.day,
                 "phase": state.world_phase,
                 "available_events": [],
                 "initiatives": [],
-                "narration": "Completa prima le presentazioni iniziali dell'Azure Crown.",
+                "narration": "Completa prima le presentazioni iniziali.",
                 "pending_missions": list(state.pending_missions),
                 "completed_missions": list(state.completed_missions),
                 "blocked": True,
