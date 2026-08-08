@@ -8,6 +8,7 @@ from pathlib import Path
 from epos_v3.application.conversation_guidance import ConversationGoal, conversation_goal_for
 from epos_v3.application.narration_context import build_narration_snapshot
 from epos_v3.domain.checks import CheckProposal, CheckType
+from epos_v3.infrastructure.llm.narration_contract import NARRATION_INSTRUCTIONS
 from epos_v3.infrastructure.worldpack.loader import WorldpackLoader
 
 
@@ -71,3 +72,12 @@ def test_direct_answer_policy_forbids_evasive_mystery_substitution() -> None:
     requirements = snapshot["conversation_directive"]["requirements"].lower()
     assert "do not substitute mystery" in requirements
     assert "say exactly what is unknown" in requirements
+
+
+def test_provider_contract_prioritizes_dynamic_conversation_goal() -> None:
+    """Every provider must explicitly honor the deterministic conversation directive."""
+    lowered = NARRATION_INSTRUCTIONS.lower()
+    assert "conversation_directive" in lowered
+    assert "conversation_objective" in lowered
+    assert "direct question" in lowered
+    assert "mystery" in lowered
