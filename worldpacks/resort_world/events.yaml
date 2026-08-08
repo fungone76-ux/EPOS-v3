@@ -16,6 +16,20 @@ events:
     completion_flag: maria_bath_service_recovered
     visual_outfit: maria_suite_service
 
+  - id: event_maria_private_aftercare
+    title: Dopo il servizio
+    summary: Maria resta in suite dopo aver concluso il servizio e trasforma la professionalita in una conversazione privata piu personale e sensuale.
+    player_hook: Puoi invitarla a restare, mantenere il rapporto professionale, chiederle cosa desidera davvero o rimandare.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_suite
+    npc_ids: [maria]
+    trigger: {flag: maria_bath_service_recovered, expected: true}
+    adult_component: private_sensual_trust
+    consent_exit_required: true
+    choices: [invite_to_stay, ask_personal_desire, remain_professional, postpone]
+    completion_flag: maria_private_trust_complete
+
   - id: event_stella_vip_evening
     title: La serata VIP da recuperare
     summary: Stella deve trasformare una serata esclusiva in una prova di carisma, spettacolo e seduzione controllata.
@@ -30,6 +44,20 @@ events:
     choices: [support_stella, demand_changes, encourage_bolder_style, involve_colleague, leave_event]
     completion_flag: stella_vip_event_success
     visual_outfit: stella_vip_gala
+
+  - id: event_stella_private_rehearsal
+    title: Prova privata di Stella
+    summary: Dopo la serata VIP, Stella chiede un giudizio lontano dal pubblico e usa una prova privata per capire se il protagonista la considera davvero speciale.
+    player_hook: Puoi incoraggiarla, alzare la difficolta della prova, darle un giudizio sincero o fermarti prima che diventi troppo personale.
+    day_range: [1, 9999]
+    phases: [pomeriggio, sera, notte]
+    location_id: loc_lounge
+    npc_ids: [stella]
+    trigger: {flag: stella_vip_event_success, expected: true}
+    adult_component: private_provocative_rehearsal
+    consent_exit_required: true
+    choices: [encourage_rehearsal, raise_challenge, honest_review, stop_rehearsal]
+    completion_flag: stella_private_rehearsal_complete
 
   - id: event_pool_outfit
     title: Prova costume VIP
@@ -52,7 +80,7 @@ events:
     phases: [pomeriggio, sera]
     location_id: loc_spa
     npc_ids: [maria, stella]
-    trigger: {relationship_field: jealousy, minimum: 1}
+    trigger: {relationship: stella, field: attraction, minimum: 2}
     adult_component: sensual_spa_service
     consent_exit_required: true
     choices: [choose_maria, choose_stella, shared_professional_session, encourage_competition, cancel]
@@ -72,6 +100,20 @@ events:
     completion_flag: luna_letter_revealed
     visual_outfit: luna_private_evening
 
+  - id: event_luna_present_choice
+    title: Luna sceglie per se stessa
+    summary: Dopo la lettera, Luna torna dal protagonista senza piu usare il passato come motivo e mette alla prova un legame adulto scelto nel presente.
+    player_hook: Puoi rassicurarla, dichiarare cosa vuoi, lasciare che sia lei a decidere la distanza o rimandare.
+    day_range: [1, 9999]
+    phases: [pomeriggio, sera, notte]
+    location_id: loc_private_beach
+    npc_ids: [luna]
+    trigger: {flag: luna_letter_revealed, expected: true}
+    adult_component: chosen_present_intimacy
+    consent_exit_required: true
+    choices: [reassure_luna, state_desire, let_luna_set_distance, postpone]
+    completion_flag: luna_present_choice_complete
+
   - id: event_victoria_private_review
     title: Valutazione privata del servizio VIP
     summary: Victoria organizza una valutazione riservata del team in cui professionalita, rivalita e attrazione diventano parte della trattativa.
@@ -85,6 +127,20 @@ events:
     consent_exit_required: true
     choices: [participate, change_assignments, request_bolder_evaluation, private_talk, end_review]
     completion_flag: victoria_team_proven
+
+  - id: event_victoria_private_audit
+    title: Audit privato con Victoria
+    summary: Victoria invita il protagonista nel suo ufficio dopo l'orario di servizio per difendere il resort senza il filtro del ruolo manageriale, lasciando emergere anche la tensione personale.
+    player_hook: Puoi metterla alla prova, offrirle fiducia, negoziare condizioni piu personali o mantenere tutto sul piano economico.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_victoria_office
+    npc_ids: [victoria]
+    trigger: {flag: victoria_team_proven, expected: true}
+    adult_component: private_seductive_negotiation
+    consent_exit_required: true
+    choices: [challenge_victoria, offer_trust, negotiate_personal_terms, keep_business_only]
+    completion_flag: victoria_private_audit_complete
 
   - id: event_night_service
     title: Servizio notturno in suite
@@ -115,7 +171,7 @@ events:
 
   - id: event_victoria_intimate_milestone
     title: Victoria abbassa la guardia
-    summary: Dopo aver risolto la sua battaglia per il resort, Victoria propone un incontro adulto privato in cui il controllo professionale lascia spazio a una scelta personale e reciproca.
+    summary: Completato il suo arco, Victoria propone un incontro adulto privato in cui il controllo professionale lascia spazio a una scelta personale e reciproca.
     player_hook: Puoi accettare, rallentare, ridefinire i limiti o lasciare che Victoria scelga un altro momento.
     day_range: [1, 9999]
     phases: [sera, notte]
@@ -129,7 +185,7 @@ events:
 
   - id: event_stella_intimate_milestone
     title: Stella vuole essere scelta
-    summary: Ottenuta la sua prova professionale, Stella trasforma la competizione in un invito adulto personale, non piu legato alla promozione ma al desiderio reciproco.
+    summary: Completata la sua prova professionale, Stella trasforma la competizione in un invito adulto personale, non piu legato alla promozione ma al desiderio reciproco.
     player_hook: Puoi accettare il suo invito, chiederle di rallentare, cambiare atmosfera o rimandare.
     day_range: [1, 9999]
     phases: [sera, notte]
@@ -143,7 +199,7 @@ events:
 
   - id: event_maria_intimate_milestone
     title: Maria oltre il servizio
-    summary: Raggiunta la stabilita che cercava, Maria sceglie di separare nettamente il lavoro dalla propria attrazione e propone un momento adulto privato per scelta personale.
+    summary: Completato il suo arco, Maria separa nettamente il lavoro dalla propria attrazione e propone un momento adulto privato per scelta personale.
     player_hook: Puoi accettare, mantenere il rapporto professionale, chiedere piu tempo o cambiare il contesto.
     day_range: [1, 9999]
     phases: [sera, notte]
@@ -157,7 +213,7 @@ events:
 
   - id: event_luna_intimate_milestone
     title: Luna sceglie il presente
-    summary: Chiarita la verita della lettera, Luna decide che qualsiasi intimita deve nascere dal presente e non da un debito del passato, e puo proporre un incontro adulto autenticamente volontario.
+    summary: Completato il suo arco, Luna decide che qualsiasi intimita deve nascere dal presente e non da un debito del passato, e puo proporre un incontro adulto autenticamente volontario.
     player_hook: Puoi accettare, rassicurarla senza procedere, rallentare o rimandare.
     day_range: [1, 9999]
     phases: [sera, notte]
@@ -170,14 +226,14 @@ events:
     completion_flag: luna_intimate_bond_complete
 
   - id: event_campaign_epilogue
-    title: L'Azure Crown dopo la conquista
+    title: L'Azure Crown dopo i quattro legami
     summary: I quattro legami adulti sono stati completati volontariamente. Il protagonista puo considerare conclusa la campagna oppure continuare a vivere liberamente nel resort.
     player_hook: Puoi chiudere formalmente la storia o continuare in modalita libera senza perdere lo stato raggiunto.
     day_range: [1, 9999]
     phases: [mattina, pomeriggio, sera, notte]
     location_id: loc_suite
     npc_ids: [victoria, stella, maria, luna]
-    trigger: {flag: campaign_epilogue_unlocked, expected: true}
+    trigger: {flag: campaign_complete, expected: true}
     adult_component: established_adult_relationships
     consent_exit_required: true
     choices: [finish_campaign, continue_freeplay]
