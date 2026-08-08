@@ -38,10 +38,13 @@ def select_focus_camera(
     raw_camera = cameras.get(camera_id)
     if not isinstance(raw_camera, Mapping):
         return None
+    orientation = str(raw_camera.get("orientation", "frontal"))
+    if orientation == "rear":
+        orientation = "rear_three_quarter"
     result: JSONObject = {
         "shot_type": str(raw_camera.get("shot_type", "medium_shot")),
         "angle": str(raw_camera.get("angle", "eye_level")),
-        "orientation": str(raw_camera.get("orientation", "frontal")),
+        "orientation": orientation,
         "depth_of_field": str(raw_camera.get("depth_of_field", "shallow")),
         "background_blur": bool(raw_camera.get("background_blur", True)),
     }
