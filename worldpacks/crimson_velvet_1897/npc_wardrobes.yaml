@@ -1,0 +1,160 @@
+schema_version: 1
+world_id: crimson_velvet_1897
+outfit_aliases:
+  "*":
+    senza guanti: "@gloves"
+    senza cappello: "@headwear"
+    scalza: "@footwear"
+    senza scarpe: "@footwear"
+wardrobes:
+  victoria:
+    1:
+      mattina: [black high collar walking dress, corseted waist, long sleeves, leather ankle boots]
+      pomeriggio: [charcoal fitted day gown, lace cuffs, cameo brooch, heeled boots]
+      sera: [black velvet evening gown, deep square neckline, long gloves, jet necklace]
+      notte: [dark crimson silk dressing gown, lace nightdress, slippers]
+    2:
+      mattina: [ivory blouse, black fitted long skirt, waistcoat, ankle boots]
+      pomeriggio: [navy tailored day gown, fitted bodice, gloves, heeled boots]
+      sera: [emerald satin evening gown, corseted bodice, opera gloves, emerald earrings]
+      notte: [black silk wrap robe, lace chemise, barefoot]
+    3:
+      mattina: [burgundy walking dress, high collar, fitted jacket, leather boots]
+      pomeriggio: [black executive day dress, lace collar, gloves, heeled boots]
+      sera: [midnight blue velvet gown, low neckline, long gloves, diamond pendant]
+      notte: [ivory silk nightgown, dark robe, slippers]
+    4:
+      mattina: [grey tailored day gown, fitted bodice, cameo, boots]
+      pomeriggio: [black archive dress, high collar, rolled sleeves, ankle boots]
+      sera: [crimson satin formal gown, sculpted corset bodice, long gloves, black heels]
+      notte: [deep green silk dressing gown, lace chemise, barefoot]
+    5:
+      mattina: [cream walking suit, long fitted skirt, gloves, hat, boots]
+      pomeriggio: [black fitted office gown, white lace collar, heeled boots]
+      sera: [gold and black evening gown, off shoulder neckline, opera gloves, jeweled choker]
+      notte: [black silk private robe, lace nightdress, slippers]
+    6:
+      mattina: [dark plum day gown, fitted waist, gloves, ankle boots]
+      pomeriggio: [charcoal office dress, high collar, brooch, boots]
+      sera: [sapphire satin evening gown, corseted bodice, long gloves, silver jewelry]
+      notte: [burgundy silk dressing gown, lace chemise, barefoot]
+    7:
+      mattina: [black tailored walking dress, fitted jacket, gloves, boots]
+      pomeriggio: [ivory and black day gown, lace collar, heeled boots]
+      sera: [crimson velvet gala gown, low neckline, opera gloves, diamond necklace]
+      notte: [ivory silk private robe, lace nightdress, barefoot]
+  stella:
+    1:
+      mattina: [rose walking dress, fitted waist, feathered hat, ankle boots]
+      pomeriggio: [crimson rehearsal corset bodice, layered performance skirt, silk stockings, heeled boots]
+      sera: [crimson stage gown, off shoulder corset bodice, silk stockings, jeweled heels]
+      notte: [black cabaret corset, short layered stage skirt, thigh high stockings, heeled boots]
+    2:
+      mattina: [cream day dress, fitted bodice, ribbon hat, boots]
+      pomeriggio: [blue rehearsal gown, corseted waist, dance shoes]
+      sera: [gold stage gown, low neckline, long gloves, jeweled heels]
+      notte: [red silk dressing gown, lace chemise, barefoot]
+    3:
+      mattina: [white blouse, burgundy long skirt, fitted waistcoat, boots]
+      pomeriggio: [black rehearsal corset, red layered skirt, silk stockings, dance shoes]
+      sera: [violet velvet stage gown, off shoulder neckline, long gloves, heels]
+      notte: [midnight blue cabaret costume, corset bodice, stockings, heeled boots]
+    4:
+      mattina: [mint walking dress, fitted jacket, hat, boots]
+      pomeriggio: [champagne rehearsal gown, corseted bodice, dance shoes]
+      sera: [scarlet satin stage gown, deep neckline, opera gloves, heels]
+      notte: [black lace dressing gown, silk chemise, barefoot]
+    5:
+      mattina: [pink day dress, fitted waist, gloves, ankle boots]
+      pomeriggio: [black and gold rehearsal corset, layered skirt, stockings, dance shoes]
+      sera: [emerald performance gown, low neckline, jeweled belt, heels]
+      notte: [crimson cabaret costume, corset, stockings, heeled boots]
+    6:
+      mattina: [powder blue walking dress, fitted waist, hat, boots]
+      pomeriggio: [white rehearsal blouse, dark corset, long skirt, dance shoes]
+      sera: [silver satin stage gown, off shoulder neckline, long gloves, heels]
+      notte: [violet silk dressing gown, lace chemise, barefoot]
+    7:
+      mattina: [cream tailored day dress, hat, gloves, boots]
+      pomeriggio: [crimson rehearsal corset, black layered skirt, stockings, dance shoes]
+      sera: [gold and crimson gala gown, low neckline, opera gloves, jeweled heels]
+      notte: [black silk cabaret robe, lace stage lingerie, barefoot]
+  maria:
+    1:
+      mattina: [dark plum housekeeper dress, fitted waist, lace collar, apron, ankle boots]
+      pomeriggio: [charcoal service dress, high collar, long skirt, practical boots]
+      sera: [black formal service gown, fitted bodice, white lace collar, low heels]
+      notte: [ivory linen nightdress, dark shawl, slippers]
+    2:
+      mattina: [navy housekeeper dress, fitted waist, brooch, boots]
+      pomeriggio: [brown archive dress, rolled sleeves, long skirt, ankle boots]
+      sera: [deep green service gown, fitted bodice, lace cuffs, low heels]
+      notte: [cream silk private dressing gown, lace nightdress, barefoot]
+    3:
+      mattina: [black housekeeper dress, white collar, apron, boots]
+      pomeriggio: [ivory blouse, dark fitted skirt, waistcoat, boots]
+      sera: [burgundy formal service gown, corseted waist, low heels]
+      notte: [soft blue nightdress, wool shawl, slippers]
+    4:
+      mattina: [grey service dress, fitted waist, lace collar, boots]
+      pomeriggio: [dark archive gown, high collar, gloves, ankle boots]
+      sera: [black silk service gown, fitted bodice, pearl brooch, low heels]
+      notte: [ivory silk dressing gown, lace chemise, barefoot]
+    5:
+      mattina: [cream housekeeper dress, fitted waist, dark apron, boots]
+      pomeriggio: [plum day dress, lace collar, long skirt, boots]
+      sera: [navy formal service gown, fitted bodice, low heels, pearl earrings]
+      notte: [pale rose nightdress, dark robe, slippers]
+    6:
+      mattina: [black and white service dress, fitted waist, apron, boots]
+      pomeriggio: [brown archive dress, high collar, rolled sleeves, boots]
+      sera: [wine red formal gown, modest neckline, fitted waist, low heels]
+      notte: [cream silk dressing gown, lace nightdress, barefoot]
+    7:
+      mattina: [navy housekeeper dress, white lace collar, boots]
+      pomeriggio: [charcoal administrative gown, fitted waist, brooch, boots]
+      sera: [ivory and black formal service gown, pearl earrings, low heels]
+      notte: [white silk private dressing gown, lace chemise, barefoot]
+  luna:
+    1:
+      mattina: [dark green walking dress, fitted jacket, long skirt, leather boots]
+      pomeriggio: [brown coastal walking skirt, fitted blouse, leather belt, boots]
+      sera: [deep blue evening day dress, fitted waist, silver pendant, heeled boots]
+      notte: [black wool cloak, dark blouse, long skirt, sturdy boots]
+    2:
+      mattina: [grey walking suit, fitted jacket, cap, boots]
+      pomeriggio: [olive coastal dress, rolled sleeves, leather belt, boots]
+      sera: [black fitted evening dress, silver pendant, low heels]
+      notte: [dark green cloak, practical skirt, leather boots]
+    3:
+      mattina: [brown coastal skirt, cream blouse, fitted vest, boots]
+      pomeriggio: [black service corridor dress, fitted waist, boots]
+      sera: [burgundy evening dress, modest neckline, silver earrings, low heels]
+      notte: [navy wool cloak, dark walking dress, boots]
+    4:
+      mattina: [dark blue walking dress, fitted jacket, leather boots]
+      pomeriggio: [charcoal archive dress, high collar, fitted waist, boots]
+      sera: [deep green evening gown, fitted bodice, silver pendant, low heels]
+      notte: [black coastal cloak, long skirt, sturdy boots]
+    5:
+      mattina: [olive walking skirt, ivory blouse, leather vest, boots]
+      pomeriggio: [dark red day dress, fitted waist, ankle boots]
+      sera: [black evening dress, low neckline, silver jewelry, heels]
+      notte: [brown wool cloak, dark blouse, long skirt, boots]
+    6:
+      mattina: [charcoal practical dress, leather belt, boots]
+      pomeriggio: [dark green coastal walking dress, fitted jacket, boots]
+      sera: [midnight blue evening gown, fitted waist, silver pendant, low heels]
+      notte: [black hooded cloak, practical long skirt, sturdy boots]
+    7:
+      mattina: [navy walking suit, fitted jacket, boots]
+      pomeriggio: [cream blouse, dark fitted skirt, leather belt, boots]
+      sera: [silver grey evening gown, fitted bodice, moon pendant, low heels]
+      notte: [dark green cloak, black walking dress, sturdy boots]
+location_overrides:
+  loc_theatre: period_stage_attire_preferred
+  loc_casino: belle_epoque_evening_attire_required
+  loc_private_cove: practical_coastal_attire_required
+  loc_cliff_path: practical_walking_attire_required
+  loc_archive: modest_practical_period_attire_preferred
+  loc_presidential_suite: private_period_attire_allowed
