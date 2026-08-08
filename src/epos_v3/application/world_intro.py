@@ -193,13 +193,18 @@ class WorldIntroService:
 
     @staticmethod
     def _steps(state: WorldState) -> list[Mapping[object, object]]:
-        raw_intro = state.gameplay_rules.get("intro", {})
-        if not isinstance(raw_intro, Mapping) or not bool(raw_intro.get("enabled", False)):
+        """Read intro steps from generic mission metadata persisted by the loader."""
+        mission_rows = state.gameplay_rules.get("missions", [])
+        if not isinstance(mission_rows, list):
             return []
-        raw_steps = raw_intro.get("steps", [])
-        if not isinstance(raw_steps, list):
-            return []
-        return [row for row in raw_steps if isinstance(row, Mapping)]
+        for row in mission_rows:
+            if not isinstance(row, Mapping):
+                continue
+            raw_steps = row.get("intro_steps")
+            if not isinstance(raw_steps, list):
+                continue
+            return [step for step in raw_steps if isinstance(step, Mapping)]
+        return []
 
     @staticmethod
     def _string_list(value: object) -> list[str]:
