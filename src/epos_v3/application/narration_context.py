@@ -8,6 +8,8 @@ from epos_v3.domain.checks import CheckProposal
 from epos_v3.domain.entities import NPCEntity
 from epos_v3.domain.world import WorldState
 
+from .conversation_guidance import conversation_directive
+
 
 def build_narration_snapshot(
     state: WorldState,
@@ -19,7 +21,7 @@ def build_narration_snapshot(
     focused_interaction: bool = False,
     outfit_resolution: dict[str, object] | None = None,
 ) -> str:
-    """Build player-local narration context without private NPC cognition."""
+    """Build player-local narration context without exposing raw NPC reasoning."""
     local_npcs = {
         npc_id: narration_npc_view(npc)
         for npc_id, npc in state.npcs.items()
@@ -35,6 +37,7 @@ def build_narration_snapshot(
         ),
         "narration_mode": _narration_mode(brief_social, direct_social, focused_interaction),
         "narration_policy": _narration_policy(brief_social, direct_social, focused_interaction),
+        "conversation_directive": conversation_directive(player_input),
         "day": state.day,
         "phase": state.world_phase,
         "player": state.player.model_dump(mode="json"),
@@ -43,6 +46,16 @@ def build_narration_snapshot(
             if location is not None
             else {"location_id": state.player.location_id}
         ),
+        "world_reference": {
+            "locations": [
+                {
+                    "location_id": item.location_id,
+                    "name": item.name,
+                    "description": item.description,
+                }
+                for item in state.locations.values()
+            ]
+        },
         "local_npcs": local_npcs,
         "raw_player_input": player_input,
         "authoritative_player_action": proposal.model_dump(mode="json"),
@@ -52,7 +65,13 @@ def build_narration_snapshot(
 
 
 def narration_npc_view(npc: NPCEntity) -> dict[str, object]:
-    """Expose observable/personality NPC data while withholding private cognition."""
+    """Expose grounded NPC data while withholding raw private chain-of-thought."""
+    disclosure_policy = npc.disclosure_policy
+    if not disclosure_policy:
+        disclosure_policy = next(
+            (secret.disclosure_condition for secret in npc.secrets if secret.disclosure_condition),
+            "",
+        )
     return {
         "entity_id": npc.entity_id,
         "name": npc.name,
@@ -63,7 +82,20 @@ def narration_npc_view(npc: NPCEntity) -> dict[str, object]:
         "is_present": npc.is_present,
         "outfit": [item.model_dump(mode="json") for item in npc.outfit],
         "conditions": list(npc.conditions),
+        "knowledge": list(npc.knowledge),
+        "disclosure_policy": disclosure_policy,
+        "conversation_objective": _conversation_objective(npc),
     }
+
+
+def _conversation_objective(npc: NPCEntity) -> str:
+    """Choose one current NPC objective without exposing its hidden reasoning."""
+    if npc.intentions:
+        return npc.intentions[0].action
+    for goal in npc.goals:
+        if goal not in npc.discoveries:
+            return goal
+    return "respond_to_player"
 
 
 def _narration_mode(brief: bool, direct: bool, focused: bool) -> str:
@@ -93,7 +125,8 @@ def _narration_policy(brief: bool, direct: bool, focused: bool) -> dict[str, obj
                 "Reply directly to the player's exact line. Use at most one short physical "
                 "reaction plus one concise NPC reply. Never exceed two sentences. Do not "
                 "restate the location or outfit unless it changed. Do not repeat exposition "
-                "and do not pivot to unrelated NPC goals."
+                "and do not pivot to unrelated NPC goals. The conversation_directive takes "
+                "priority over conversation_objective."
             ),
         }
     if focused:
@@ -106,4 +139,10 @@ def _narration_policy(brief: bool, direct: bool, focused: bool) -> dict[str, obj
                 "or repeat scene setup."
             ),
         }
-    return {"max_sentences": None}
+    return {
+        "max_sentences": None,
+        "requirements": (
+            "Every NPC reply must advance at least one of information, relationship, tension, "
+            "or decision. Follow conversation_directive before any NPC conversation_objective."
+        ),
+    }
