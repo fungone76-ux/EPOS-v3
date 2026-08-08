@@ -1,0 +1,127 @@
+schema_version: 1
+world_id: crimson_velvet_1897
+missions:
+  - id: mission_crimson_arrival
+    reveal: initial
+    success_points: 0
+    failure_points: 0
+    required_flags: [resort_intro_completed]
+    complete_when_required_flags: true
+    completion_flag: crimson_arrival_complete
+    terminal_failure_flags: []
+    intro_steps:
+      - id: player_intro
+        kind: player_intro
+        target_npc_id: ""
+        narration: La carrozza si ferma sotto la pensilina del Crimson Velvet. Nel Grand Hall, Victoria Hale attende accanto alla scalinata mentre un domestico prende il cappotto del nuovo ospite.
+        dialogue: "Victoria: Benvenuto al Crimson Velvet. Prima delle formalità, preferisco sapere direttamente da lei chi sto accogliendo questa sera."
+        action_id: idle_neutral
+      - id: victoria
+        kind: npc_intro
+        target_npc_id: victoria
+        narration: Victoria ascolta la presentazione senza interrompere, poi si presenta come proprietaria e direttrice del Crimson Velvet. Precisa che la casa vive di discrezione, reputazione e accordi mantenuti.
+        dialogue: "Victoria: Victoria Hale. Questa casa è mia responsabilità. Se resterà abbastanza a lungo, scoprirà che qui il lusso è la parte più semplice da amministrare."
+        action_id: speaking_gesture
+      - id: luna
+        kind: npc_intro
+        target_npc_id: luna
+        narration: Victoria introduce Luna come la persona che conosce meglio il tratto di costa, i fornitori e tutto ciò che arriva al Crimson Velvet senza passare dalla porta principale.
+        dialogue: "Luna: Conosco sentieri, barche e persone. Se vuole vedere la Riviera che non compare sulle cartoline, chieda a me."
+        action_id: speaking_gesture
+      - id: maria
+        kind: npc_intro
+        target_npc_id: maria
+        narration: Maria viene presentata come responsabile della casa, della corrispondenza riservata e degli archivi privati. Il suo tono è discreto, quasi notarile.
+        dialogue: "Maria: Mi occupo di ciò che deve arrivare alla persona giusta e di ciò che non deve finire nelle mani sbagliate. La sua suite è pronta."
+        action_id: speaking_gesture
+      - id: stella
+        kind: npc_intro
+        target_npc_id: stella
+        narration: Per ultima arriva Stella dal teatro privato, ancora avvolta nell'energia delle prove. Victoria la presenta come la voce e il volto pubblico delle serate del Crimson Velvet.
+        dialogue: "Stella: Io mi occupo della parte che tutti ricordano. Musica, spettacoli, scandali evitabili e qualche scandalo che vale la pena correre."
+        action_id: speaking_gesture
+
+  - id: mission_crimson_fate
+    reveal: progressive
+    unlock_when: {flag: resort_intro_completed, expected: true}
+    success_points: 40
+    failure_points: 0
+    required_flags:
+      - title_dispute_discovered
+      - missing_register_recovered
+      - creditor_connection_resolved
+      - crimson_ownership_decision
+    complete_when_required_flags: true
+    completion_flag: crimson_fate_resolved
+    terminal_failure_flags: []
+
+  - id: mission_victoria_house
+    reveal: progressive
+    unlock_when: {flag: resort_intro_completed, expected: true}
+    success_points: 15
+    failure_points: 0
+    required_flags:
+      - victoria_copy_examined
+      - victoria_private_terms_discussed
+      - victoria_autonomy_choice_respected
+      - crimson_fate_resolved
+    complete_when_required_flags: true
+    completion_flag: victoria_intimate_milestone_unlocked
+    terminal_failure_flags: [victoria_trust_destroyed]
+
+  - id: mission_stella_stage
+    reveal: progressive
+    unlock_when: {relationship: stella, field: respect, minimum: 1}
+    success_points: 15
+    failure_points: 0
+    required_flags:
+      - stella_rehearsal_supported
+      - stella_critic_letter_resolved
+      - stella_europe_contract_decided
+      - stella_private_choice_complete
+    complete_when_required_flags: true
+    completion_flag: stella_intimate_milestone_unlocked
+    terminal_failure_flags: [stella_career_destroyed]
+
+  - id: mission_maria_letters
+    reveal: progressive
+    unlock_when: {flag: title_dispute_discovered, expected: true}
+    success_points: 15
+    failure_points: 0
+    required_flags:
+      - maria_archive_inventory_complete
+      - maria_creditor_letter_revealed
+      - maria_letters_fate_decided
+      - maria_authority_recognized
+    complete_when_required_flags: true
+    completion_flag: maria_intimate_milestone_unlocked
+    terminal_failure_flags: [maria_trust_destroyed]
+
+  - id: mission_luna_smugglers
+    reveal: progressive
+    unlock_when: {relationship: luna, field: trust, minimum: 1}
+    success_points: 15
+    failure_points: 0
+    required_flags:
+      - luna_hidden_route_revealed
+      - luna_cove_network_identified
+      - missing_register_recovered
+      - luna_fishermen_choice_respected
+    complete_when_required_flags: true
+    completion_flag: luna_intimate_milestone_unlocked
+    terminal_failure_flags: [luna_trust_destroyed]
+
+  - id: mission_crimson_legacy
+    reveal: progressive
+    unlock_when: {flag: resort_intro_completed, expected: true}
+    success_points: 100
+    failure_points: 0
+    required_flags:
+      - crimson_fate_resolved
+      - victoria_bond_complete
+      - stella_bond_complete
+      - maria_bond_complete
+      - luna_bond_complete
+    complete_when_required_flags: true
+    completion_flag: campaign_complete
+    terminal_failure_flags: []
