@@ -10,13 +10,10 @@ rendering:
     Zatanna_-_DC_Animated_Universe: Zatanna_-_DC_Animated_Universe.safetensors
     stsSmith-10e: stsSmith-10e.safetensors
     stsDebbie-10e: stsDebbie-10e.safetensors
-    FantasyWorldPonyV2: FantasyWorldPonyV2.safetensors
     alice_milf_catchers_lora.safetensors: alice_mitchell_milf_catchers_lora.safetensors
   default_loras:
     - name: Expressive_H
       weight: 0.4
-    - name: FantasyWorldPonyV2
-      weight: 0.3
 negative_extra_en: underage, child, teenager, modern clothing, modern electronics, smartphone, car, electric neon, coercion, violence, bad anatomy, extra limbs, duplicate person, plain background, white background, studio background, anime school uniform
 visual_policy:
   protected_base_prompts: true
@@ -45,7 +42,7 @@ characters:
     starting_outfit_en: [black evening tailcoat, white waistcoat, high collar shirt, polished shoes]
     gender: male
   - id: victoria
-    base_prompt: score_9, score_8_up, masterpiece, photorealistic, mature woman, long black hair, grey eyes, pink lips, voluptuous figure, wide hips, full bust, poised aristocratic bearing, period accurate 1890s styling, <lora:Zatanna_-_DC_Animated_Universe:0.6>
+    base_prompt: score_9, score_8_up, masterpiece, photorealistic, mature woman, long black hair, grey eyes, pink lips, voluptuous figure, wide hips, full bust, poised aristocratic bearing, period accurate 1890s styling
     character_lora_en: <lora:Zatanna_-_DC_Animated_Universe:0.6>
     role_prompt_en: commanding adult hotel owner
     starting_outfit_en: [black 1897 fitted evening gown, high lace collar, corseted waist, long gloves, jet jewelry]
