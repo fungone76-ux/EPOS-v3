@@ -5,6 +5,7 @@ import inspect
 import os
 from collections.abc import Awaitable, Callable
 
+from epos_v3.application.intro_orchestrator import IntroTurnOrchestrator
 from epos_v3.application.orchestrator import TurnOrchestrator
 from epos_v3.application.ports import EventBusPort, LLMPort, PlayerDecisionPort, StorePort
 from epos_v3.domain.checks import CheckProposal, CheckType
@@ -178,6 +179,7 @@ def _build_renderer() -> ComfyUIAdapter | StableDiffusionWebUIAdapter | Unavaila
         worldpack_root=os.getenv("EPOS_WORLDPACK_ROOT", "./worldpacks"),
     )
 
+
 def _build_memory_provider() -> InMemoryLongTermMemoryProvider | ChromaLongTermMemoryProvider:
     """Build the configured NPC long-term memory provider."""
     backend = os.getenv("EPOS_MEMORY_BACKEND", "simple").strip().lower()
@@ -187,8 +189,8 @@ def _build_memory_provider() -> InMemoryLongTermMemoryProvider | ChromaLongTermM
 
 
 def create_default_orchestrator(store: StorePort) -> TurnOrchestrator:
-    """Create a configuration-aware orchestrator with safe offline degradation."""
-    return TurnOrchestrator(
+    """Create a configuration-aware orchestrator with deterministic intro support."""
+    return IntroTurnOrchestrator(
         llm=_build_llm(),
         renderer=_build_renderer(),
         store=store,
