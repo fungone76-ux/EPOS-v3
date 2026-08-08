@@ -134,7 +134,11 @@ missions:
       - {id: stella_bond, type: flag, key: stella_intimate_bond_complete, expected: true}
       - {id: maria_bond, type: flag, key: maria_intimate_bond_complete, expected: true}
       - {id: luna_bond, type: flag, key: luna_intimate_bond_complete, expected: true}
-    success_conditions: [{type: flag, key: all_four_intimate_bonds_complete, expected: true}]
+    success_conditions:
+      - {type: flag, key: victoria_intimate_bond_complete, expected: true}
+      - {type: flag, key: stella_intimate_bond_complete, expected: true}
+      - {type: flag, key: maria_intimate_bond_complete, expected: true}
+      - {type: flag, key: luna_intimate_bond_complete, expected: true}
     failure_conditions: []
     rewards:
       - {type: flag, key: campaign_complete, value: true}
