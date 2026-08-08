@@ -57,6 +57,8 @@ class WorldpackGameplay:
         player_request: bool = False,
     ) -> list[dict[str, object]]:
         """Return events whose clock, location, and trigger currently match."""
+        if _intro_active(loaded.world):
+            return []
         result: list[dict[str, object]] = []
         for event in loaded.events.values():
             if not self._clock_matches(loaded, event, phase):
@@ -87,6 +89,8 @@ class WorldpackGameplay:
         self, state: WorldState, *, player_request: bool = False
     ) -> list[dict[str, object]]:
         """Return currently available events from rules persisted in state."""
+        if _intro_active(state):
+            return []
         result: list[dict[str, object]] = []
         for event in _list_of_mappings(state.gameplay_rules.get("events", [])):
             normalized = {str(key): value for key, value in event.items()}
@@ -249,6 +253,15 @@ class WorldpackGameplay:
         mission.turn_completed = state.turn_number
         if mission.mission_id not in state.completed_missions:
             state.completed_missions.append(mission.mission_id)
+
+
+def _intro_active(state: WorldState) -> bool:
+    """Return whether a Worldpack-authored intro mission is still gating freeplay."""
+    mission_rows = _list_of_mappings(state.gameplay_rules.get("missions", []))
+    has_intro = any(isinstance(row.get("intro_steps"), list) for row in mission_rows)
+    if not has_intro:
+        return False
+    return not bool(state.global_flags.get("resort_intro_completed", False))
 
 
 def _list_of_mappings(value: object) -> list[Mapping[object, object]]:
