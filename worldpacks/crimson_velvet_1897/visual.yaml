@@ -1,0 +1,70 @@
+schema_version: 1
+world_id: crimson_velvet_1897
+visual_style_en: photorealistic 1897 Belle Epoque Italian Riviera, decadent luxury hotel casino, gaslight interiors, velvet and mahogany, period accurate adult fashion, cinematic photography
+rendering:
+  workflow_file: comfy_workflow_image.json
+  width: 896
+  height: 1152
+  lora_registry:
+    Expressive_H: Expressive_H-000001.safetensors
+    Zatanna_-_DC_Animated_Universe: Zatanna_-_DC_Animated_Universe.safetensors
+    stsSmith-10e: stsSmith-10e.safetensors
+    stsDebbie-10e: stsDebbie-10e.safetensors
+    FantasyWorldPonyV2: FantasyWorldPonyV2.safetensors
+    alice_milf_catchers_lora.safetensors: alice_mitchell_milf_catchers_lora.safetensors
+  default_loras:
+    - name: Expressive_H
+      weight: 0.4
+    - name: FantasyWorldPonyV2
+      weight: 0.3
+negative_extra_en: underage, child, teenager, modern clothing, modern electronics, smartphone, car, electric neon, coercion, violence, bad anatomy, extra limbs, duplicate person, plain background, white background, studio background, anime school uniform
+visual_policy:
+  protected_base_prompts: true
+  single_character_default: true
+  multi_character_mode: shared_action
+  speaker_action_focus: true
+  include_sheet_negative: true
+  sanitize_identity_layers: true
+  concise_role_prompts: true
+  max_role_prompt_words: 12
+  visual_en_primary: true
+  dedupe_across_layers: true
+  max_scene_tags: 10
+  role_prompt_optional: true
+  preserve_revealing_outfit_traits: true
+  revealing_outfit_priority: true
+  visual_director_enabled: true
+  structured_camera: true
+  camera_variety_enabled: true
+  camera_history_size: 6
+  avoid_repeating_camera: true
+characters:
+  - id: player
+    base_prompt: adult wealthy Victorian gentleman, refined masculine presence
+    role_prompt_en: wealthy 1897 guest and investor
+    starting_outfit_en: [black evening tailcoat, white waistcoat, high collar shirt, polished shoes]
+    gender: male
+  - id: victoria
+    base_prompt: score_9, score_8_up, masterpiece, photorealistic, mature woman, long black hair, grey eyes, pink lips, voluptuous figure, wide hips, full bust, poised aristocratic bearing, period accurate 1890s styling, <lora:Zatanna_-_DC_Animated_Universe:0.6>
+    character_lora_en: <lora:Zatanna_-_DC_Animated_Universe:0.6>
+    role_prompt_en: commanding adult hotel owner
+    starting_outfit_en: [black 1897 fitted evening gown, high lace collar, corseted waist, long gloves, jet jewelry]
+    gender: female
+  - id: stella
+    base_prompt: score_9, score_8_up, masterpiece, photorealistic, mature blonde woman, blue eyes, hourglass figure, full bust, shapely legs, charismatic stage presence, period accurate 1890s styling
+    character_lora_en: <lora:alice_milf_catchers_lora.safetensors:0.7>
+    role_prompt_en: ambitious adult Belle Epoque performer
+    starting_outfit_en: [crimson 1890s stage gown, fitted corset bodice, off shoulder sleeves, silk stockings, heeled boots]
+    gender: female
+  - id: maria
+    base_prompt: score_9, score_8_up, masterpiece, photorealistic, mature woman, short black hair, full bust, composed intelligent presence, period accurate 1890s styling
+    character_lora_en: <lora:stsSmith-10e:0.65>
+    role_prompt_en: discreet adult archive administrator
+    starting_outfit_en: [dark plum 1890s housekeeper dress, fitted waist, lace collar, long skirt, ankle boots]
+    gender: female
+  - id: luna
+    base_prompt: score_9, score_8_up, masterpiece, photorealistic, mature woman, brown hair, athletic curvy body, full bust, weathered coastal elegance, period accurate 1890s styling
+    character_lora_en: <lora:stsDebbie-10e:0.7>
+    role_prompt_en: independent adult coastal guide
+    starting_outfit_en: [dark green 1890s walking dress, fitted jacket, long skirt, leather boots, silver pendant]
+    gender: female
