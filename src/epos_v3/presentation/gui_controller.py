@@ -72,6 +72,7 @@ class GuiController:
         """Build a rich, player-facing situation panel for the desktop GUI."""
         location = state.locations.get(state.player.location_id)
         location_name = location.name if location is not None else state.player.location_id
+        intro_rows = GuiController._intro_rows(state)
         present_npc_rows, world_npc_rows = GuiController._npc_rows(state)
         mission_rows = GuiController._mission_rows(state)
         event_rows = GuiController._event_rows(state)
@@ -79,15 +80,19 @@ class GuiController:
             f"<b>{escape(GuiController._label(name))}</b> {state.player.stats.get(name, 0)}"
             for name in state.skill_definitions
         ]
-        return "".join(
+        parts = [
+            '<div style="line-height:1.35">',
+            '<div style="font-size:17px;font-weight:700;color:#ffffff">',
+            f"📍 Posizione: {escape(location_name)}",
+            "</div>",
+            '<div style="color:#aab2c0;margin-top:2px">',
+            f"Giorno {state.day} · Fase {escape(state.world_phase.capitalize())} · Turno {state.turn_number}",
+            "</div>",
+        ]
+        if intro_rows:
+            parts.append(GuiController._section("Introduzione", intro_rows))
+        parts.extend(
             [
-                '<div style="line-height:1.35">',
-                '<div style="font-size:17px;font-weight:700;color:#ffffff">',
-                f"📍 Posizione: {escape(location_name)}",
-                "</div>",
-                '<div style="color:#aab2c0;margin-top:2px">',
-                f"Giorno {state.day} · Fase {escape(state.world_phase.capitalize())} · Turno {state.turn_number}",
-                "</div>",
                 GuiController._section("NPC presenti", present_npc_rows),
                 GuiController._section("NPC nel mondo", world_npc_rows),
                 GuiController._section("Missioni attive", mission_rows),
@@ -96,6 +101,45 @@ class GuiController:
                 "</div>",
             ]
         )
+        return "".join(parts)
+
+    @staticmethod
+    def _intro_rows(state: WorldState) -> list[str]:
+        """Render the current Worldpack-authored intro instruction without changing state."""
+        if bool(state.global_flags.get("resort_intro_completed", False)):
+            return []
+        mission_rows = state.gameplay_rules.get("missions", [])
+        if not isinstance(mission_rows, list):
+            return []
+        steps: list[dict[str, object]] = []
+        for mission_row in mission_rows:
+            if not isinstance(mission_row, dict):
+                continue
+            raw_steps = mission_row.get("intro_steps")
+            if isinstance(raw_steps, list):
+                steps = [step for step in raw_steps if isinstance(step, dict)]
+                break
+        if not steps:
+            return []
+        index_raw = state.global_flags.get("resort_intro_index", 0)
+        index = index_raw if isinstance(index_raw, int) else 0
+        if index < 0 or index >= len(steps):
+            return []
+        step = steps[index]
+        kind = step.get("kind")
+        if kind == "player_intro":
+            narration = escape(str(step.get("narration", "")))
+            dialogue = escape(str(step.get("dialogue", "")))
+            return [
+                '<span style="color:#8fb7ff;font-weight:700">Presentati a Victoria</span>'
+                f"<br>{narration}<br><i>{dialogue}</i>"
+            ]
+        target = str(step.get("target_npc_id", "")).strip()
+        label = GuiController._label(target) if target else "la prossima NPC"
+        return [
+            '<span style="color:#8fb7ff;font-weight:700">Presentazioni in corso</span>'
+            f"<br>Rispondi liberamente per continuare con la presentazione di <b>{escape(label)}</b>."
+        ]
 
     @staticmethod
     def _npc_rows(state: WorldState) -> tuple[list[str], list[str]]:
