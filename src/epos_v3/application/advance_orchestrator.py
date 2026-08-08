@@ -7,6 +7,7 @@ from .initiative_narration import InitiativeNarrationPort, InitiativeNarrationSe
 from .initiative_integration import InitiativeIntegrationService
 from .ports import StorePort, WorldRulesPort
 from .time_advance import TimeAdvanceService
+from .world_intro import WorldIntroService
 
 
 class TimeAdvanceOrchestrator:
@@ -19,12 +20,7 @@ class TimeAdvanceOrchestrator:
         initiative_llm: InitiativeNarrationPort | None = None,
         agent_service: AgentService | None = None,
     ) -> None:
-        """Initialize the explicit time-advance use case.
-
-        Args:
-            store: Persistence port for loading and saving the session.
-            world_rules: Optional Worldpack-driven mission and event evaluator.
-        """
+        """Initialize the explicit time-advance use case."""
         self.store = store
         self.world_rules = world_rules
         self.clock = TimeAdvanceService()
@@ -33,23 +29,27 @@ class TimeAdvanceOrchestrator:
         self.initiative_narrator = (
             InitiativeNarrationService(initiative_llm) if initiative_llm is not None else None
         )
+        self.intro_service = WorldIntroService()
 
     async def advance(self, session_id: str) -> dict[str, object]:
-        """Advance exactly one phase after an explicit player request.
-
-        Args:
-            session_id: Session to advance.
-
-        Returns:
-            A compact result containing the new clock, available events,
-            mission state, and autonomous NPC initiatives.
-
-        Raises:
-            ValueError: If the session does not exist or the clock is invalid.
-        """
+        """Advance exactly one phase unless an authored introduction is still active."""
         state = await self.store.load(session_id)
         if state is None:
             raise ValueError(f"Session not found: {session_id}")
+
+        if self.intro_service.current_step(state) is not None:
+            return {
+                "turn_number": state.turn_number,
+                "day": state.day,
+                "phase": state.world_phase,
+                "available_events": [],
+                "initiatives": [],
+                "narration": "Completa prima le presentazioni iniziali dell'Azure Crown.",
+                "pending_missions": list(state.pending_missions),
+                "completed_missions": list(state.completed_missions),
+                "blocked": True,
+                "reason": "intro_active",
+            }
 
         advanced = self.clock.advance(state)
         advanced.turn_number += 1
@@ -78,4 +78,5 @@ class TimeAdvanceOrchestrator:
             "narration": narration,
             "pending_missions": list(advanced.pending_missions),
             "completed_missions": list(advanced.completed_missions),
+            "blocked": False,
         }
