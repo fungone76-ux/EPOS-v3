@@ -5,7 +5,7 @@ events:
     title: Il bagno per due
     summary: Maria propone un servizio privato in suite con atmosfera intima e discreta.
     player_hook: Puoi accettare, chiedere una variante o rifiutare il servizio.
-    day_range: [1, 2]
+    day_range: [1, 9999]
     phases: [sera, notte]
     location_id: loc_suite
     npc_ids: [maria]
@@ -15,76 +15,82 @@ events:
     choices: [accept_maria_solution, request_second_companion, modify_service, decline]
     completion_flag: maria_bath_service_recovered
     visual_outfit: maria_suite_service
+
   - id: event_stella_vip_evening
     title: La serata VIP da recuperare
-    summary: Stella ha bisogno di salvare una serata esclusiva che rischia di saltare.
-    player_hook: Puoi sostenerla, imporre cambiamenti o coinvolgere qualcun altro.
-    day_range: [2, 5]
+    summary: Stella deve trasformare una serata esclusiva in una prova di carisma, spettacolo e seduzione controllata.
+    player_hook: Puoi sostenerla, imporre cambiamenti, sfidarla a osare di piu o coinvolgere qualcun altro.
+    day_range: [1, 9999]
     phases: [sera, notte]
     location_id: loc_lounge
     npc_ids: [stella, victoria]
     trigger: {mission_active: mission_stella_promotion}
-    adult_component: provocative_dress_code
+    adult_component: provocative_vip_performance
     consent_exit_required: true
-    choices: [support_stella, demand_changes, involve_colleague, leave_event]
+    choices: [support_stella, demand_changes, encourage_bolder_style, involve_colleague, leave_event]
     completion_flag: stella_vip_event_success
     visual_outfit: stella_vip_gala
+
   - id: event_pool_outfit
     title: Prova costume VIP
-    summary: A bordo piscina si sta organizzando una prova outfit per un evento VIP.
-    player_hook: Puoi osservare, scegliere uno stile, lasciar decidere alle NPC o consultare Victoria.
-    day_range: [1, 6]
+    summary: A bordo piscina le NPC provano outfit audaci per un servizio VIP dedicato al protagonista.
+    player_hook: Puoi osservare, scegliere uno stile, lasciar decidere alle NPC o chiedere una prova privata.
+    day_range: [1, 9999]
     phases: [mattina, pomeriggio]
     location_id: loc_pool
     npc_ids: [stella, maria, luna]
     trigger: {random_weight: 2}
     adult_component: revealing_outfit_choice
     consent_exit_required: true
-    choices: [choose_style, let_npc_choose, ask_victoria, skip]
+    choices: [choose_style, let_npc_choose, request_private_fitting, ask_victoria, skip]
+
   - id: event_contested_massage
     title: Massaggio conteso
-    summary: Maria e Stella si contendono l'attenzione durante un servizio spa sensuale.
-    player_hook: Puoi scegliere chi seguire, chiedere una sessione condivisa o annullare.
-    day_range: [2, 6]
+    summary: Maria e Stella trasformano un servizio spa in una competizione adulta per l'attenzione del protagonista.
+    player_hook: Puoi scegliere chi seguire, chiedere una sessione condivisa o interrompere la rivalita.
+    day_range: [1, 9999]
     phases: [pomeriggio, sera]
     location_id: loc_spa
     npc_ids: [maria, stella]
     trigger: {relationship_field: jealousy, minimum: 1}
     adult_component: sensual_spa_service
     consent_exit_required: true
-    choices: [choose_maria, choose_stella, shared_professional_session, cancel]
+    choices: [choose_maria, choose_stella, shared_professional_session, encourage_competition, cancel]
+
   - id: event_luna_wild_beach
     title: La lettera sulla spiaggia selvaggia
-    summary: Luna vuole condividere una rivelazione personale in un luogo più appartato.
-    player_hook: Puoi ascoltarla, leggere la lettera o rimandare il momento.
-    day_range: [3, 7]
+    summary: Luna sceglie un luogo appartato per condividere la propria vulnerabilita e mettere alla prova la fiducia costruita con il protagonista.
+    player_hook: Puoi ascoltarla, leggere la lettera, avvicinarti con cautela o rimandare il momento.
+    day_range: [1, 9999]
     phases: [sera, notte]
     location_id: loc_wild_beach
     npc_ids: [luna]
     trigger: {flag: luna_letter_reveal_unlocked, expected: true}
     adult_component: vulnerable_romantic_intimacy
     consent_exit_required: true
-    choices: [listen, read_letter, postpone, leave]
+    choices: [listen, read_letter, offer_closeness, postpone, leave]
     completion_flag: luna_letter_revealed
     visual_outfit: luna_private_evening
+
   - id: event_victoria_private_review
     title: Valutazione privata del servizio VIP
-    summary: Victoria organizza una valutazione riservata del team e delle sue dinamiche.
-    player_hook: Puoi partecipare, cambiare assegnazioni o chiedere un confronto privato.
-    day_range: [4, 6]
+    summary: Victoria organizza una valutazione riservata del team in cui professionalita, rivalita e attrazione diventano parte della trattativa.
+    player_hook: Puoi partecipare, cambiare assegnazioni, chiedere una prova piu audace o convocare Victoria in privato.
+    day_range: [1, 9999]
     phases: [sera, notte]
     location_id: loc_lounge
     npc_ids: [victoria, stella, maria, luna]
     trigger: {flag: bank_debt_disclosed, expected: true}
     adult_component: elegant_provocative_evaluation
     consent_exit_required: true
-    choices: [participate, change_assignments, private_talk, end_review]
+    choices: [participate, change_assignments, request_bolder_evaluation, private_talk, end_review]
     completion_flag: victoria_team_proven
+
   - id: event_night_service
     title: Servizio notturno in suite
-    summary: Di notte puoi richiedere compagnia o assistenza privata direttamente in suite.
-    player_hook: Puoi invitare una persona, richiederne due o lasciare scegliere Victoria.
-    day_range: [1, 7]
+    summary: Di notte il protagonista puo richiedere compagnia adulta o assistenza privata, lasciando sempre alle NPC la possibilita di accettare, modificare o rifiutare.
+    player_hook: Puoi invitare una persona, proporre una serata condivisa, lasciare scegliere Victoria o dormire solo.
+    day_range: [1, 9999]
     phases: [notte]
     location_id: loc_suite
     npc_ids: [stella, maria, luna, victoria]
@@ -92,16 +98,86 @@ events:
     adult_component: intimate_companionship
     consent_exit_required: true
     choices: [invite_one, request_two, ask_victoria_to_choose, sleep_alone]
-  - id: event_final_decision
-    title: La decisione del settimo giorno
-    summary: È arrivato il momento di decidere il destino del resort insieme a Victoria.
-    player_hook: Puoi comprare, rifinanziare, negoziare condizioni o rimandare la decisione.
-    day_range: [7, 7]
-    phases: [sera]
+
+  - id: event_resort_decision
+    title: La decisione sul futuro del resort
+    summary: Quando la situazione economica e abbastanza chiara, Victoria apre una trattativa privata sul futuro dell'Azure Crown.
+    player_hook: Puoi comprare, rifinanziare, negoziare condizioni o rimandare senza chiudere la campagna.
+    day_range: [1, 9999]
+    phases: [pomeriggio, sera, notte]
     location_id: loc_victoria_office
     npc_ids: [victoria]
-    trigger: {day: 7, phase: sera}
+    trigger: {flag: bank_debt_disclosed, expected: true}
     adult_component: private_emotional_negotiation
     consent_exit_required: true
     choices: [buy, buy_with_conditions, refinance, delay_binding_talks, end_without_agreement]
     completion_flag: resort_final_decision
+
+  - id: event_victoria_intimate_milestone
+    title: Victoria abbassa la guardia
+    summary: Dopo aver risolto la sua battaglia per il resort, Victoria propone un incontro adulto privato in cui il controllo professionale lascia spazio a una scelta personale e reciproca.
+    player_hook: Puoi accettare, rallentare, ridefinire i limiti o lasciare che Victoria scelga un altro momento.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_victoria_office
+    npc_ids: [victoria]
+    trigger: {flag: victoria_intimate_milestone_unlocked, expected: true}
+    adult_component: consensual_private_consummation
+    consent_exit_required: true
+    choices: [accept_private_moment, slow_down, redefine_boundaries, postpone]
+    completion_flag: victoria_intimate_bond_complete
+
+  - id: event_stella_intimate_milestone
+    title: Stella vuole essere scelta
+    summary: Ottenuta la sua prova professionale, Stella trasforma la competizione in un invito adulto personale, non piu legato alla promozione ma al desiderio reciproco.
+    player_hook: Puoi accettare il suo invito, chiederle di rallentare, cambiare atmosfera o rimandare.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_lounge
+    npc_ids: [stella]
+    trigger: {flag: stella_intimate_milestone_unlocked, expected: true}
+    adult_component: consensual_private_consummation
+    consent_exit_required: true
+    choices: [accept_stella_invitation, slow_down, change_setting, postpone]
+    completion_flag: stella_intimate_bond_complete
+
+  - id: event_maria_intimate_milestone
+    title: Maria oltre il servizio
+    summary: Raggiunta la stabilita che cercava, Maria sceglie di separare nettamente il lavoro dalla propria attrazione e propone un momento adulto privato per scelta personale.
+    player_hook: Puoi accettare, mantenere il rapporto professionale, chiedere piu tempo o cambiare il contesto.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_suite
+    npc_ids: [maria]
+    trigger: {flag: maria_intimate_milestone_unlocked, expected: true}
+    adult_component: consensual_private_consummation
+    consent_exit_required: true
+    choices: [accept_maria_invitation, remain_professional, ask_for_time, change_setting]
+    completion_flag: maria_intimate_bond_complete
+
+  - id: event_luna_intimate_milestone
+    title: Luna sceglie il presente
+    summary: Chiarita la verita della lettera, Luna decide che qualsiasi intimita deve nascere dal presente e non da un debito del passato, e puo proporre un incontro adulto autenticamente volontario.
+    player_hook: Puoi accettare, rassicurarla senza procedere, rallentare o rimandare.
+    day_range: [1, 9999]
+    phases: [sera, notte]
+    location_id: loc_wild_beach
+    npc_ids: [luna]
+    trigger: {flag: luna_intimate_milestone_unlocked, expected: true}
+    adult_component: consensual_private_consummation
+    consent_exit_required: true
+    choices: [accept_luna_invitation, reassure_only, slow_down, postpone]
+    completion_flag: luna_intimate_bond_complete
+
+  - id: event_campaign_epilogue
+    title: L'Azure Crown dopo la conquista
+    summary: I quattro legami adulti sono stati completati volontariamente. Il protagonista puo considerare conclusa la campagna oppure continuare a vivere liberamente nel resort.
+    player_hook: Puoi chiudere formalmente la storia o continuare in modalita libera senza perdere lo stato raggiunto.
+    day_range: [1, 9999]
+    phases: [mattina, pomeriggio, sera, notte]
+    location_id: loc_suite
+    npc_ids: [victoria, stella, maria, luna]
+    trigger: {flag: campaign_epilogue_unlocked, expected: true}
+    adult_component: established_adult_relationships
+    consent_exit_required: true
+    choices: [finish_campaign, continue_freeplay]
