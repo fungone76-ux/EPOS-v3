@@ -1,0 +1,72 @@
+schema_version: 1
+world_id: crimson_velvet_1897
+library_type: camera
+cameras:
+  portrait_medium:
+    shot_type: medium_shot
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+  period_medium_full:
+    shot_type: medium_full_shot
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+  full_environment:
+    shot_type: full_body
+    angle: eye_level
+    orientation: three_quarter
+    depth_of_field: medium
+    background_blur: false
+  seated_three_quarter:
+    shot_type: medium_full_shot
+    angle: eye_level
+    orientation: three_quarter
+    depth_of_field: shallow
+    background_blur: true
+  stage_low:
+    shot_type: full_body
+    angle: low_angle
+    orientation: frontal
+    depth_of_field: medium
+    background_blur: false
+  document_detail:
+    shot_type: close_detail
+    angle: high_angle
+    orientation: over_shoulder
+    depth_of_field: shallow
+    background_blur: true
+  coastal_wide:
+    shot_type: full_body
+    angle: eye_level
+    orientation: side_three_quarter
+    depth_of_field: deep
+    background_blur: false
+focus_sets:
+  face: [portrait_medium]
+  eyes: [portrait_medium]
+  hands: [document_detail, portrait_medium]
+  chest: [portrait_medium, period_medium_full]
+  back: [period_medium_full, coastal_wide]
+  hips: [period_medium_full, seated_three_quarter]
+  buttocks: [period_medium_full]
+  legs: [period_medium_full, full_environment, stage_low]
+  feet: [full_environment, stage_low]
+  outfit: [period_medium_full, full_environment]
+  full_body: [period_medium_full, full_environment, stage_low, coastal_wide]
+  interaction: [seated_three_quarter, period_medium_full]
+framing_rules:
+  full_body:
+    positive: [complete period outfit visible, shoes visible, environment readable]
+    negative: [cropped feet, cropped head]
+  outfit:
+    positive: [period clothing silhouette clearly visible, garment details readable]
+    negative: [extreme closeup]
+  hands:
+    positive: [hands and held document clearly visible]
+    negative: [hands outside frame]
+  interaction:
+    positive: [participants readable, shared action clear]
+    negative: [unrelated background character emphasis]
