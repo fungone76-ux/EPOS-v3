@@ -34,6 +34,16 @@ class WorldpackGameplay:
             for objective in mission.objectives:
                 if objective.objective_id in required_set:
                     objective.completed = bool(state.global_flags.get(objective.objective_id, False))
+            if (
+                row.get("complete_when_required_flags") is True
+                and required
+                and all(bool(state.global_flags.get(flag, False)) for flag in required)
+            ):
+                completion_flag = row.get("completion_flag")
+                if isinstance(completion_flag, str):
+                    state.global_flags[completion_flag] = True
+                self._mark_completed_state(state, mission)
+                continue
             if _any_true(state.global_flags, _string_list(row.get("terminal_failure_flags", []))):
                 self._mark_failed(mission)
             elif _any_true(state.global_flags, _string_list(row.get("terminal_success_flags", []))):
