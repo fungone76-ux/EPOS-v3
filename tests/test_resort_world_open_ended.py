@@ -3,13 +3,18 @@
 from pathlib import Path
 
 from epos_v3.infrastructure.worldpack import WorldpackLoader
+from epos_v3.infrastructure.worldpack.gameplay import WorldpackGameplay
 
 
 WORLD = Path("worldpacks/resort_world")
 
 
+def _load_state():
+    return WorldpackLoader().load(WORLD, session_id="test-open-end").world
+
+
 def _mission_rules() -> dict[str, dict[str, object]]:
-    state = WorldpackLoader().load(WORLD, session_id="test-open-end").world
+    state = _load_state()
     return {
         str(row["id"]): row
         for row in state.gameplay_rules["missions"]
@@ -36,7 +41,25 @@ def test_four_bonds_is_the_campaign_completion_mission() -> None:
         "maria_intimate_bond_complete",
         "luna_intimate_bond_complete",
     ]
-    assert mission["terminal_success_flags"] == ["campaign_complete"]
+    assert mission["complete_when_required_flags"] is True
+    assert mission["completion_flag"] == "campaign_complete"
+
+
+def test_four_bonds_completion_is_python_deterministic() -> None:
+    """Python, not the LLM, marks the campaign complete when all four bonds exist."""
+    state = _load_state()
+    for flag in (
+        "victoria_intimate_bond_complete",
+        "stella_intimate_bond_complete",
+        "maria_intimate_bond_complete",
+        "luna_intimate_bond_complete",
+    ):
+        state.global_flags[flag] = True
+
+    WorldpackGameplay().refresh_state_missions(state)
+
+    assert state.global_flags["campaign_complete"] is True
+    assert state.missions["mission_four_bonds"].is_completed is True
 
 
 def test_each_npc_arc_has_an_intermediate_adult_progression_step() -> None:
