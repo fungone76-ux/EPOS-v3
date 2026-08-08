@@ -1,0 +1,62 @@
+schema_version: 1
+world_id: crimson_velvet_1897
+library_type: adult_intimacy
+defaults:
+  adults_only: true
+  consent_required: true
+  fallback_intimacy_id: none
+  strict_unknown_intimacy: true
+interactions:
+  none:
+    label: No intimate interaction
+    aliases: [none, nessuna]
+    tags: []
+    requires: {}
+  private_proximity:
+    label: Private proximity
+    aliases: [vicinanza, molto vicini, private proximity]
+    tags: [close adult proximity, quiet private moment, restrained physical tension]
+    requires: {consent: true, target: player_or_subject}
+    camera_hints: [medium]
+  hand_touch:
+    label: Hand touch
+    aliases: [sfiora la mano, mano nella mano, hand touch]
+    tags: [gentle adult hand contact, fingers lightly intertwined]
+    requires: {consent: true, target: player_or_subject}
+    camera_hints: [medium, close_up]
+  embrace:
+    label: Mutual embrace
+    aliases: [abbraccio, embrace]
+    tags: [mutual adult embrace, bodies close, arms wrapped around each other]
+    requires: {consent: true, target: player_or_subject}
+    camera_hints: [medium]
+  kiss:
+    label: Consensual kiss
+    aliases: [bacio, bacia, kiss]
+    tags: [consensual adult kiss, intimate closeness]
+    requires: {consent: true, target: player_or_subject}
+    camera_hints: [medium, close_up]
+  private_dance:
+    label: Close private dance
+    aliases: [ballo privato, danza ravvicinata, private dance]
+    tags: [close adult dance, coordinated slow movement, period ballroom setting]
+    requires: {consent: true, target: player_or_subject}
+    camera_hints: [medium, full_body]
+  dressing_room_intimacy:
+    label: Dressing room intimacy
+    aliases: [camerino, dressing room intimacy]
+    tags: [private adult dressing room moment, period costume details, mutual closeness]
+    requires: {consent: true, target: player_or_subject}
+    camera_hints: [medium]
+  private_suite_intimacy:
+    label: Private suite intimacy
+    aliases: [suite privata, private suite, notte insieme]
+    tags: [consensual adult private suite intimacy, warm gaslight, close physical affection]
+    requires: {consent: true, target: player_or_subject}
+    camera_hints: [medium]
+  coastal_intimacy:
+    label: Coastal private intimacy
+    aliases: [cala, scogliera, coastal intimacy]
+    tags: [consensual adult closeness by moonlit coast, sea wind, private moment]
+    requires: {consent: true, target: player_or_subject}
+    camera_hints: [medium, full_body]
