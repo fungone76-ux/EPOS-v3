@@ -1,8 +1,71 @@
 schema_version: 1
 world_id: resort_world
 missions:
-  - id: mission_resort_future
+  - id: mission_resort_arrival
     reveal: initial
+    success_points: 0
+    failure_points: 0
+    required_flags: [resort_intro_completed]
+    complete_when_required_flags: true
+    completion_flag: resort_intro_completed
+    terminal_failure_flags: []
+    intro_steps:
+      - id: player_intro
+        kind: player_intro
+        target_npc_id: victoria
+        action_id: speaking_gesture
+        narration: >-
+          L'elicottero privato si posa all'Azure Crown. Nella lobby, Victoria Hale ti
+          accoglie personalmente e ti concede il tempo di presentarti prima di iniziare
+          il soggiorno.
+        dialogue: >-
+          Victoria inclina appena il capo. «Benvenuto all'Azure Crown. Prima di tutto,
+          desidero sapere chi ho il piacere di accogliere.»
+      - id: victoria
+        kind: npc_intro
+        target_npc_id: victoria
+        action_id: speaking_gesture
+        narration: >-
+          Victoria prende formalmente la parola come direttrice del resort. Il suo tono
+          e calmo e autorevole: sara il riferimento personale del protagonista e guidera
+          le presentazioni delle tre collaboratrici principali.
+        dialogue: >-
+          «Sono Victoria Hale, direttrice dell'Azure Crown. Durante il soggiorno saro il
+          suo riferimento personale. Vorrei presentarle Luna, Maria e Stella, una alla volta.»
+      - id: luna
+        kind: npc_intro
+        target_npc_id: luna
+        action_id: speaking_gesture
+        narration: >-
+          Su invito di Victoria, Luna si presenta con modi misurati e attenti. Si occupa
+          degli aspetti piu riservati e discreti dell'assistenza agli ospiti.
+        dialogue: >-
+          «Piacere, sono Luna. Mi occupo dell'assistenza privata e discreta. Preferisco
+          osservare e capire cio che serve davvero, prima di intervenire.»
+      - id: maria
+        kind: npc_intro
+        target_npc_id: maria
+        action_id: speaking_gesture
+        narration: >-
+          Victoria introduce quindi Maria. Composta e professionale, Maria e responsabile
+          della suite presidenziale e dei servizi personali durante il soggiorno.
+        dialogue: >-
+          «Sono Maria. Mi occupero della suite presidenziale e del suo comfort personale.
+          Per qualsiasi necessita potra rivolgersi direttamente a me.»
+      - id: stella
+        kind: npc_intro
+        target_npc_id: stella
+        action_id: speaking_gesture
+        narration: >-
+          Per ultima Victoria introduce Stella, vivace e sicura di se. Stella segue gli
+          eventi VIP, l'intrattenimento e le esperienze speciali organizzate nel resort.
+        dialogue: >-
+          «Io sono Stella. Organizzo gli eventi VIP, l'intrattenimento e le esperienze
+          speciali dell'Azure Crown. Faro in modo che qui non ci sia spazio per la noia.»
+
+  - id: mission_resort_future
+    reveal: progressive
+    unlock_when: {flag: resort_intro_completed, expected: true}
     success_points: 25
     failure_points: -15
     required_flags:
@@ -76,7 +139,8 @@ missions:
     terminal_failure_flags: [victoria_trust_destroyed]
 
   - id: mission_four_bonds
-    reveal: initial
+    reveal: progressive
+    unlock_when: {flag: resort_intro_completed, expected: true}
     success_points: 100
     failure_points: 0
     required_flags:
