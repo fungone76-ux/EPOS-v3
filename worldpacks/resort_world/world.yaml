@@ -1,8 +1,8 @@
 schema_version: 1
 id: resort_world
 world_id: resort_world
-title: Seven Nights at Azure Crown
-premise: Un miliardario adulto trascorre sette notti all'Azure Crown Resort sull'isola di Calista, tra servizio VIP, relazioni e una possibile acquisizione.
+title: Azure Crown Resort
+premise: Un miliardario adulto soggiorna senza una scadenza prestabilita all'Azure Crown Resort sull'isola di Calista, tra servizio VIP, relazioni, rivalita, crescita personale e una possibile acquisizione del resort.
 start_time_phase: mattina
 start_location_id: loc_lobby
 interactive_creation: true
@@ -27,20 +27,21 @@ locations:
   - {id: loc_lounge, name: Lounge bar, description: Cocktail lounge con terrazza panoramica.}
   - {id: loc_victoria_office, name: Ufficio di Victoria, description: Ufficio executive elegante con vista sul resort.}
 pressures:
-  - {id: pressure_bank_debt, summary: Il debito bancario scade durante il settimo giorno., escalation_hint: Victoria deve ottenere una soluzione concreta.}
+  - {id: pressure_bank_debt, summary: Il resort e sotto pressione finanziaria e Victoria deve ottenere una soluzione concreta., escalation_hint: La pressione economica cresce con il tempo ma non impone una fine automatica della campagna.}
 world_facts:
-  - {id: fact_all_adults, statement: Tutti i personaggi coinvolti in dinamiche romantiche o sensuali sono adulti., visibility: public, does_not_imply: [Il consenso è automatico.]}
-  - {id: fact_no_conspiracy, statement: Le difficoltà del resort non nascondono un complotto., visibility: contextual, does_not_imply: [Esistono sabotaggi nascosti.]}
-  - {id: fact_victoria_knows_purchase, statement: Solo Victoria conosce inizialmente il possibile interesse per l'acquisto., visibility: secret, does_not_imply: [Le altre lo sanno già.]}
+  - {id: fact_all_adults, statement: Tutti i personaggi coinvolti in dinamiche romantiche o sensuali sono adulti., visibility: public, does_not_imply: [Il consenso e automatico.]}
+  - {id: fact_campaign_end, statement: La campagna si conclude soltanto quando Victoria, Stella, Maria e Luna hanno ciascuna completato volontariamente il proprio arco personale e il relativo traguardo intimo adulto con il protagonista., visibility: public, does_not_imply: [Le NPC sono proprieta del protagonista., Il consenso e permanente., Un singolo incontro conclude automaticamente un arco.]}
+  - {id: fact_no_conspiracy, statement: Le difficolta del resort non nascondono un complotto., visibility: contextual, does_not_imply: [Esistono sabotaggi nascosti.]}
+  - {id: fact_victoria_knows_purchase, statement: Solo Victoria conosce inizialmente il possibile interesse per l'acquisto., visibility: secret, does_not_imply: [Le altre lo sanno gia.]}
 relationships:
   - {from: victoria, to: stella, statement: Victoria premia l'iniziativa di Stella ma ne controlla l'ambizione., known_by: [victoria, stella]}
-  - {from: victoria, to: maria, statement: Victoria considera Maria il riferimento professionale più affidabile., known_by: [victoria, maria]}
-  - {from: victoria, to: luna, statement: Victoria considera Luna la più difficile da controllare., known_by: [victoria, luna]}
+  - {from: victoria, to: maria, statement: Victoria considera Maria il riferimento professionale piu affidabile., known_by: [victoria, maria]}
+  - {from: victoria, to: luna, statement: Victoria considera Luna la piu difficile da controllare., known_by: [victoria, luna]}
 missions:
   - id: mission_resort_future
     location_id: loc_victoria_office
     name: Il futuro dell'Azure Crown
-    description: Valutare il resort e decidere come affrontare il debito entro il settimo giorno.
+    description: Valutare il resort e decidere, senza una scadenza rigida, se acquistarlo, rifinanziarlo o sostenerlo in altro modo.
     state: active
     objectives:
       - {id: assess_service, type: flag, key: resort_service_assessed, expected: true}
@@ -48,13 +49,16 @@ missions:
       - {id: final_decision, type: flag, key: resort_final_decision, expected: true}
     success_conditions: [{type: flag, key: resort_saved, expected: true}]
     failure_conditions: [{type: flag, key: negotiations_refused, expected: true}]
-    rewards: [{type: flag, key: campaign_complete, value: true}]
+    rewards:
+      - {type: relationship, target_id: victoria, field: respect, delta: 2}
+      - {type: flag, key: resort_future_resolved, value: true}
     consequences: [{type: flag, key: resort_evaluation_consequence, value: recorded}]
     transitions: [{type: remain, location_id: loc_victoria_office}]
+
   - id: mission_stella_promotion
     location_id: loc_lounge
     name: La promozione internazionale
-    description: Stella deve meritare la promozione nel servizio VIP internazionale.
+    description: Stella deve dimostrare di meritare la promozione nel servizio VIP internazionale attraverso iniziativa, gestione degli eventi e capacita di conquistare la fiducia del protagonista.
     state: locked
     objectives:
       - {id: vip_event, type: flag, key: stella_vip_event_success, expected: true}
@@ -62,13 +66,16 @@ missions:
       - {id: victoria_test, type: flag, key: stella_victoria_test_passed, expected: true}
     success_conditions: [{type: flag, key: stella_promotion_approved, expected: true}]
     failure_conditions: [{type: flag, key: stella_grave_misconduct, expected: true}]
-    rewards: [{type: relationship, target_id: stella, field: respect, delta: 2}]
+    rewards:
+      - {type: relationship, target_id: stella, field: respect, delta: 2}
+      - {type: flag, key: stella_intimate_milestone_unlocked, value: true}
     consequences: [{type: flag, key: stella_mission_consequence, value: recorded}]
     transitions: [{type: remain, location_id: loc_lounge}]
+
   - id: mission_maria_stability
     location_id: loc_suite
     name: Un futuro stabile
-    description: Maria deve ottenere un contratto stabile e meglio retribuito.
+    description: Maria deve ottenere stabilita professionale dimostrando affidabilita, cura personale e capacita di costruire una fiducia reale con il protagonista.
     state: locked
     objectives:
       - {id: recover_bath_service, type: flag, key: maria_bath_service_recovered, expected: true}
@@ -76,13 +83,16 @@ missions:
       - {id: positive_review, type: flag, key: maria_positive_review, expected: true}
     success_conditions: [{type: flag, key: maria_contract_approved, expected: true}]
     failure_conditions: [{type: flag, key: maria_grave_negligence, expected: true}]
-    rewards: [{type: relationship, target_id: maria, field: trust, delta: 2}]
+    rewards:
+      - {type: relationship, target_id: maria, field: trust, delta: 2}
+      - {type: flag, key: maria_intimate_milestone_unlocked, value: true}
     consequences: [{type: flag, key: maria_mission_consequence, value: recorded}]
     transitions: [{type: remain, location_id: loc_suite}]
+
   - id: mission_luna_letter
     location_id: loc_wild_beach
-    name: Il legame nascosto
-    description: Luna vuole chiarire la promessa incompiuta nella lettera del padre del protagonista.
+    name: La verita della lettera
+    description: Luna vuole chiarire la promessa incompiuta contenuta nella lettera del padre del protagonista e decidere autonomamente se trasformare quella verita in un legame personale.
     state: locked
     objectives:
       - {id: mention_letter, type: flag, key: luna_letter_mentioned, expected: true}
@@ -91,13 +101,16 @@ missions:
       - {id: answer_promise, type: flag, key: luna_promise_answered, expected: true}
     success_conditions: [{type: flag, key: luna_truth_clarified, expected: true}]
     failure_conditions: [{type: flag, key: luna_letter_abused, expected: true}]
-    rewards: [{type: relationship, target_id: luna, field: trust, delta: 3}]
+    rewards:
+      - {type: relationship, target_id: luna, field: trust, delta: 3}
+      - {type: flag, key: luna_intimate_milestone_unlocked, value: true}
     consequences: [{type: flag, key: luna_mission_consequence, value: recorded}]
     transitions: [{type: remain, location_id: loc_wild_beach}]
+
   - id: mission_victoria_save_resort
     location_id: loc_victoria_office
     name: Salvare l'Azure Crown
-    description: Victoria deve ottenere un acquisto un rifinanziamento o una trattativa vincolante.
+    description: Victoria deve dimostrare il valore del resort e ottenere dal protagonista una soluzione economica concreta senza perdere il controllo della propria autonomia personale.
     state: locked
     objectives:
       - {id: show_strengths, type: flag, key: victoria_strengths_shown, expected: true}
@@ -105,6 +118,26 @@ missions:
       - {id: prove_team, type: flag, key: victoria_team_proven, expected: true}
     success_conditions: [{type: flag, key: resort_saved, expected: true}]
     failure_conditions: [{type: flag, key: victoria_trust_destroyed, expected: true}]
-    rewards: [{type: relationship, target_id: victoria, field: trust, delta: 2}]
+    rewards:
+      - {type: relationship, target_id: victoria, field: trust, delta: 2}
+      - {type: flag, key: victoria_intimate_milestone_unlocked, value: true}
     consequences: [{type: flag, key: victoria_mission_consequence, value: recorded}]
     transitions: [{type: remain, location_id: loc_victoria_office}]
+
+  - id: mission_four_bonds
+    location_id: loc_suite
+    name: I quattro legami
+    description: Portare a compimento, senza limite di giorni, i quattro archi personali e raggiungere con Victoria, Stella, Maria e Luna un traguardo intimo adulto, volontario e distinto per ciascuna di loro.
+    state: active
+    objectives:
+      - {id: victoria_bond, type: flag, key: victoria_intimate_bond_complete, expected: true}
+      - {id: stella_bond, type: flag, key: stella_intimate_bond_complete, expected: true}
+      - {id: maria_bond, type: flag, key: maria_intimate_bond_complete, expected: true}
+      - {id: luna_bond, type: flag, key: luna_intimate_bond_complete, expected: true}
+    success_conditions: [{type: flag, key: all_four_intimate_bonds_complete, expected: true}]
+    failure_conditions: []
+    rewards:
+      - {type: flag, key: campaign_complete, value: true}
+    consequences:
+      - {type: flag, key: campaign_epilogue_unlocked, value: true}
+    transitions: [{type: remain, location_id: loc_suite}]
