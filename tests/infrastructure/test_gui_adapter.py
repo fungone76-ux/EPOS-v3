@@ -94,8 +94,8 @@ async def test_gui_state_view_shows_other_npc_locations_and_active_missions(tmp_
     assert "Missioni attive" in view
     assert "Resort future" in view
     assert "Eventi aperti" in view
-    assert "A bordo piscina si sta organizzando una prova outfit per un evento VIP." in view
-    assert "Puoi osservare, scegliere uno stile" in view
+    assert "A bordo piscina le NPC provano outfit audaci per un servizio VIP dedicato al protagonista." in view
+    assert "Puoi osservare, scegliere uno stile, lasciar decidere alle NPC o chiedere una prova privata." in view
 
 
 @pytest.mark.asyncio
