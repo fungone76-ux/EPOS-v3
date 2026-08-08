@@ -256,12 +256,10 @@ class WorldpackGameplay:
 
 
 def _intro_active(state: WorldState) -> bool:
-    """Return whether a Worldpack-authored intro mission is still gating freeplay."""
-    mission_rows = _list_of_mappings(state.gameplay_rules.get("missions", []))
-    has_intro = any(isinstance(row.get("intro_steps"), list) for row in mission_rows)
-    if not has_intro:
+    """Return whether an explicitly initialized Worldpack intro is gating freeplay."""
+    if bool(state.global_flags.get("resort_intro_completed", False)):
         return False
-    return not bool(state.global_flags.get("resort_intro_completed", False))
+    return bool(state.global_flags.get("resort_intro_active", False))
 
 
 def _list_of_mappings(value: object) -> list[Mapping[object, object]]:
