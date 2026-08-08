@@ -1,0 +1,3 @@
+[console_scripts]
+epos = epos_v3.presentation.cli:main_sync
+epos-gui = epos_v3.presentation.gui_app:main_sync

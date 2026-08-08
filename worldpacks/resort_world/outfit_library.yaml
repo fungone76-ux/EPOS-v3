@@ -1,0 +1,99 @@
+schema_version: 2
+world_id: resort_world
+library_type: outfit
+
+defaults:
+  strict_unknown_item: true
+  authoritative_source: npc_wardrobes.yaml
+
+categories:
+  garment:
+    keywords: [dress, gown, robe, swimsuit, bikini, romper, blazer, skirt, top, shirt, bodysuit, corset, teddy, babydoll, chemise, negligee, slip, wrap_dress, halter_top, crop_top, tube_top, off_shoulder]
+  lingerie:
+    keywords: [bra, panties, thong, g_string, garter_belt, suspender_belt, bustier, corset_lingerie, lace_bra, sheer_bra, push_up_bra, bralette, crotchless_panties, open_cup_bra, shelf_bra, harness, body_harness]
+  hosiery:
+    keywords: [stockings, pantyhose, tights, hosiery, thigh_highs, stay_up_stockings, fishnet_stockings, sheer_stockings, lace_top_stockings, garter_stockings, hold_ups, knee_highs]
+  footwear:
+    keywords: [stiletto, pumps, heels, shoes, sandals, boots, thigh_high_boots, ankle_boots, platform_heels, mules, slippers, bare_feet]
+  accessory:
+    keywords: [earrings, necklace, bracelet, pendant, choker, anklet, sunglasses, jewelry, body_chain, belly_chain, nipple_pasties, nipple_tassels, nipple_clamps, collar, leash, handcuffs, blindfold]
+  coverup:
+    keywords: [cover up, cover-up, sarong, wrap, sheer_robe, see_through_kimono, lace_shawl, mesh_cover]
+  swimwear:
+    keywords: [bikini, micro_bikini, string_bikini, thong_bikini, monokini, one_piece, cutout_swimsuit, sheer_swimsuit, wet_swimsuit, topless_bikini, pasties_beach]
+  sleepwear:
+    keywords: [nightgown, nightie, silk_slip, satin_robe, lace_nightgown, see_through_nightie, open_robe, sleep_shorts, camisole]
+  fetish:
+    keywords: [latex, leather, pvc, vinyl, catsuit, bodysuit_zipper, bondage_outfit, harness_dress, strappy_outfit, cutout_dress, mesh_dress, transparent_dress, wet_look, shiny_fabric]
+
+aliases:
+  '*':
+    scarpe: '@footwear'
+    senza scarpe: '@footwear'
+    tacchi: '@footwear'
+    collant: sheer stockings
+    calze: sheer stockings
+    reggiseno: bra
+    mutande: panties
+    perizoma: thong
+    tanga: thong
+    stringa: g_string
+    giarrettiera: garter_belt
+    body: bodysuit
+    corpetto: corset
+    completino: lingerie set
+    intimo: lingerie
+    bikini_micro: micro bikini
+    bikini_stringa: string bikini
+    bikini_perizoma: thong bikini
+    costume_umido: wet swimsuit
+    vestito_bagnato: wet dress
+    vestito_trasparente: see through dress
+    vestito_rete: mesh dress
+    vestito_lattice: latex dress
+    pasties: nipple pasties
+    benda: blindfold
+    collare: collar
+    guinzaglio: leash
+    manette: handcuffs
+    calze_velate: sheer stockings
+    calze_rete: fishnet stockings
+    calze_autoreggenti: stay up stockings
+    stivali_alti: thigh_high_boots
+    stivali_coscia: thigh_high_boots
+    tacchi_a_spillo: stiletto
+    piedi_nudi: bare_feet
+    nuda: bare_skin
+    nudo: bare_skin
+    senza_vestiti: bare_skin
+    completamente_nuda: fully_nude
+    completamente_nudo: fully_nude
+  victoria:
+    pantyhose neri: sheer black stockings
+    collant neri: sheer black stockings
+    calze nere: sheer black stockings
+    reggiseno nero: black lace bra
+    perizoma nero: black thong
+  stella:
+    costume rosso: red micro bikini
+    bikini rosso: red string bikini
+    vestito rosso: red sheer wrap dress
+  maria:
+    calze velate: sheer stockings
+    completino bianco: white lace lingerie set
+    vestito da notte: white silk nightgown
+  luna:
+    costume avorio: ivory string bikini
+    vestito sera: black cutout evening dress
+    intimo set: black lace lingerie set
+    accappatoio: sheer black robe
+
+rules:
+  replacement_is_category_exclusive: true
+  never_invent_item: true
+  wear_only_if_present_in_authored_wardrobe: true
+  remove_only_if_currently_worn: true
+  allow_partial_nudity: true
+  allow_full_nudity: true
+  allow_transparent_garments: true
+  allow_wet_clothing: true

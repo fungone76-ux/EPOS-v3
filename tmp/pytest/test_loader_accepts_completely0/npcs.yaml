@@ -1,0 +1,28 @@
+schema_version: 1
+world_id: orbital_colony
+npcs:
+- id: unit7
+  name: Unit Seven
+  location_id: dock
+  present_at_start: true
+  personality:
+  - analytical
+  speech_style: precise
+  desires:
+  - map the anomaly
+  fears:
+  - system failure
+  goals:
+  - reach the lab
+  secrets: []
+  knowledge:
+  - the station map
+  skills:
+    hacking: 4
+    pilotaggio: 1
+    scienza: 3
+  disclosure_policy: ''
+  red_lines: []
+  intimate_profile: ''
+  starting_outfit:
+  - maintenance shell

@@ -1,0 +1,255 @@
+schema_version: 2
+world_id: resort_world
+library_type: camera
+
+defaults:
+  fallback_camera_id: medium_eye_level
+  avoid_repeat_history: 6
+  strict_unknown_camera: true
+
+cameras:
+  # ============================================================
+  # STANDARD SHOTS (originali mantenuti)
+  # ============================================================
+  medium_eye_level:
+    label: Medium eye-level
+    tags: [medium shot, eye level, frontal]
+    shot_type: medium_shot
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+
+  medium_full:
+    label: Medium full
+    tags: [medium full shot, eye level]
+    shot_type: medium_full_shot
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+
+  full_body:
+    label: Full body
+    tags: [full body shot, eye level]
+    shot_type: full_body
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+
+  rear_three_quarter:
+    label: Rear three-quarter
+    tags: [rear three quarter view, medium full shot]
+    shot_type: medium_full_shot
+    angle: eye_level
+    orientation: rear_three_quarter
+    depth_of_field: shallow
+    background_blur: true
+
+  side_medium_full:
+    label: Side medium-full
+    tags: [side view, medium full shot]
+    shot_type: medium_full_shot
+    angle: eye_level
+    orientation: side
+    depth_of_field: shallow
+    background_blur: true
+
+  low_full_body:
+    label: Low full-body
+    tags: [full body shot, low angle]
+    shot_type: full_body
+    angle: low
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+
+  close_detail:
+    label: Close detail
+    tags: [close detail shot, shallow depth of field]
+    shot_type: close_up
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+
+  # ============================================================
+  # ADULT / SENSUAL SHOTS (nuovi)
+  # ============================================================
+  extreme_close_up:
+    label: Extreme close-up
+    tags: [extreme close up, macro shot, shallow depth of field, intimate framing]
+    shot_type: extreme_close_up
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: very_shallow
+    background_blur: true
+
+  close_up_breasts:
+    label: Close-up on breasts
+    tags: [close up, breast focus, cleavage shot, chest centered, nipple visible through fabric, décolleté]
+    shot_type: close_up
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+
+  close_up_hips:
+    label: Close-up on hips and pelvis
+    tags: [close up, hip focus, pelvis centered, waist to thigh, groin area, intimate zone]
+    shot_type: close_up
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+
+  close_up_buttocks:
+    label: Close-up on buttocks
+    tags: [close up, buttocks focus, rear close up, ass centered, cheeks visible, rear detail]
+    shot_type: close_up
+    angle: eye_level
+    orientation: rear
+    depth_of_field: shallow
+    background_blur: true
+
+  low_angle_legs:
+    label: Low angle legs
+    tags: [low angle, legs emphasized, looking up at subject, powerful stance, thighs prominent, from below]
+    shot_type: medium_full_shot
+    angle: low
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+
+  low_angle_buttocks:
+    label: Low angle buttocks
+    tags: [low angle, buttocks emphasized, rear view from below, cheeks prominent, looking up at rear]
+    shot_type: medium_full_shot
+    angle: low
+    orientation: rear
+    depth_of_field: shallow
+    background_blur: true
+
+  high_angle_looking_down:
+    label: High angle looking down
+    tags: [high angle, looking down at subject, dominant perspective, subject looking up, vulnerable from above]
+    shot_type: medium_shot
+    angle: high
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+
+  between_legs:
+    label: Between legs view
+    tags: [between legs shot, looking through thighs, intimate perspective, center framed, legs apart framing]
+    shot_type: close_up
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+
+  dutch_angle:
+    label: Dutch angle sensual
+    tags: [dutch angle, tilted frame, disorienting, sensual tension, dynamic composition, off kilter]
+    shot_type: medium_full_shot
+    angle: dutch
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+
+  over_shoulder:
+    label: Over the shoulder
+    tags: [over shoulder shot, subject rear visible, intimate proximity, looking past shoulder, close embrace framing]
+    shot_type: medium_shot
+    angle: eye_level
+    orientation: over_shoulder
+    depth_of_field: shallow
+    background_blur: true
+
+  mirror_shot:
+    label: Mirror reflection shot
+    tags: [mirror reflection, reflected image, dual perspective, front and back visible, vanity shot]
+    shot_type: full_body
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: deep
+    background_blur: false
+
+  shower_glass:
+    label: Through shower glass
+    tags: [through glass, wet glass, steamy, silhouette, blurred by water, obscured nudity, shower door]
+    shot_type: full_body
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: deep
+    background_blur: false
+
+  voyeur_peek:
+    label: Voyeur peek shot
+    tags: [partially obscured, peeking through door, hidden view, spying perspective, subject unaware, candid intimate]
+    shot_type: medium_shot
+    angle: eye_level
+    orientation: frontal
+    depth_of_field: shallow
+    background_blur: true
+
+  # ============================================================
+  # FOCUS SETS (aggiornati)
+  # ============================================================
+focus_sets:
+  face: [medium_eye_level, close_detail, extreme_close_up]
+  eyes: [close_detail, extreme_close_up, medium_eye_level]
+  hands: [medium_eye_level, close_detail]
+  chest: [medium_eye_level, medium_full, close_up_breasts]
+  back: [rear_three_quarter, side_medium_full]
+  hips: [medium_full, rear_three_quarter, close_up_hips, low_angle_legs]
+  buttocks: [rear_three_quarter, side_medium_full, close_up_buttocks, low_angle_buttocks]
+  legs: [medium_full, full_body, low_angle_legs]
+  feet: [full_body, low_full_body]
+  outfit: [full_body, medium_full, mirror_shot]
+  full_body: [full_body, low_full_body, mirror_shot]
+  interaction: [medium_eye_level, medium_full, over_shoulder]
+  intimate: [extreme_close_up, close_up_breasts, close_up_hips, close_up_buttocks, between_legs]
+  voyeur: [voyeur_peek, shower_glass, high_angle_looking_down]
+
+framing_rules:
+  face:
+    positive: [face clearly visible]
+    negative: [face out of frame, obscured face]
+  eyes:
+    positive: [eyes unobstructed]
+    negative: [obscured eyes]
+  hands:
+    positive: [both hands clearly visible]
+    negative: [cropped hands, hands out of frame]
+  chest:
+    positive: [upper torso clearly visible]
+    negative: [upper torso cropped]
+  back:
+    positive: [back clearly visible, rear body emphasis]
+    negative: [back obscured]
+  hips:
+    positive: [hips clearly visible, hip emphasis]
+    negative: [hips cropped]
+  buttocks:
+    positive: [lower body clearly visible, rear lower-body emphasis]
+    negative: [lower body cropped, rear view obscured]
+  legs:
+    positive: [legs clearly visible, include legs fully in frame]
+    negative: [legs out of frame, cropped legs]
+  feet:
+    positive: [both feet fully in frame, feet clearly visible]
+    negative: [cropped feet, feet out of frame, malformed feet, extra toes, missing toes]
+  outfit:
+    positive: [full outfit clearly visible]
+    negative: [cropped outfit]
+  full_body:
+    positive: [full body in frame]
+    negative: [cropped body]
+  interaction:
+    positive: [interaction clearly framed]
+    negative: []
+  intimate:
+    positive: [intimate area clearly framed, no obstruction]
+    negative: [intimate area cropped, intimate area obscured]

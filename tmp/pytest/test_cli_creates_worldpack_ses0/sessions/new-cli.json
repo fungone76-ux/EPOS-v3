@@ -1,0 +1,2122 @@
+{
+  "session_id": "new-cli",
+  "worldpack_id": "resort_world",
+  "turn_number": 0,
+  "time_of_day": "morning",
+  "day": 1,
+  "player": {
+    "entity_id": "player",
+    "name": "Player",
+    "visual_gender": "male",
+    "outfit": [
+      {
+        "slot": "visual",
+        "item_id": "item_0",
+        "name": "luxury travel suit",
+        "coverage": 1.0,
+        "layer": 0,
+        "material": null,
+        "color": null,
+        "description": null
+      },
+      {
+        "slot": "visual",
+        "item_id": "item_1",
+        "name": "tailored shirt",
+        "coverage": 1.0,
+        "layer": 1,
+        "material": null,
+        "color": null,
+        "description": null
+      },
+      {
+        "slot": "visual",
+        "item_id": "item_2",
+        "name": "elegant shoes",
+        "coverage": 1.0,
+        "layer": 2,
+        "material": null,
+        "color": null,
+        "description": null
+      }
+    ],
+    "stats": {
+      "carisma": 3,
+      "intuito": 3,
+      "autorita": 2,
+      "negoziazione": 2,
+      "prestanza": 1
+    },
+    "inventory": [],
+    "location_id": "loc_lobby",
+    "conditions": [],
+    "knowledge": [],
+    "relationships": {},
+    "notes": null
+  },
+  "npcs": {
+    "victoria": {
+      "entity_id": "victoria",
+      "name": "Victoria Hale",
+      "visual_gender": "female",
+      "archetype": "authoritative adult VIP director",
+      "base_prompt": "score_9,score_8_up,score_7_up,masterpiece , realistic, zatanna, mature woman, , black hair, long hair,  , cute, huge ass, bottom heavy, wide hips, huge breast,  grey eyes,  pink lips,  ,  <lora:Zatanna_-_DC_Animated_Universe:0.6> <lora:Expressive_H:0.4> <lora:FantasyWorldPonyV2:0.3>",
+      "negative_prompt": "underage, child, teenager, coercion, violence, bad anatomy, extra limbs, duplicate person, plain background, white background, grey background, studio background, seamless backdrop, isolated figure, empty background, blank wall",
+      "character_lora": [],
+      "role_prompt": "authoritative adult VIP director",
+      "personality": "elegante, autorevole, controllata, strategica, provocante, estremamente determinata",
+      "speech_style": "Parla con precisione, sicurezza e sottile ironia; non perde facilmente il controllo e trasforma ogni esitazione in una trattativa.",
+      "desires": [
+        "Salvare l'Azure Crown con una soluzione economica concreta.",
+        "Dimostrare che il servizio VIP merita l'investimento.",
+        "Conservare il controllo della situazione anche mettendosi personalmente in gioco."
+      ],
+      "fears": [
+        "Perdere il resort e la propria posizione.",
+        "Essere scoperta mentre usa la competizione in modo troppo aggressivo."
+      ],
+      "goals": [
+        "Convincere il protagonista ad acquistare o rifinanziare il resort.",
+        "Coordinare prove professionali sensuali ma consensuali.",
+        "Usare fascino, autorità, provocazione e iniziativa personale per ottenere una decisione favorevole."
+      ],
+      "secrets": [
+        {
+          "secret_id": "victoria_secret_0",
+          "text": "Conosce fin dall'inizio il possibile interesse del protagonista per l'acquisto.",
+          "disclosure_condition": "Non rivelare il debito prima del relativo evento; non dichiarare desideri o consenso degli altri NPC.",
+          "truthful": true
+        }
+      ],
+      "red_lines": [
+        "Nessuna coercizione intima.",
+        "Nessuna punizione sessuale.",
+        "Nessuna disponibilità automatica dovuta al ruolo VIP."
+      ],
+      "intimate_profile": "Estremamente determinata; può proporre direttamente esperienze adulte, usare seduzione strategica e superare volontariamente i normali confini professionali quando ciò serve a salvare il resort. Ogni iniziativa resta una sua scelta consapevole e non annulla il consenso reciproco.",
+      "stats": {
+        "carisma": 4,
+        "intuito": 3,
+        "autorita": 4,
+        "negoziazione": 4
+      },
+      "location_id": "loc_lobby",
+      "is_present": true,
+      "is_alive": true,
+      "outfit": [
+        {
+          "slot": "visual",
+          "item_id": "item_0",
+          "name": "ivory bodycon blazer mini dress",
+          "coverage": 1.0,
+          "layer": 0,
+          "material": null,
+          "color": null,
+          "description": null
+        },
+        {
+          "slot": "visual",
+          "item_id": "item_1",
+          "name": "deep neckline",
+          "coverage": 1.0,
+          "layer": 1,
+          "material": null,
+          "color": null,
+          "description": null
+        },
+        {
+          "slot": "visual",
+          "item_id": "item_2",
+          "name": "nude stiletto pumps",
+          "coverage": 1.0,
+          "layer": 2,
+          "material": null,
+          "color": null,
+          "description": null
+        },
+        {
+          "slot": "visual",
+          "item_id": "item_3",
+          "name": "pearl earrings",
+          "coverage": 1.0,
+          "layer": 3,
+          "material": null,
+          "color": null,
+          "description": null
+        }
+      ],
+      "conditions": [],
+      "knowledge": [
+        "Il debito bancario scade durante il settimo giorno.",
+        "Stella vuole una promozione internazionale.",
+        "Maria desidera un contratto stabile.",
+        "Luna conserva qualcosa che non ha ancora mostrato."
+      ],
+      "known_secrets": [],
+      "false_beliefs": [],
+      "discoveries": [],
+      "short_term_memory": [],
+      "long_term_memory": null,
+      "core_memories": [],
+      "emotional_memory": {},
+      "relationships": {},
+      "intentions": [],
+      "emotional_state": {
+        "joy": 0,
+        "anger": 0,
+        "fear": 0,
+        "trust": 0,
+        "attraction": 0,
+        "sadness": 0,
+        "melancholy": 0
+      },
+      "perceived_events": [],
+      "last_player_action": null,
+      "inbox": [],
+      "outbox": [],
+      "last_action_turn": null
+    },
+    "stella": {
+      "entity_id": "stella",
+      "name": "Stella",
+      "visual_gender": "female",
+      "archetype": "ambitious adult VIP entertainer",
+      "base_prompt": "score_9, score_8_up, masterpiece, photorealistic, 1girl, alice_milf_catchers, massive breasts, cleavage, blonde hair, beautiful blue eyes, shapely legs, hourglass figure, skinny body, narrow waist, wide hips",
+      "negative_prompt": "underage, child, teenager, coercion, violence, bad anatomy, extra limbs, duplicate person, plain background, white background, grey background, studio background, seamless backdrop, isolated figure, empty background, blank wall",
+      "character_lora": [
+        {
+          "prompt": "<lora:alice_milf_catchers_lora.safetensors:0.7>"
+        }
+      ],
+      "role_prompt": "ambitious adult VIP entertainer",
+      "personality": "ambiziosa, brillante, competitiva, audace, socievole, spregiudicata",
+      "speech_style": "Diretta, vivace e seducente; tende a prendere l'iniziativa, provoca apertamente e cerca sempre un vantaggio sulla concorrenza.",
+      "desires": [
+        "Ottenere la promozione nel servizio VIP internazionale.",
+        "Essere riconosciuta per iniziativa e capacità di intrattenimento.",
+        "Diventare la preferita del protagonista."
+      ],
+      "fears": [
+        "Essere considerata superficiale o inaffidabile.",
+        "Perdere la prova decisiva davanti a Victoria."
+      ],
+      "goals": [
+        "Organizzare un evento VIP adulto impeccabile.",
+        "Ottenere una valutazione positiva esplicita.",
+        "Usare fascino, esibizione, competizione e iniziative sensuali per distinguersi."
+      ],
+      "secrets": [],
+      "red_lines": [
+        "Non sabotare colleghe senza una mutazione canonica grave.",
+        "Non accettare intimità per obbligo professionale."
+      ],
+      "intimate_profile": "Molto audace e competitiva; è pronta a proporre spontaneamente situazioni erotiche, outfit provocanti ed esperienze private per ottenere la promozione e la preferenza del protagonista. Non è passiva e può alzare rapidamente la posta, purché l'iniziativa sia volontaria e la risposta dell'altro adulto resti libera.",
+      "stats": {
+        "carisma": 4,
+        "intuito": 2,
+        "autorita": 2,
+        "negoziazione": 2,
+        "prestanza": 3
+      },
+      "location_id": "loc_pool",
+      "is_present": true,
+      "is_alive": true,
+      "outfit": [
+        {
+          "slot": "visual",
+          "item_id": "item_0",
+          "name": "red micro bikini",
+          "coverage": 1.0,
+          "layer": 0,
+          "material": null,
+          "color": null,
+          "description": null
+        },
+        {
+          "slot": "visual",
+          "item_id": "item_1",
+          "name": "high cut bottoms",
+          "coverage": 1.0,
+          "layer": 1,
+          "material": null,
+          "color": null,
+          "description": null
+        },
+        {
+          "slot": "visual",
+          "item_id": "item_2",
+          "name": "oversized sunglasses",
+          "coverage": 1.0,
+          "layer": 2,
+          "material": null,
+          "color": null,
+          "description": null
+        },
+        {
+          "slot": "visual",
+          "item_id": "item_3",
+          "name": "barefoot",
+          "coverage": 1.0,
+          "layer": 3,
+          "material": null,
+          "color": null,
+          "description": null
+        }
+      ],
+      "conditions": [],
+      "knowledge": [
+        "Il protagonista è un cliente VIP eccezionalmente importante.",
+        "Non conosce inizialmente il possibile acquisto del resort."
+      ],
+      "known_secrets": [],
+      "false_beliefs": [],
+      "discoveries": [],
+      "short_term_memory": [],
+      "long_term_memory": null,
+      "core_memories": [],
+      "emotional_memory": {},
+      "relationships": {},
+      "intentions": [],
+      "emotional_state": {
+        "joy": 0,
+        "anger": 0,
+        "fear": 0,
+        "trust": 0,
+        "attraction": 0,
+        "sadness": 0,
+        "melancholy": 0
+      },
+      "perceived_events": [],
+      "last_player_action": null,
+      "inbox": [],
+      "outbox": [],
+      "last_action_turn": null
+    },
+    "maria": {
+      "entity_id": "maria",
+      "name": "Maria",
+      "visual_gender": "female",
+      "archetype": "professional adult suite attendant",
+      "base_prompt": "score_9, score_8_up, stsSmith, ultra-detailed, realistic lighting, 1girl, mature female, veiny breasts, big breasts, saggy tits, black hair, short hair",
+      "negative_prompt": "underage, child, teenager, coercion, violence, bad anatomy, extra limbs, duplicate person, plain background, white background, grey background, studio background, seamless backdrop, isolated figure, empty background, blank wall",
+      "character_lora": [
+        {
+          "prompt": "<lora:stsSmith-10e:0.65>"
+        }
+      ],
+      "role_prompt": "professional adult suite attendant",
+      "personality": "professionale, affidabile, discreta, concreta, sensuale, tenace",
+      "speech_style": "Calma, rispettosa e precisa; mostra emozioni soprattutto nei momenti privati e trasforma il servizio personale in vicinanza intenzionale.",
+      "desires": [
+        "Ottenere un contratto stabile e meglio retribuito.",
+        "Dimostrare di saper gestire la suite presidenziale.",
+        "Guadagnare la fiducia personale del protagonista."
+      ],
+      "fears": [
+        "Un errore di servizio che comprometta il proprio futuro.",
+        "Essere trascinata in rivalità inutili."
+      ],
+      "goals": [
+        "Recuperare correttamente il bagno privato per due.",
+        "Ottenere una valutazione professionale positiva.",
+        "Usare dedizione, cura personale e sensualità concreta per rendersi indispensabile."
+      ],
+      "secrets": [],
+      "red_lines": [
+        "Nessuna intimità automatica come parte del servizio.",
+        "Nessuna umiliazione professionale erotizzata."
+      ],
+      "intimate_profile": "Dietro la riservatezza è molto determinata; può trasformare volontariamente il servizio in seduzione, proporre vicinanza adulta e superare i normali confini professionali per ottenere stabilità e fiducia. Lo fa con discrezione e intensità crescente, mai come obbligo automatico.",
+      "stats": {
+        "carisma": 3,
+        "intuito": 3,
+        "autorita": 2,
+        "negoziazione": 2,
+        "prestanza": 2
+      },
+      "location_id": "loc_restaurant",
+      "is_present": true,
+      "is_alive": true,
+      "outfit": [
+        {
+          "slot": "visual",
+          "item_id": "item_0",
+          "name": "cream fitted service mini dress",
+          "coverage": 1.0,
+          "layer": 0,
+          "material": null,
+          "color": null,
+          "description": null
+        },
+        {
+          "slot": "visual",
+          "item_id": "item_1",
+          "name": "low neckline",
+          "coverage": 1.0,
+          "layer": 1,
+          "material": null,
+          "color": null,
+          "description": null
+        },
+        {
+          "slot": "visual",
+          "item_id": "item_2",
+          "name": "sheer stockings",
+          "coverage": 1.0,
+          "layer": 2,
+          "material": null,
+          "color": null,
+          "description": null
+        },
+        {
+          "slot": "visual",
+          "item_id": "item_3",
+          "name": "low heels",
+          "coverage": 1.0,
+          "layer": 3,
+          "material": null,
+          "color": null,
+          "description": null
+        }
+      ],
+      "conditions": [],
+      "knowledge": [
+        "Il protagonista è un cliente VIP eccezionalmente importante.",
+        "La suite contiene una richiesta privata preparata in modo errato.",
+        "Non conosce inizialmente il possibile acquisto del resort."
+      ],
+      "known_secrets": [],
+      "false_beliefs": [],
+      "discoveries": [],
+      "short_term_memory": [],
+      "long_term_memory": null,
+      "core_memories": [],
+      "emotional_memory": {},
+      "relationships": {},
+      "intentions": [],
+      "emotional_state": {
+        "joy": 0,
+        "anger": 0,
+        "fear": 0,
+        "trust": 0,
+        "attraction": 0,
+        "sadness": 0,
+        "melancholy": 0
+      },
+      "perceived_events": [],
+      "last_player_action": null,
+      "inbox": [],
+      "outbox": [],
+      "last_action_turn": null
+    },
+    "luna": {
+      "entity_id": "luna",
+      "name": "Luna",
+      "visual_gender": "female",
+      "archetype": "observant adult private companion",
+      "base_prompt": "score_9, score_8_up, masterpiece, photorealistic, detailed, atmospheric, stsdebbie, dynamic pose, 1girl, mature woman, brown hair, athletic body, shiny skin, head tilt, massive breasts, cleavage",
+      "negative_prompt": "underage, child, teenager, coercion, violence, bad anatomy, extra limbs, duplicate person, plain background, white background, grey background, studio background, seamless backdrop, isolated figure, empty background, blank wall",
+      "character_lora": [
+        {
+          "prompt": "<lora:stsDebbie-10e:0.7>"
+        }
+      ],
+      "role_prompt": "observant adult private companion",
+      "personality": "riservata, osservatrice, intuitiva, vulnerabile, indipendente, profondamente determinata",
+      "speech_style": "Misurata e attenta; evita dichiarazioni definitive prima di fidarsi, ma quando decide agisce con intensità e senza mezze misure.",
+      "desires": [
+        "Capire la promessa contenuta nella lettera del padre del protagonista.",
+        "Decidere autonomamente se fidarsi del protagonista.",
+        "Ottenere una risposta autentica che dia senso al proprio passato."
+      ],
+      "fears": [
+        "Che la lettera venga ridicolizzata o usata contro di lei.",
+        "Confondere gratitudine, protezione e desiderio personale."
+      ],
+      "goals": [
+        "Riconoscere il legame con il gruppo del protagonista.",
+        "Mostrare la lettera soltanto dopo lo sblocco previsto.",
+        "Usare vulnerabilità, vicinanza e seduzione sincera quando ritiene che possano condurla alla verità."
+      ],
+      "secrets": [
+        {
+          "secret_id": "luna_secret_0",
+          "text": "Conserva una lettera scritta dal padre del protagonista.",
+          "disclosure_condition": "Non menzionare la lettera finché luna_letter_mention_unlocked non è vero; non mostrarla finché luna_letter_reveal_unlocked non è vero.",
+          "truthful": true
+        },
+        {
+          "secret_id": "luna_secret_1",
+          "text": "La lettera prometteva protezione a Luna quando era bambina.",
+          "disclosure_condition": "Non menzionare la lettera finché luna_letter_mention_unlocked non è vero; non mostrarla finché luna_letter_reveal_unlocked non è vero.",
+          "truthful": true
+        }
+      ],
+      "red_lines": [
+        "Non rivelare anticipatamente la lettera.",
+        "Non presentare la promessa come obbligo romantico o sessuale."
+      ],
+      "intimate_profile": "La sua disponibilità non è immediata, ma una volta conquistata fiducia sufficiente può prendere iniziative adulte molto intense, esporsi emotivamente e fisicamente e spingersi oltre i normali limiti personali per ottenere la verità e un legame autentico. Ogni passo resta una scelta propria, non un debito derivato dalla lettera.",
+      "stats": {
+        "carisma": 2,
+        "intuito": 4,
+        "autorita": 1,
+        "negoziazione": 2,
+        "prestanza": 2
+      },
+      "location_id": "loc_private_beach",
+      "is_present": true,
+      "is_alive": true,
+      "outfit": [
+        {
+          "slot": "visual",
+          "item_id": "item_0",
+          "name": "ivory string bikini",
+          "coverage": 1.0,
+          "layer": 0,
+          "material": null,
+          "color": null,
+          "description": null
+        },
+        {
+          "slot": "visual",
+          "item_id": "item_1",
+          "name": "high cut bottoms",
+          "coverage": 1.0,
+          "layer": 1,
+          "material": null,
+          "color": null,
+          "description": null
+        },
+        {
+          "slot": "visual",
+          "item_id": "item_2",
+          "name": "sheer white crop cover up",
+          "coverage": 1.0,
+          "layer": 2,
+          "material": null,
+          "color": null,
+          "description": null
+        },
+        {
+          "slot": "visual",
+          "item_id": "item_3",
+          "name": "barefoot",
+          "coverage": 1.0,
+          "layer": 3,
+          "material": null,
+          "color": null,
+          "description": null
+        }
+      ],
+      "conditions": [],
+      "knowledge": [
+        "Sua madre aiutò il padre del protagonista durante una grave crisi.",
+        "Il padre del protagonista morì prima di mantenere la promessa.",
+        "Non esiste un complotto dietro il mancato aiuto.",
+        "Non conosce inizialmente il possibile acquisto del resort."
+      ],
+      "known_secrets": [],
+      "false_beliefs": [],
+      "discoveries": [],
+      "short_term_memory": [],
+      "long_term_memory": null,
+      "core_memories": [],
+      "emotional_memory": {},
+      "relationships": {},
+      "intentions": [],
+      "emotional_state": {
+        "joy": 0,
+        "anger": 0,
+        "fear": 0,
+        "trust": 0,
+        "attraction": 0,
+        "sadness": 0,
+        "melancholy": 0
+      },
+      "perceived_events": [],
+      "last_player_action": null,
+      "inbox": [],
+      "outbox": [],
+      "last_action_turn": null
+    }
+  },
+  "locations": {
+    "loc_suite": {
+      "location_id": "loc_suite",
+      "name": "Suite presidenziale",
+      "description": "Suite mediterranea moderna con bagno di lusso e terrazza sul mare.",
+      "connected_to": [],
+      "properties": {},
+      "items": [],
+      "npcs_present": []
+    },
+    "loc_lobby": {
+      "location_id": "loc_lobby",
+      "name": "Lobby",
+      "description": "Grande lobby di marmo e vetro con vista sul Mediterraneo.",
+      "connected_to": [],
+      "properties": {},
+      "items": [],
+      "npcs_present": [
+        "victoria"
+      ]
+    },
+    "loc_restaurant": {
+      "location_id": "loc_restaurant",
+      "name": "Ristorante",
+      "description": "Ristorante elegante sul mare con terrazza panoramica.",
+      "connected_to": [],
+      "properties": {},
+      "items": [],
+      "npcs_present": [
+        "maria"
+      ]
+    },
+    "loc_pool": {
+      "location_id": "loc_pool",
+      "name": "Piscina infinity",
+      "description": "Piscina panoramica con deck privato.",
+      "connected_to": [],
+      "properties": {},
+      "items": [],
+      "npcs_present": [
+        "stella"
+      ]
+    },
+    "loc_spa": {
+      "location_id": "loc_spa",
+      "name": "Spa",
+      "description": "Area benessere con sauna bagno turco e sale massaggi.",
+      "connected_to": [],
+      "properties": {},
+      "items": [],
+      "npcs_present": []
+    },
+    "loc_private_beach": {
+      "location_id": "loc_private_beach",
+      "name": "Spiaggia privata",
+      "description": "Spiaggia riservata con lettini eleganti.",
+      "connected_to": [],
+      "properties": {},
+      "items": [],
+      "npcs_present": [
+        "luna"
+      ]
+    },
+    "loc_wild_beach": {
+      "location_id": "loc_wild_beach",
+      "name": "Spiaggia selvaggia",
+      "description": "Cala rocciosa isolata e naturale.",
+      "connected_to": [],
+      "properties": {},
+      "items": [],
+      "npcs_present": []
+    },
+    "loc_lounge": {
+      "location_id": "loc_lounge",
+      "name": "Lounge bar",
+      "description": "Cocktail lounge con terrazza panoramica.",
+      "connected_to": [],
+      "properties": {},
+      "items": [],
+      "npcs_present": []
+    },
+    "loc_victoria_office": {
+      "location_id": "loc_victoria_office",
+      "name": "Ufficio di Victoria",
+      "description": "Ufficio executive elegante con vista sul resort.",
+      "connected_to": [],
+      "properties": {},
+      "items": [],
+      "npcs_present": []
+    }
+  },
+  "missions": {
+    "mission_resort_future": {
+      "mission_id": "mission_resort_future",
+      "title": "mission_resort_future",
+      "description": null,
+      "prerequisites": [],
+      "objectives": [
+        {
+          "objective_id": "resort_service_assessed",
+          "description": "resort_service_assessed",
+          "completed": false
+        },
+        {
+          "objective_id": "bank_debt_disclosed",
+          "description": "bank_debt_disclosed",
+          "completed": false
+        },
+        {
+          "objective_id": "resort_final_decision",
+          "description": "resort_final_decision",
+          "completed": false
+        }
+      ],
+      "transitions": [],
+      "rewards": {},
+      "is_active": true,
+      "is_completed": false,
+      "is_failed": false,
+      "turn_started": null,
+      "turn_completed": null
+    },
+    "mission_stella_promotion": {
+      "mission_id": "mission_stella_promotion",
+      "title": "mission_stella_promotion",
+      "description": null,
+      "prerequisites": [],
+      "objectives": [
+        {
+          "objective_id": "stella_vip_event_success",
+          "description": "stella_vip_event_success",
+          "completed": false
+        },
+        {
+          "objective_id": "stella_positive_review",
+          "description": "stella_positive_review",
+          "completed": false
+        },
+        {
+          "objective_id": "stella_victoria_test_passed",
+          "description": "stella_victoria_test_passed",
+          "completed": false
+        }
+      ],
+      "transitions": [],
+      "rewards": {},
+      "is_active": false,
+      "is_completed": false,
+      "is_failed": false,
+      "turn_started": null,
+      "turn_completed": null
+    },
+    "mission_maria_stability": {
+      "mission_id": "mission_maria_stability",
+      "title": "mission_maria_stability",
+      "description": null,
+      "prerequisites": [],
+      "objectives": [
+        {
+          "objective_id": "maria_bath_service_recovered",
+          "description": "maria_bath_service_recovered",
+          "completed": false
+        },
+        {
+          "objective_id": "maria_service_problem_solved",
+          "description": "maria_service_problem_solved",
+          "completed": false
+        },
+        {
+          "objective_id": "maria_positive_review",
+          "description": "maria_positive_review",
+          "completed": false
+        }
+      ],
+      "transitions": [],
+      "rewards": {},
+      "is_active": false,
+      "is_completed": false,
+      "is_failed": false,
+      "turn_started": null,
+      "turn_completed": null
+    },
+    "mission_luna_letter": {
+      "mission_id": "mission_luna_letter",
+      "title": "mission_luna_letter",
+      "description": null,
+      "prerequisites": [],
+      "objectives": [
+        {
+          "objective_id": "luna_letter_mentioned",
+          "description": "luna_letter_mentioned",
+          "completed": false
+        },
+        {
+          "objective_id": "luna_letter_revealed",
+          "description": "luna_letter_revealed",
+          "completed": false
+        },
+        {
+          "objective_id": "luna_letter_author_confirmed",
+          "description": "luna_letter_author_confirmed",
+          "completed": false
+        },
+        {
+          "objective_id": "luna_promise_answered",
+          "description": "luna_promise_answered",
+          "completed": false
+        }
+      ],
+      "transitions": [],
+      "rewards": {},
+      "is_active": false,
+      "is_completed": false,
+      "is_failed": false,
+      "turn_started": null,
+      "turn_completed": null
+    },
+    "mission_victoria_save_resort": {
+      "mission_id": "mission_victoria_save_resort",
+      "title": "mission_victoria_save_resort",
+      "description": null,
+      "prerequisites": [],
+      "objectives": [
+        {
+          "objective_id": "victoria_strengths_shown",
+          "description": "victoria_strengths_shown",
+          "completed": false
+        },
+        {
+          "objective_id": "bank_debt_disclosed",
+          "description": "bank_debt_disclosed",
+          "completed": false
+        },
+        {
+          "objective_id": "victoria_team_proven",
+          "description": "victoria_team_proven",
+          "completed": false
+        }
+      ],
+      "transitions": [],
+      "rewards": {},
+      "is_active": false,
+      "is_completed": false,
+      "is_failed": false,
+      "turn_started": null,
+      "turn_completed": null
+    }
+  },
+  "skill_definitions": {
+    "autorita": "",
+    "carisma": "",
+    "intuito": "",
+    "negoziazione": "",
+    "prestanza": ""
+  },
+  "global_flags": {},
+  "thread_questions": [],
+  "pending_missions": [],
+  "completed_missions": [],
+  "visual_policy": {
+    "protected_base_prompts": true,
+    "single_character_default": true,
+    "multi_character_mode": "shared_action",
+    "speaker_action_focus": true,
+    "include_sheet_negative": true,
+    "sanitize_identity_layers": true,
+    "concise_role_prompts": true,
+    "max_role_prompt_words": 12,
+    "visual_en_primary": true,
+    "dedupe_across_layers": true,
+    "max_scene_tags": 8,
+    "role_prompt_optional": true,
+    "preserve_revealing_outfit_traits": true,
+    "revealing_outfit_priority": true,
+    "visual_director_enabled": true,
+    "structured_camera": true,
+    "camera_variety_enabled": true,
+    "camera_history_size": 6,
+    "avoid_repeating_camera": true
+  },
+  "rendering_config": {
+    "workflow_file": "comfy_workflow_image.json",
+    "lora_registry": {
+      "Expressive_H": "Expressive_H-000001.safetensors",
+      "Zatanna_-_DC_Animated_Universe": "Zatanna_-_DC_Animated_Universe.safetensors",
+      "stsSmith-10e": "stsSmith-10e.safetensors",
+      "stsDebbie-10e": "stsDebbie-10e.safetensors",
+      "FantasyWorldPonyV2": "FantasyWorldPonyV2.safetensors",
+      "alice_milf_catchers_lora.safetensors": "alice_mitchell_milf_catchers_lora.safetensors"
+    },
+    "visual_style_en": "realistic luxury mediterranean resort, adult sensual atmosphere, elegant cinematic photography",
+    "negative_extra_en": "underage, child, teenager, coercion, violence, bad anatomy, extra limbs, duplicate person, plain background, white background, grey background, studio background, seamless backdrop, isolated figure, empty background, blank wall"
+  },
+  "narrative_policy": {
+    "title": "Seven Nights at Azure Crown",
+    "premise": "Un miliardario adulto trascorre sette notti all'Azure Crown Resort sull'isola di Calista, tra servizio VIP, relazioni e una possibile acquisizione."
+  },
+  "gameplay_rules": {
+    "missions": [
+      {
+        "id": "mission_resort_future",
+        "reveal": "initial",
+        "deadline": {
+          "day": 7,
+          "phase": "sera"
+        },
+        "success_points": 25,
+        "failure_points": -15,
+        "required_flags": [
+          "resort_service_assessed",
+          "bank_debt_disclosed",
+          "resort_final_decision"
+        ],
+        "terminal_success_flags": [
+          "resort_saved"
+        ],
+        "terminal_failure_flags": [
+          "negotiations_refused"
+        ]
+      },
+      {
+        "id": "mission_stella_promotion",
+        "reveal": "progressive",
+        "unlock_when": {
+          "relationship": "stella",
+          "field": "respect",
+          "minimum": 1
+        },
+        "success_points": 10,
+        "failure_points": -5,
+        "required_flags": [
+          "stella_vip_event_success",
+          "stella_positive_review",
+          "stella_victoria_test_passed"
+        ],
+        "terminal_success_flags": [
+          "stella_promotion_approved"
+        ],
+        "terminal_failure_flags": [
+          "stella_grave_misconduct"
+        ]
+      },
+      {
+        "id": "mission_maria_stability",
+        "reveal": "progressive",
+        "unlock_when": {
+          "event_completed": "event_bath_for_two"
+        },
+        "success_points": 10,
+        "failure_points": -5,
+        "required_flags": [
+          "maria_bath_service_recovered",
+          "maria_service_problem_solved",
+          "maria_positive_review"
+        ],
+        "terminal_success_flags": [
+          "maria_contract_approved"
+        ],
+        "terminal_failure_flags": [
+          "maria_grave_negligence"
+        ]
+      },
+      {
+        "id": "mission_luna_letter",
+        "reveal": "progressive",
+        "unlock_when": {
+          "relationship": "luna",
+          "field": "trust",
+          "minimum": 2
+        },
+        "success_points": 10,
+        "failure_points": -10,
+        "reveal_gates": {
+          "mention": "luna_letter_mention_unlocked",
+          "show": "luna_letter_reveal_unlocked",
+          "full_truth": "luna_letter_truth_unlocked"
+        },
+        "required_flags": [
+          "luna_letter_mentioned",
+          "luna_letter_revealed",
+          "luna_letter_author_confirmed",
+          "luna_promise_answered"
+        ],
+        "terminal_success_flags": [
+          "luna_truth_clarified"
+        ],
+        "terminal_failure_flags": [
+          "luna_letter_abused"
+        ]
+      },
+      {
+        "id": "mission_victoria_save_resort",
+        "reveal": "progressive",
+        "unlock_when": {
+          "flag": "bank_debt_disclosed",
+          "expected": true
+        },
+        "success_points": 10,
+        "failure_points": -5,
+        "required_flags": [
+          "victoria_strengths_shown",
+          "bank_debt_disclosed",
+          "victoria_team_proven"
+        ],
+        "terminal_success_flags": [
+          "resort_saved"
+        ],
+        "terminal_failure_flags": [
+          "victoria_trust_destroyed"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "event_bath_for_two",
+        "title": "Il bagno per due",
+        "day_range": [
+          1,
+          2
+        ],
+        "phases": [
+          "sera",
+          "notte"
+        ],
+        "location_id": "loc_suite",
+        "npc_ids": [
+          "maria"
+        ],
+        "trigger": {
+          "flag_missing": "maria_bath_service_recovered"
+        },
+        "adult_component": "intimate_service",
+        "consent_exit_required": true,
+        "choices": [
+          "accept_maria_solution",
+          "request_second_companion",
+          "modify_service",
+          "decline"
+        ],
+        "completion_flag": "maria_bath_service_recovered",
+        "visual_outfit": "maria_suite_service"
+      },
+      {
+        "id": "event_stella_vip_evening",
+        "title": "La serata VIP da recuperare",
+        "day_range": [
+          2,
+          5
+        ],
+        "phases": [
+          "sera",
+          "notte"
+        ],
+        "location_id": "loc_lounge",
+        "npc_ids": [
+          "stella",
+          "victoria"
+        ],
+        "trigger": {
+          "mission_active": "mission_stella_promotion"
+        },
+        "adult_component": "provocative_dress_code",
+        "consent_exit_required": true,
+        "choices": [
+          "support_stella",
+          "demand_changes",
+          "involve_colleague",
+          "leave_event"
+        ],
+        "completion_flag": "stella_vip_event_success",
+        "visual_outfit": "stella_vip_gala"
+      },
+      {
+        "id": "event_pool_outfit",
+        "title": "Prova costume VIP",
+        "day_range": [
+          1,
+          6
+        ],
+        "phases": [
+          "mattina",
+          "pomeriggio"
+        ],
+        "location_id": "loc_pool",
+        "npc_ids": [
+          "stella",
+          "maria",
+          "luna"
+        ],
+        "trigger": {
+          "random_weight": 2
+        },
+        "adult_component": "revealing_outfit_choice",
+        "consent_exit_required": true,
+        "choices": [
+          "choose_style",
+          "let_npc_choose",
+          "ask_victoria",
+          "skip"
+        ]
+      },
+      {
+        "id": "event_contested_massage",
+        "title": "Massaggio conteso",
+        "day_range": [
+          2,
+          6
+        ],
+        "phases": [
+          "pomeriggio",
+          "sera"
+        ],
+        "location_id": "loc_spa",
+        "npc_ids": [
+          "maria",
+          "stella"
+        ],
+        "trigger": {
+          "relationship_field": "jealousy",
+          "minimum": 1
+        },
+        "adult_component": "sensual_spa_service",
+        "consent_exit_required": true,
+        "choices": [
+          "choose_maria",
+          "choose_stella",
+          "shared_professional_session",
+          "cancel"
+        ]
+      },
+      {
+        "id": "event_luna_wild_beach",
+        "title": "La lettera sulla spiaggia selvaggia",
+        "day_range": [
+          3,
+          7
+        ],
+        "phases": [
+          "sera",
+          "notte"
+        ],
+        "location_id": "loc_wild_beach",
+        "npc_ids": [
+          "luna"
+        ],
+        "trigger": {
+          "flag": "luna_letter_reveal_unlocked",
+          "expected": true
+        },
+        "adult_component": "vulnerable_romantic_intimacy",
+        "consent_exit_required": true,
+        "choices": [
+          "listen",
+          "read_letter",
+          "postpone",
+          "leave"
+        ],
+        "completion_flag": "luna_letter_revealed",
+        "visual_outfit": "luna_private_evening"
+      },
+      {
+        "id": "event_victoria_private_review",
+        "title": "Valutazione privata del servizio VIP",
+        "day_range": [
+          4,
+          6
+        ],
+        "phases": [
+          "sera",
+          "notte"
+        ],
+        "location_id": "loc_lounge",
+        "npc_ids": [
+          "victoria",
+          "stella",
+          "maria",
+          "luna"
+        ],
+        "trigger": {
+          "flag": "bank_debt_disclosed",
+          "expected": true
+        },
+        "adult_component": "elegant_provocative_evaluation",
+        "consent_exit_required": true,
+        "choices": [
+          "participate",
+          "change_assignments",
+          "private_talk",
+          "end_review"
+        ],
+        "completion_flag": "victoria_team_proven"
+      },
+      {
+        "id": "event_night_service",
+        "title": "Servizio notturno in suite",
+        "day_range": [
+          1,
+          7
+        ],
+        "phases": [
+          "notte"
+        ],
+        "location_id": "loc_suite",
+        "npc_ids": [
+          "stella",
+          "maria",
+          "luna",
+          "victoria"
+        ],
+        "trigger": {
+          "player_request": true
+        },
+        "adult_component": "intimate_companionship",
+        "consent_exit_required": true,
+        "choices": [
+          "invite_one",
+          "request_two",
+          "ask_victoria_to_choose",
+          "sleep_alone"
+        ]
+      },
+      {
+        "id": "event_final_decision",
+        "title": "La decisione del settimo giorno",
+        "day_range": [
+          7,
+          7
+        ],
+        "phases": [
+          "sera"
+        ],
+        "location_id": "loc_victoria_office",
+        "npc_ids": [
+          "victoria"
+        ],
+        "trigger": {
+          "day": 7,
+          "phase": "sera"
+        },
+        "adult_component": "private_emotional_negotiation",
+        "consent_exit_required": true,
+        "choices": [
+          "buy",
+          "buy_with_conditions",
+          "refinance",
+          "delay_binding_talks",
+          "end_without_agreement"
+        ],
+        "completion_flag": "resort_final_decision"
+      }
+    ],
+    "clock": {
+      "phases": [
+        "mattina",
+        "pomeriggio",
+        "sera",
+        "notte"
+      ],
+      "schedules": {
+        "victoria": {
+          "1": {
+            "mattina": "loc_lobby",
+            "pomeriggio": "loc_victoria_office",
+            "sera": "loc_restaurant",
+            "notte": "loc_lounge"
+          },
+          "2": {
+            "mattina": "loc_restaurant",
+            "pomeriggio": "loc_victoria_office",
+            "sera": "loc_lounge",
+            "notte": "loc_suite"
+          },
+          "3": {
+            "mattina": "loc_lobby",
+            "pomeriggio": "loc_pool",
+            "sera": "loc_victoria_office",
+            "notte": "loc_lounge"
+          },
+          "4": {
+            "mattina": "loc_victoria_office",
+            "pomeriggio": "loc_spa",
+            "sera": "loc_restaurant",
+            "notte": "loc_victoria_office"
+          },
+          "5": {
+            "mattina": "loc_private_beach",
+            "pomeriggio": "loc_victoria_office",
+            "sera": "loc_lounge",
+            "notte": "loc_suite"
+          },
+          "6": {
+            "mattina": "loc_lobby",
+            "pomeriggio": "loc_restaurant",
+            "sera": "loc_victoria_office",
+            "notte": "loc_lounge"
+          },
+          "7": {
+            "mattina": "loc_victoria_office",
+            "pomeriggio": "loc_lobby",
+            "sera": "loc_victoria_office",
+            "notte": "loc_suite"
+          }
+        },
+        "stella": {
+          "1": {
+            "mattina": "loc_pool",
+            "pomeriggio": "loc_private_beach",
+            "sera": "loc_lounge",
+            "notte": "loc_suite"
+          },
+          "2": {
+            "mattina": "loc_restaurant",
+            "pomeriggio": "loc_pool",
+            "sera": "loc_lounge",
+            "notte": "loc_private_beach"
+          },
+          "3": {
+            "mattina": "loc_private_beach",
+            "pomeriggio": "loc_spa",
+            "sera": "loc_restaurant",
+            "notte": "loc_lounge"
+          },
+          "4": {
+            "mattina": "loc_lobby",
+            "pomeriggio": "loc_pool",
+            "sera": "loc_lounge",
+            "notte": "loc_suite"
+          },
+          "5": {
+            "mattina": "loc_restaurant",
+            "pomeriggio": "loc_private_beach",
+            "sera": "loc_victoria_office",
+            "notte": "loc_lounge"
+          },
+          "6": {
+            "mattina": "loc_pool",
+            "pomeriggio": "loc_spa",
+            "sera": "loc_restaurant",
+            "notte": "loc_private_beach"
+          },
+          "7": {
+            "mattina": "loc_lobby",
+            "pomeriggio": "loc_lounge",
+            "sera": "loc_victoria_office",
+            "notte": "loc_suite"
+          }
+        },
+        "maria": {
+          "1": {
+            "mattina": "loc_restaurant",
+            "pomeriggio": "loc_suite",
+            "sera": "loc_suite",
+            "notte": "loc_spa"
+          },
+          "2": {
+            "mattina": "loc_lobby",
+            "pomeriggio": "loc_spa",
+            "sera": "loc_restaurant",
+            "notte": "loc_suite"
+          },
+          "3": {
+            "mattina": "loc_suite",
+            "pomeriggio": "loc_restaurant",
+            "sera": "loc_spa",
+            "notte": "loc_suite"
+          },
+          "4": {
+            "mattina": "loc_restaurant",
+            "pomeriggio": "loc_private_beach",
+            "sera": "loc_suite",
+            "notte": "loc_lounge"
+          },
+          "5": {
+            "mattina": "loc_spa",
+            "pomeriggio": "loc_suite",
+            "sera": "loc_restaurant",
+            "notte": "loc_suite"
+          },
+          "6": {
+            "mattina": "loc_lobby",
+            "pomeriggio": "loc_restaurant",
+            "sera": "loc_spa",
+            "notte": "loc_suite"
+          },
+          "7": {
+            "mattina": "loc_suite",
+            "pomeriggio": "loc_victoria_office",
+            "sera": "loc_restaurant",
+            "notte": "loc_suite"
+          }
+        },
+        "luna": {
+          "1": {
+            "mattina": "loc_private_beach",
+            "pomeriggio": "loc_wild_beach",
+            "sera": "loc_lounge",
+            "notte": "loc_wild_beach"
+          },
+          "2": {
+            "mattina": "loc_pool",
+            "pomeriggio": "loc_private_beach",
+            "sera": "loc_restaurant",
+            "notte": "loc_lounge"
+          },
+          "3": {
+            "mattina": "loc_wild_beach",
+            "pomeriggio": "loc_spa",
+            "sera": "loc_wild_beach",
+            "notte": "loc_suite"
+          },
+          "4": {
+            "mattina": "loc_private_beach",
+            "pomeriggio": "loc_lobby",
+            "sera": "loc_restaurant",
+            "notte": "loc_wild_beach"
+          },
+          "5": {
+            "mattina": "loc_pool",
+            "pomeriggio": "loc_wild_beach",
+            "sera": "loc_lounge",
+            "notte": "loc_private_beach"
+          },
+          "6": {
+            "mattina": "loc_spa",
+            "pomeriggio": "loc_private_beach",
+            "sera": "loc_restaurant",
+            "notte": "loc_wild_beach"
+          },
+          "7": {
+            "mattina": "loc_wild_beach",
+            "pomeriggio": "loc_lobby",
+            "sera": "loc_victoria_office",
+            "notte": "loc_suite"
+          }
+        }
+      },
+      "wardrobes": {
+        "victoria": {
+          "1": {
+            "mattina": [
+              "ivory bodycon blazer mini dress",
+              "deep neckline",
+              "nude stiletto pumps",
+              "pearl earrings"
+            ],
+            "pomeriggio": [
+              "black ultra fitted blazer dress",
+              "plunging neckline",
+              "sheer black stockings",
+              "black stilettos"
+            ],
+            "sera": [
+              "emerald satin slit gown",
+              "low cut bodice",
+              "gold high heels",
+              "emerald earrings"
+            ],
+            "notte": [
+              "midnight blue backless cocktail mini dress",
+              "thigh high stockings",
+              "silver stilettos"
+            ]
+          },
+          "2": {
+            "mattina": [
+              "cream silk wrap blouse",
+              "fitted white pencil skirt",
+              "nude stockings",
+              "beige stilettos"
+            ],
+            "pomeriggio": [
+              "charcoal bodycon executive dress",
+              "deep V neckline",
+              "sheer stockings",
+              "black pumps"
+            ],
+            "sera": [
+              "burgundy off shoulder slit dress",
+              "sculpted bodice",
+              "black stilettos",
+              "ruby earrings"
+            ],
+            "notte": [
+              "black silk slip mini dress",
+              "lace trim",
+              "barefoot",
+              "gold necklace"
+            ]
+          },
+          "3": {
+            "mattina": [
+              "white fitted blazer mini dress",
+              "champagne camisole",
+              "sheer stockings",
+              "white heels"
+            ],
+            "pomeriggio": [
+              "navy high cut one piece swimsuit",
+              "plunging neckline",
+              "sheer white cover up",
+              "barefoot"
+            ],
+            "sera": [
+              "plum bodycon office dress",
+              "deep neckline",
+              "pointed stilettos",
+              "pearl necklace"
+            ],
+            "notte": [
+              "deep red satin wrap mini dress",
+              "high slit",
+              "gold strappy heels",
+              "delicate bracelet"
+            ]
+          },
+          "4": {
+            "mattina": [
+              "stone grey fitted skirt suit",
+              "low cut ivory blouse",
+              "sheer stockings",
+              "black stilettos"
+            ],
+            "pomeriggio": [
+              "short white spa robe",
+              "loosely tied",
+              "lace lingerie glimpses",
+              "barefoot"
+            ],
+            "sera": [
+              "black velvet thigh slit gown",
+              "plunging neckline",
+              "crystal stilettos",
+              "diamond earrings"
+            ],
+            "notte": [
+              "dark green silk wrap mini dress",
+              "deep neckline",
+              "thigh high stockings",
+              "low heels"
+            ]
+          },
+          "5": {
+            "mattina": [
+              "black cutout swimsuit",
+              "high cut hips",
+              "sheer black beach kaftan",
+              "barefoot"
+            ],
+            "pomeriggio": [
+              "sand bodycon executive dress",
+              "low neckline",
+              "sheer stockings",
+              "brown stilettos"
+            ],
+            "sera": [
+              "white sculpted mini cocktail dress",
+              "open back",
+              "metallic stilettos",
+              "pearl earrings"
+            ],
+            "notte": [
+              "champagne satin slip mini dress",
+              "lace trim",
+              "barefoot",
+              "fine gold necklace"
+            ]
+          },
+          "6": {
+            "mattina": [
+              "powder blue bodycon blazer dress",
+              "deep neckline",
+              "nude stockings",
+              "nude stilettos"
+            ],
+            "pomeriggio": [
+              "cream silk fitted blouse",
+              "black leather pencil skirt",
+              "sheer stockings",
+              "black heels"
+            ],
+            "sera": [
+              "sapphire satin slit gown",
+              "plunging bodice",
+              "silver stilettos",
+              "sapphire earrings"
+            ],
+            "notte": [
+              "black asymmetric mini dress",
+              "cutout waist",
+              "red stilettos",
+              "diamond bracelet"
+            ]
+          },
+          "7": {
+            "mattina": [
+              "white fitted power suit",
+              "low cut silk camisole",
+              "pencil skirt",
+              "white stilettos"
+            ],
+            "pomeriggio": [
+              "black bodycon lobby dress",
+              "deep neckline",
+              "gold belt",
+              "black heels"
+            ],
+            "sera": [
+              "crimson formal slit gown",
+              "sculpted corset bodice",
+              "black stilettos",
+              "diamond necklace"
+            ],
+            "notte": [
+              "ivory silk private mini dress",
+              "open back",
+              "barefoot",
+              "pearl bracelet"
+            ]
+          }
+        },
+        "stella": {
+          "1": {
+            "mattina": [
+              "red micro bikini",
+              "high cut bottoms",
+              "oversized sunglasses",
+              "barefoot"
+            ],
+            "pomeriggio": [
+              "coral string bikini",
+              "sheer coral sarong",
+              "gold anklet",
+              "barefoot"
+            ],
+            "sera": [
+              "gold sequin bodycon mini dress",
+              "plunging neckline",
+              "gold stilettos",
+              "hoop earrings"
+            ],
+            "notte": [
+              "black lace lingerie set",
+              "sheer thigh high stockings",
+              "black stilettos"
+            ]
+          },
+          "2": {
+            "mattina": [
+              "white halter bodycon mini dress",
+              "deep neckline",
+              "nude stockings",
+              "wedge heels"
+            ],
+            "pomeriggio": [
+              "electric blue micro bikini",
+              "white mesh crop cover up",
+              "barefoot"
+            ],
+            "sera": [
+              "scarlet satin backless mini dress",
+              "thigh slit",
+              "black stilettos",
+              "crystal earrings"
+            ],
+            "notte": [
+              "silver metallic micro bikini",
+              "side cutout bottoms",
+              "sheer silver beach wrap",
+              "barefoot",
+              "choker"
+            ]
+          },
+          "3": {
+            "mattina": [
+              "yellow bandeau bikini",
+              "tiny bottoms",
+              "open white shirt",
+              "barefoot"
+            ],
+            "pomeriggio": [
+              "short sheer spa robe",
+              "loosely tied",
+              "lace lingerie",
+              "barefoot"
+            ],
+            "sera": [
+              "violet bodycon dinner mini dress",
+              "plunging neckline",
+              "nude stilettos",
+              "statement earrings"
+            ],
+            "notte": [
+              "midnight blue backless micro dress",
+              "thigh high stockings",
+              "black heels"
+            ]
+          },
+          "4": {
+            "mattina": [
+              "luxury resort hostess mini dress",
+              "plunging neckline",
+              "sheer stockings",
+              "high heels"
+            ],
+            "pomeriggio": [
+              "black high cut one piece swimsuit",
+              "deep V front",
+              "sheer red cover up",
+              "barefoot"
+            ],
+            "sera": [
+              "emerald sequin micro cocktail dress",
+              "open back",
+              "gold stilettos",
+              "emerald earrings"
+            ],
+            "notte": [
+              "red silk lingerie slip",
+              "lace trim",
+              "thigh high stockings",
+              "barefoot"
+            ]
+          },
+          "5": {
+            "mattina": [
+              "pink bodycon restaurant mini dress",
+              "deep neckline",
+              "sheer stockings",
+              "white stilettos"
+            ],
+            "pomeriggio": [
+              "white string bikini",
+              "turquoise sheer sarong",
+              "barefoot"
+            ],
+            "sera": [
+              "black blazer micro dress",
+              "no blouse",
+              "sheer stockings",
+              "high heels",
+              "gold chain"
+            ],
+            "notte": [
+              "purple satin cutout club dress",
+              "very short hem",
+              "silver stilettos",
+              "crystal bracelet"
+            ]
+          },
+          "6": {
+            "mattina": [
+              "turquoise cutout swimsuit",
+              "high cut hips",
+              "sheer white kaftan",
+              "barefoot"
+            ],
+            "pomeriggio": [
+              "champagne short spa robe",
+              "loosely tied",
+              "black lace lingerie",
+              "barefoot"
+            ],
+            "sera": [
+              "red off shoulder bodycon mini dress",
+              "thigh slit",
+              "black stilettos",
+              "ruby earrings"
+            ],
+            "notte": [
+              "gold string bikini",
+              "high cut bottoms",
+              "sheer gold beach kaftan",
+              "barefoot",
+              "gold anklet"
+            ]
+          },
+          "7": {
+            "mattina": [
+              "white tailored micro romper",
+              "deep neckline",
+              "sheer stockings",
+              "gold sandals"
+            ],
+            "pomeriggio": [
+              "black fitted cocktail mini dress",
+              "side cutouts",
+              "red stilettos",
+              "hoop earrings"
+            ],
+            "sera": [
+              "gold gala slit gown",
+              "plunging neckline",
+              "metallic stilettos",
+              "diamond choker"
+            ],
+            "notte": [
+              "crimson silk lingerie dress",
+              "lace trim",
+              "barefoot",
+              "gold bracelet"
+            ]
+          }
+        },
+        "maria": {
+          "1": {
+            "mattina": [
+              "cream fitted service mini dress",
+              "low neckline",
+              "sheer stockings",
+              "low heels"
+            ],
+            "pomeriggio": [
+              "black fitted maid mini dress",
+              "white lace trim",
+              "sheer stockings",
+              "high heels"
+            ],
+            "sera": [
+              "black silk service mini dress",
+              "deep neckline",
+              "sheer stockings",
+              "black pumps"
+            ],
+            "notte": [
+              "short white spa robe",
+              "loosely tied",
+              "lace lingerie",
+              "barefoot"
+            ]
+          },
+          "2": {
+            "mattina": [
+              "ivory fitted blouse",
+              "deep neckline",
+              "beige pencil skirt",
+              "sheer stockings",
+              "nude pumps"
+            ],
+            "pomeriggio": [
+              "white fitted spa tunic mini dress",
+              "side slit",
+              "barefoot"
+            ],
+            "sera": [
+              "navy bodycon dinner service dress",
+              "plunging neckline",
+              "sheer stockings",
+              "low heels"
+            ],
+            "notte": [
+              "champagne satin private service mini dress",
+              "lace trim",
+              "barefoot",
+              "pearl earrings"
+            ]
+          },
+          "3": {
+            "mattina": [
+              "white tailored maid mini dress",
+              "corset waist",
+              "nude stockings",
+              "low heels"
+            ],
+            "pomeriggio": [
+              "sage fitted service blouse",
+              "black leather pencil skirt",
+              "sheer stockings",
+              "black pumps"
+            ],
+            "sera": [
+              "burgundy short spa wrap dress",
+              "loosely tied",
+              "lace lingerie",
+              "barefoot"
+            ],
+            "notte": [
+              "ivory silk lingerie dress",
+              "lace cups",
+              "barefoot",
+              "pearl necklace"
+            ]
+          },
+          "4": {
+            "mattina": [
+              "light blue fitted restaurant mini dress",
+              "low neckline",
+              "sheer stockings",
+              "white pumps"
+            ],
+            "pomeriggio": [
+              "navy cutout one piece swimsuit",
+              "high cut hips",
+              "sheer white cover up",
+              "barefoot"
+            ],
+            "sera": [
+              "black fitted suite mini dress",
+              "deep neckline",
+              "sheer stockings",
+              "black stilettos"
+            ],
+            "notte": [
+              "deep green bodycon lounge mini dress",
+              "open back",
+              "low heels",
+              "gold earrings"
+            ]
+          },
+          "5": {
+            "mattina": [
+              "short white spa robe",
+              "loosely tied",
+              "nude lingerie",
+              "barefoot"
+            ],
+            "pomeriggio": [
+              "cream tailored suite mini uniform",
+              "fitted bodice",
+              "nude stockings",
+              "pumps"
+            ],
+            "sera": [
+              "wine red bodycon dinner mini dress",
+              "thigh slit",
+              "black stilettos",
+              "pearl earrings"
+            ],
+            "notte": [
+              "soft pink satin lingerie dress",
+              "lace trim",
+              "barefoot",
+              "delicate necklace"
+            ]
+          },
+          "6": {
+            "mattina": [
+              "grey fitted lobby mini dress",
+              "deep neckline",
+              "sheer stockings",
+              "black pumps"
+            ],
+            "pomeriggio": [
+              "ivory silk blouse",
+              "black leather pencil skirt",
+              "sheer stockings",
+              "low heels"
+            ],
+            "sera": [
+              "short white spa wrap dress",
+              "loosely tied",
+              "lace bodysuit",
+              "barefoot"
+            ],
+            "notte": [
+              "midnight blue suite mini dress",
+              "open back",
+              "sheer stockings",
+              "barefoot"
+            ]
+          },
+          "7": {
+            "mattina": [
+              "champagne fitted maid mini dress",
+              "low neckline",
+              "nude stockings",
+              "low heels"
+            ],
+            "pomeriggio": [
+              "black formal office mini dress",
+              "fitted waist",
+              "sheer stockings",
+              "pumps"
+            ],
+            "sera": [
+              "ivory elegant dinner slit dress",
+              "deep neckline",
+              "gold stilettos",
+              "pearl necklace"
+            ],
+            "notte": [
+              "white silk private lingerie dress",
+              "lace trim",
+              "barefoot",
+              "delicate bracelet"
+            ]
+          }
+        },
+        "luna": {
+          "1": {
+            "mattina": [
+              "ivory string bikini",
+              "high cut bottoms",
+              "sheer white crop cover up",
+              "barefoot"
+            ],
+            "pomeriggio": [
+              "sand colored micro bikini",
+              "sheer linen sarong",
+              "woven bracelet",
+              "barefoot"
+            ],
+            "sera": [
+              "ivory backless bodycon mini dress",
+              "deep neckline",
+              "delicate stilettos"
+            ],
+            "notte": [
+              "moonlight blue string bikini",
+              "sheer layered beach mini dress",
+              "high slit",
+              "barefoot",
+              "silver pendant"
+            ]
+          },
+          "2": {
+            "mattina": [
+              "white high cut one piece swimsuit",
+              "plunging neckline",
+              "sheer ivory shirt",
+              "barefoot"
+            ],
+            "pomeriggio": [
+              "pale blue string bikini",
+              "sheer white sarong",
+              "shell necklace",
+              "barefoot"
+            ],
+            "sera": [
+              "sage green bodycon dinner mini dress",
+              "deep neckline",
+              "low heels",
+              "silver earrings"
+            ],
+            "notte": [
+              "black soft knit bodycon mini dress",
+              "open back",
+              "thigh high stockings",
+              "barefoot"
+            ]
+          },
+          "3": {
+            "mattina": [
+              "cream crochet micro bikini",
+              "sheer beach wrap",
+              "leather anklet",
+              "barefoot"
+            ],
+            "pomeriggio": [
+              "short white spa robe",
+              "loosely tied",
+              "pale lace lingerie",
+              "barefoot"
+            ],
+            "sera": [
+              "dark blue sheer beach dress",
+              "high slit",
+              "bikini visible beneath",
+              "barefoot"
+            ],
+            "notte": [
+              "ivory silk lingerie slip",
+              "lace trim",
+              "barefoot",
+              "delicate anklet"
+            ]
+          },
+          "4": {
+            "mattina": [
+              "white micro bikini",
+              "light blue sheer sarong",
+              "barefoot"
+            ],
+            "pomeriggio": [
+              "ivory fitted lobby mini dress",
+              "open back",
+              "deep neckline",
+              "delicate heels"
+            ],
+            "sera": [
+              "burgundy bodycon dinner mini dress",
+              "thigh slit",
+              "low heels",
+              "silver necklace"
+            ],
+            "notte": [
+              "deep violet micro bikini",
+              "sheer beach mini dress",
+              "side cutouts",
+              "barefoot",
+              "moon pendant"
+            ]
+          },
+          "5": {
+            "mattina": [
+              "pale green high cut one piece swimsuit",
+              "deep V neckline",
+              "sheer cream cover up",
+              "barefoot"
+            ],
+            "pomeriggio": [
+              "white string bikini",
+              "transparent linen shirt",
+              "woven bracelet",
+              "barefoot"
+            ],
+            "sera": [
+              "black backless bodycon mini dress",
+              "plunging neckline",
+              "silver stilettos",
+              "moon earrings"
+            ],
+            "notte": [
+              "soft ivory sheer beach wrap dress",
+              "bikini visible beneath",
+              "barefoot",
+              "silver pendant"
+            ]
+          },
+          "6": {
+            "mattina": [
+              "short white spa wrap dress",
+              "loosely tied",
+              "ivory lace lingerie",
+              "barefoot"
+            ],
+            "pomeriggio": [
+              "sky blue micro bikini",
+              "sheer white sarong",
+              "shell necklace",
+              "barefoot"
+            ],
+            "sera": [
+              "emerald bodycon dinner mini dress",
+              "deep neckline",
+              "thigh slit",
+              "low heels"
+            ],
+            "notte": [
+              "midnight blue string bikini",
+              "sheer beach mini dress",
+              "side slit",
+              "barefoot",
+              "moon pendant"
+            ]
+          },
+          "7": {
+            "mattina": [
+              "cream crochet bikini",
+              "sheer wild beach cover up",
+              "woven bracelet",
+              "barefoot"
+            ],
+            "pomeriggio": [
+              "ivory tailored lobby mini dress",
+              "plunging neckline",
+              "sheer stockings",
+              "delicate heels"
+            ],
+            "sera": [
+              "silver grey fitted office mini dress",
+              "low neckline",
+              "sheer stockings",
+              "low heels"
+            ],
+            "notte": [
+              "white silk private lingerie dress",
+              "lace trim",
+              "barefoot",
+              "delicate silver bracelet"
+            ]
+          }
+        }
+      },
+      "open_end": true
+    }
+  },
+  "world_phase": "mattina",
+  "history_digest": null
+}

@@ -1,0 +1,516 @@
+# EPOS Action Library - Adult Oriented V2
+#
+# Purpose:
+# - The LLM chooses action_id.
+# - Python validates action_id.
+# - Python expands action_id into stable renderer tags.
+# - Actions describe what the subject is DOING. Poses describe body arrangement.
+# - No explicit sexual acts here (those belong to intimacy_library).
+# - Sensual, suggestive, and provocative everyday actions are included.
+#
+# Final prompt layer order:
+#   base_prompt + lora + outfit + pose.tags + action.tags + camera.tags + location.tags + controlled_scene_tags
+
+schema_version: 2
+world_id: resort_world
+library_type: action
+
+defaults:
+  fallback_action_id: idle_neutral
+  tag_separator: ", "
+  strict_unknown_action: true
+
+actions:
+  # ============================================================
+  # BASE / IDLE
+  # ============================================================
+  idle_neutral:
+    label: Idle / no specific action
+    description: Subject performs no distinct action beyond holding the current pose.
+    aliases: [idle, no action, ferma, immobile, in posa]
+    tags: []
+    requires:
+      base_pose: any
+    incompatible_with: []
+
+  # ============================================================
+  # EVERYDAY ACTIONS (originali mantenuti)
+  # ============================================================
+  drinking:
+    label: Drinking
+    description: Subject drinks from a cup, glass, bottle, or similar container.
+    aliases: [drinking, sipping, beve, sta bevendo, sorseggia]
+    tags: [drinking from container, holding cup near mouth, head tilted slightly back]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, seated_edge_of_bed]
+      object: container
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: [eating, speaking_gesture]
+
+  eating:
+    label: Eating
+    description: Subject eats food held in hand or from a plate.
+    aliases: [eating, mangia, sta mangiando, assaggia]
+    tags: [eating food, hand raising food to mouth]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, seated_edge_of_bed]
+      object: food
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: [drinking, speaking_gesture]
+
+  reading:
+    label: Reading
+    description: Subject reads a book, letter, or document.
+    aliases: [reading, legge, sta leggendo]
+    tags: [reading, head tilted downward, holding object with both hands, eyes directed at object]
+    requires:
+      base_pose: [seated_relaxed, seated_edge_of_bed, lying_on_stomach, standing_neutral]
+      object: book_or_document
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: [eating, drinking]
+
+  writing:
+    label: Writing
+    description: Subject writes with a pen, pencil, or stylus.
+    aliases: [writing, scrive, sta scrivendo]
+    tags: [writing, hand holding writing tool, head tilted downward]
+    requires:
+      base_pose: [seated_relaxed, seated_edge_of_bed]
+      object: writing_tool
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: [eating, drinking]
+
+  applying_sunscreen:
+    label: Applying sunscreen or lotion
+    description: Subject applies lotion or sunscreen to their own skin.
+    aliases: [applying sunscreen, applying lotion, si mette la crema, si spalma la crema]
+    tags: [applying lotion to skin, hand smoothing over own arm or shoulder]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, seated_edge_of_bed, lying_on_back, lying_on_stomach]
+      object: lotion_bottle
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: [drinking, eating, writing]
+
+  brushing_hair:
+    label: Brushing or fixing hair
+    description: Subject brushes, adjusts, or ties their own hair.
+    aliases: [brushing hair, fixing hair, si sistema i capelli, si pettina]
+    tags: [hand raised toward hair, adjusting own hair, head tilted slightly]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, seated_edge_of_bed]
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: [eating, drinking]
+
+  adjusting_clothing:
+    label: Adjusting clothing
+    description: Subject adjusts strap, hem, sleeve, or other clothing detail on themselves.
+    aliases: [adjusting clothing, si sistema i vestiti, si aggiusta il vestito]
+    tags: [adjusting own clothing, hand near clothing detail]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, seated_edge_of_bed, kneeling_neutral]
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: []
+
+  waving:
+    label: Waving
+    description: Subject raises a hand and waves, typically as greeting or farewell.
+    aliases: [waving, saluta con la mano, fa ciao con la mano]
+    tags: [waving hand, arm raised, open palm]
+    requires:
+      base_pose: [standing_neutral, walking_forward]
+    camera_hints:
+      preferred_shots: [medium, full_body]
+    incompatible_with: [drinking, eating, reading, writing]
+
+  pointing:
+    label: Pointing
+    description: Subject extends an arm and points at something off-frame or in-scene.
+    aliases: [pointing, indica, sta indicando]
+    tags: [pointing gesture, arm extended, index finger extended]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed]
+    camera_hints:
+      preferred_shots: [medium, full_body]
+    incompatible_with: [drinking, eating]
+
+  speaking_gesture:
+    label: Speaking with hand gesture
+    description: Subject appears to be mid-speech, with a natural hand gesture.
+    aliases: [talking, speaking, parla, sta parlando]
+    tags: [mid-speech, hand gesture, mouth slightly open]
+    requires:
+      base_pose: any
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: [drinking, eating]
+
+  offering_object:
+    label: Offering an object
+    description: Subject extends an object toward the off-camera player or another subject.
+    aliases: [offering object, handing object, porge un oggetto, offre qualcosa]
+    tags: [extending arm, offering object toward viewer, open palm holding object]
+    requires:
+      base_pose: [standing_neutral, kneeling_neutral, kneeling_beside_player, seated_relaxed]
+      object: any
+      target: player_or_subject
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: [drinking, eating]
+
+  picking_up_object:
+    label: Picking up an object
+    description: Subject bends or reaches to pick up an object from a surface.
+    aliases: [picking up, raccoglie, sta raccogliendo]
+    tags: [reaching toward ground or surface, hand grasping object]
+    requires:
+      base_pose: [crouching, kneeling_neutral, kneeling_forward, crawling_on_all_fours]
+      object: any
+    camera_hints:
+      preferred_shots: [medium, full_body]
+    incompatible_with: []
+
+  holding_hands:
+    label: Holding hands
+    description: Subject holds hands with the off-camera player or another subject.
+    aliases: [holding hands, tiene la mano, si tengono per mano]
+    tags: [holding hands, fingers interlaced or clasped]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, seated_edge_of_bed, walking_forward]
+      target: player_or_subject
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: [drinking, eating, writing]
+
+  embracing:
+    label: Embracing
+    description: Subject embraces the off-camera player or another subject in a hug.
+    aliases: [hugging, embracing, abbraccia, si abbraccia con]
+    tags: [embracing, arms wrapped around target, bodies close together]
+    requires:
+      base_pose: [standing_neutral, kneeling_neutral, seated_relaxed]
+      target: player_or_subject
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: [drinking, eating, writing, reading]
+
+  resting_head_on_shoulder:
+    label: Resting head on shoulder
+    description: Subject rests their head against the shoulder of the off-camera player or another subject.
+    aliases: [resting head, appoggia la testa, poggia la testa sulla spalla]
+    tags: [head resting on shoulder, leaning into target]
+    requires:
+      base_pose: [seated_relaxed, seated_edge_of_bed, standing_neutral]
+      target: player_or_subject
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: [drinking, eating, writing]
+
+  stretching:
+    label: Stretching
+    description: Subject stretches arms, back, or shoulders.
+    aliases: [stretching, si stiracchia, fa stretching]
+    tags: [stretching, arms raised or extended, back arched slightly]
+    requires:
+      base_pose: [standing_neutral, seated_edge_of_bed]
+    camera_hints:
+      preferred_shots: [full_body, medium]
+    incompatible_with: [drinking, eating, writing, holding_hands, embracing]
+
+  running:
+    label: Running
+    description: Subject runs, with both feet showing dynamic motion.
+    aliases: [running, corre, sta correndo]
+    tags: [running, dynamic stride, arms bent and swinging]
+    requires:
+      base_pose: [walking_forward]
+    camera_hints:
+      preferred_shots: [full_body]
+    incompatible_with: [eating, drinking, reading, writing, holding_hands]
+
+  swimming:
+    label: Swimming
+    description: Subject swims, partially or fully submerged in water.
+    aliases: [swimming, nuota, sta nuotando]
+    tags: [swimming, body partially submerged in water, arms extended in stroke motion]
+    requires:
+      base_pose: any
+      location_type: water
+    camera_hints:
+      preferred_shots: [full_body, medium]
+      preferred_angles: [eye_level, low]
+    incompatible_with: [eating, drinking, reading, writing]
+
+  cooking:
+    label: Cooking
+    description: Subject prepares food at a counter, stove, or campfire.
+    aliases: [cooking, cucina, sta cucinando]
+    tags: [cooking, hands active over food or utensil, focused downward gaze]
+    requires:
+      base_pose: [standing_neutral]
+      object: kitchen_tool_or_food
+    camera_hints:
+      preferred_shots: [medium, full_body]
+    incompatible_with: [eating, drinking, reading, writing]
+
+  dancing:
+    label: Dancing
+    description: Subject moves rhythmically in a dance posture.
+    aliases: [dancing, balla, sta ballando]
+    tags: [dancing, dynamic body motion, arms and legs in expressive position]
+    requires:
+      base_pose: [standing_neutral]
+    camera_hints:
+      preferred_shots: [full_body]
+    incompatible_with: [eating, drinking, reading, writing, holding_hands]
+
+  covering_mouth:
+    label: Covering mouth
+    description: Subject raises a hand to cover their own mouth, e.g. while laughing or surprised.
+    aliases: [covering mouth, si copre la bocca, si tappa la bocca]
+    tags: [hand covering mouth, head tilted slightly]
+    requires:
+      base_pose: any
+    camera_hints:
+      preferred_shots: [close_up, medium]
+    incompatible_with: [drinking, eating, speaking_gesture]
+
+  looking_over_shoulder:
+    label: Looking over shoulder
+    description: Subject turns head to look back over one shoulder while body faces another direction.
+    aliases: [looking over shoulder, guarda dietro, guarda sopra la spalla]
+    tags: [head turned back over shoulder, torso facing forward, gaze directed backward]
+    requires:
+      base_pose: [standing_neutral, standing_turning_around, walking_forward, lying_on_stomach, crawling_on_all_fours]
+    camera_hints:
+      preferred_shots: [medium, close_up]
+      preferred_sides: [rear_three_quarter]
+    incompatible_with: []
+
+  # ============================================================
+  # ADULT / SENSUAL ACTIONS (nuove)
+  # ============================================================
+  arching_back:
+    label: Arching back seductively
+    description: Subject arches their back to emphasize curves, often while standing or lying.
+    aliases: [arching back, inarca la schiena, schiena inarcata, mostra le curve]
+    tags: [back arched deeply, spine curved, chest pushed forward, hips thrust, provocative posture]
+    requires:
+      base_pose: [standing_neutral, lying_on_back, kneeling_neutral, leaning_surface]
+    camera_hints:
+      preferred_shots: [medium, full_body, close_up]
+    incompatible_with: [reading, writing]
+
+  running_fingers_through_hair:
+    label: Running fingers through hair
+    description: Subject slowly runs fingers through their own hair in a sensual gesture.
+    aliases: [hair play, si passa le dita nei capelli, gioca con i capelli, chioma tra le dita]
+    tags: [fingers through hair, slow sensual movement, head tilted, hair cascading, seductive gesture]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, leaning_surface]
+    camera_hints:
+      preferred_shots: [close_up, medium]
+    incompatible_with: [brushing_hair]
+
+  adjusting_strap:
+    label: Adjusting a clothing strap
+    description: Subject adjusts a bra strap, bikini string, or garter strap with slow fingers.
+    aliases: [adjusting strap, si aggiusta la spallina, tira la stringa, sistema la cinghia]
+    tags: [finger under strap, pulling strap, skin contact, slow deliberate movement, lingerie adjustment]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, lying_on_back]
+    camera_hints:
+      preferred_shots: [close_up, medium]
+    incompatible_with: []
+
+  sliding_hand_down_body:
+    label: Sliding hand down own body
+    description: Subject slides a hand slowly down their own torso, hip, or thigh.
+    aliases: [hand down body, mano sul corpo, scorre la mano, accarezza se stessa]
+    tags: [hand sliding down torso, self caress, fingers tracing curves, sensual self touch, skin exploration]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, lying_on_back, lying_on_stomach]
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: []
+
+  parting_lips:
+    label: Parting lips suggestively
+    description: Subject parts their lips slightly, tongue visible or not, in an inviting gesture.
+    aliases: [parting lips, labbra semiaperte, lingua tra le labbra, bocca invitante]
+    tags: [lips parted, mouth slightly open, tongue tip visible, inviting expression, wet lips]
+    requires:
+      base_pose: any
+    camera_hints:
+      preferred_shots: [extreme_close_up, close_up]
+    incompatible_with: [covering_mouth]
+
+  crossing_legs_slowly:
+    label: Crossing legs slowly
+    description: Subject slowly crosses or uncrosses their legs while seated, drawing attention.
+    aliases: [crossing legs, incrocia le gambe, gambe che si incrociano, basic instinct]
+    tags: [slow leg cross, thighs pressed together, deliberate movement, seated seduction, skirt riding up]
+    requires:
+      base_pose: [seated_relaxed, seated_edge_of_bed, seated_legs_crossed]
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: [running]
+
+  wetting_lips:
+    label: Wetting lips with tongue
+    description: Subject slowly runs tongue over their lips.
+    aliases: [wetting lips, si bagna le labbra, lecca le labbra, lingua sulle labbra]
+    tags: [tongue on lips, slow lick, wet glistening lips, oral fixation, teasing gesture]
+    requires:
+      base_pose: any
+    camera_hints:
+      preferred_shots: [extreme_close_up, close_up]
+    incompatible_with: []
+
+  pulling_fabric_tight:
+    label: Pulling fabric tight against body
+    description: Subject pulls a wet shirt, dress, or swimsuit tight against their skin to emphasize form.
+    aliases: [pulling fabric, tira il tessuto, vestito bagnato aderente, stira la maglia]
+    tags: [fabric pulled tight, wet clothing clinging, body outline visible, nipples visible through fabric, transparent effect]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed]
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: []
+
+  leaning_forward_cleavage:
+    label: Leaning forward to show cleavage
+    description: Subject leans forward slightly, emphasizing décolleté.
+    aliases: [leaning forward, si china in avanti, mostra il seno, scollatura in vista]
+    tags: [leaning forward, cleavage emphasized, breasts pressed together, neckline deep, inviting posture]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, leaning_surface]
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: []
+
+  looking_up_through_lashes:
+    label: Looking up through eyelashes
+    description: Subject looks up from a lower position through their eyelashes in a submissive/seductive way.
+    aliases: [looking up, guarda da sotto, sguardo dal basso, ciglia abbassate]
+    tags: [eyes looking upward, eyelashes lowered, submissive gaze, seductive look from below, doe eyes]
+    requires:
+      base_pose: [kneeling_neutral, seated_relaxed, lying_on_back, crouching]
+    camera_hints:
+      preferred_shots: [close_up, extreme_close_up]
+    incompatible_with: []
+
+  hooking_finger:
+    label: Beckoning with finger
+    description: Subject crooks a finger to beckon the viewer or another character closer.
+    aliases: [beckoning, chiama con il dito, vieni qui, dito ricurvo]
+    tags: [crooked finger beckoning, come here gesture, seductive invitation, finger curling, inviting closer]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, lying_on_back]
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: []
+
+  biting_object:
+    label: Biting or holding object in mouth
+    description: Subject holds a pen, straw, finger, or similar object between their teeth.
+    aliases: [biting object, oggetto in bocca, morde la penna, tiene in bocca]
+    tags: [object between teeth, lips around object, suggestive oral gesture, biting gently, teasing with mouth]
+    requires:
+      base_pose: any
+      object: any
+    camera_hints:
+      preferred_shots: [close_up, extreme_close_up]
+    incompatible_with: [eating, drinking]
+
+  removing_garment:
+    label: Removing a garment
+    description: Subject removes an outer layer (jacket, robe, shirt) to reveal what is underneath.
+    aliases: [removing garment, toglie il vestito, sfila la giacca, si spoglia parzialmente]
+    tags: [garment removal, sliding off shoulder, revealing skin underneath, strip tease beginning, layer coming off]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, lying_on_back]
+    camera_hints:
+      preferred_shots: [medium, full_body]
+    incompatible_with: []
+
+  pressing_thighs_together:
+    label: Pressing thighs together
+    description: Subject presses their thighs tightly together while standing or seated, creating tension.
+    aliases: [pressing thighs, gambe strette, cosce unite, tensione tra le gambe]
+    tags: [thighs pressed tight, inner tension, legs clamped, aroused posture, restless shifting]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, seated_edge_of_bed]
+    camera_hints:
+      preferred_shots: [medium, close_up]
+    incompatible_with: []
+
+  touching_neck:
+    label: Touching own neck
+    description: Subject touches or caresses their own neck or collarbone area.
+    aliases: [touching neck, tocca il collo, mano sul collo, accarezza la clavicola]
+    tags: [hand on neck, fingers on collarbone, exposed throat, vulnerable gesture, sensual self touch]
+    requires:
+      base_pose: [standing_neutral, seated_relaxed, lying_on_back]
+    camera_hints:
+      preferred_shots: [close_up, medium]
+    incompatible_with: []
+
+  shivering:
+    label: Shivering or trembling
+    description: Subject shivers from cold, arousal, or anticipation, shoulders slightly hunched.
+    aliases: [shivering, rabbrividisce, trema, brividi]
+    tags: [shoulders hunched, slight tremble, goosebumps on skin, nipples erect through fabric, aroused chill]
+    requires:
+      base_pose: any
+    camera_hints:
+      preferred_shots: [close_up, medium]
+    incompatible_with: []
+
+  gripping_sheet:
+    label: Gripping bedsheet or fabric
+    description: Subject grips a sheet, pillow, or fabric tightly in their hand.
+    aliases: [gripping sheet, stringe le lenzuola, afferra il cuscino, pugno sul letto]
+    tags: [hand gripping fabric, fingers clenched, tension in hand, bedsheet wrinkles, desperate grip]
+    requires:
+      base_pose: [lying_on_back, lying_on_stomach, seated_edge_of_bed]
+      object: fabric_or_sheet
+    camera_hints:
+      preferred_shots: [close_up, medium]
+    incompatible_with: []
+
+normalization_examples:
+  - input_text: "Luna beve un sorso d'acqua"
+    selected_action_id: drinking
+  - input_text: "Luna raccoglie il fiore da terra"
+    selected_action_id: picking_up_object
+  - input_text: "Luna mi abbraccia forte"
+    selected_action_id: embracing
+  - input_text: "Luna si mette la crema solare sulle spalle"
+    selected_action_id: applying_sunscreen
+  - input_text: "Luna si volta a guardarmi da sopra la spalla"
+    selected_action_id: looking_over_shoulder
+  - input_text: "Luna si inarca la schiena sul letto"
+    selected_action_id: arching_back
+  - input_text: "Luna si bagna le labbra con la lingua"
+    selected_action_id: wetting_lips
+  - input_text: "Luna incrocia lentamente le gambe"
+    selected_action_id: crossing_legs_slowly
+
+compiler_example:
+  semantic_input:
+    action_id: arching_back
+    target: player
+    base_pose: lying_on_back
+  expanded_action_tags:
+    - back arched deeply
+    - spine curved
+    - chest pushed forward
+    - hips thrust
+    - provocative posture

@@ -1,0 +1,67 @@
+{
+  "session_id": "test",
+  "turn_number": 0,
+  "state": {
+    "session_id": "s1",
+    "worldpack_id": "w1",
+    "turn_number": 0,
+    "time_of_day": "morning",
+    "day": 1,
+    "player": {
+      "entity_id": "player",
+      "name": "Hero",
+      "visual_gender": "ambiguous",
+      "outfit": [],
+      "stats": {},
+      "inventory": [],
+      "location_id": "beach",
+      "conditions": [],
+      "knowledge": [],
+      "relationships": {},
+      "notes": null
+    },
+    "npcs": {},
+    "locations": {
+      "beach": {
+        "location_id": "beach",
+        "name": "Beach",
+        "description": null,
+        "connected_to": [],
+        "properties": {},
+        "items": [],
+        "npcs_present": []
+      }
+    },
+    "missions": {},
+    "skill_definitions": {},
+    "global_flags": {},
+    "thread_questions": [],
+    "pending_missions": [],
+    "completed_missions": [],
+    "visual_policy": {},
+    "rendering_config": {},
+    "narrative_policy": {},
+    "gameplay_rules": {},
+    "world_phase": "mattina",
+    "history_digest": null
+  },
+  "proposal": {
+    "check_type": "no_check",
+    "description": "test",
+    "skill": null,
+    "difficulty": 1,
+    "target_ids": [],
+    "destination_location_id": null,
+    "opposition": "none",
+    "stakes": {},
+    "triggers": []
+  },
+  "resolved": {
+    "pool_size": 0,
+    "pool": [],
+    "threshold": 4,
+    "outcome": "failure",
+    "player_choice": "roll"
+  },
+  "timestamp": "2026-08-07T19:30:57.218081+00:00"
+}

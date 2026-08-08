@@ -1,0 +1,28 @@
+schema_version: 1
+world_id: orbital_colony
+id: orbital_colony
+title: Orbital Colony
+start_time_phase: mattina
+start_location_id: dock
+skill_definitions:
+  hacking: Intrusione e controllo dei sistemi
+  pilotaggio: Controllo di veicoli e navette
+  scienza: Analisi tecnica e scientifica
+player_start:
+  name: Commander
+  skills:
+    hacking: 2
+    pilotaggio: 3
+    scienza: 1
+  inventory:
+  - access_card
+  conditions: []
+  outfit:
+  - pressure suit
+locations:
+- id: dock
+  name: Dock
+  description: Arrival ring
+- id: lab
+  name: Lab
+  description: Research deck

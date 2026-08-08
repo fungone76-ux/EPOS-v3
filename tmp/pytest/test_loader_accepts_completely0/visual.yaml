@@ -1,0 +1,10 @@
+schema_version: 1
+world_id: orbital_colony
+visual_style_en: hard science fiction orbital station
+negative_extra_en: duplicate person
+visual_policy:
+  structured_camera: true
+characters:
+- id: unit7
+  base_prompt: adult synthetic crew member
+  role_prompt_en: station technician

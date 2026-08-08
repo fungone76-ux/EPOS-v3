@@ -1,0 +1,44 @@
+TU > ciao Victoria
+
+📖 "Ciao, Player," risponde Victoria con un sorriso elegante, la sua voce sicura risuonando nella lobby. "Come procede la tua giornata?"
+POSITIVE
+realistic luxury mediterranean resort, adult sensual atmosphere, elegant cinematic photography, soft and elegant tones, sophisticated, high quality, loc_lobby, morning, natural, lobby, luxury, mediterranean, score_9, score_8_up, score_7_up, masterpiece, realistic, zatanna, mature woman, black hair, long hair, cute, huge ass, bottom heavy, wide hips, huge breast, grey eyes, pink lips, authoritative adult VIP director, standing with a smile, elegant, confident, smiling, direct, ivory bodycon blazer mini dress, deep neckline, nude stiletto pumps, pearl earrings, clothed, greeting, conversation, medium shot, eye level, frontal, shallow_depth_of_field, background_blur, natural light
+
+NEGATIVE
+lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, facial_expressions, broken_chunks, underage, child, teenager, coercion, violence, extra limbs, duplicate person, plain background, white background, grey background, studio background, seamless backdrop, isolated figure, empty background, blank wall
+
+TU > dimmi tu...cosa puoi fare per allietarmi la giornata? le dico guardandole le gambe
+
+📖 Victoria, seguendo il tuo sguardo e cogliendo il tono insolente, sorride con un'espressione divertita. "Beh, posso offrirti un'esperienza esclusiva che renderà la tua giornata molto più interessante," dice con sicurezza, avvicinandosi un po' di più mentre il suo sguardo fissa il tuo. "Sei pronto a scoprire cosa ho in mente?"
+POSITIVE
+realistic luxury mediterranean resort, adult sensual atmosphere, elegant cinematic photography, warm tones with gold accents, inviting and sophisticated, highly detailed, loc_lobby, morning, bright and airy, luxury, modern, welcoming, score_9, score_8_up, score_7_up, masterpiece, realistic, zatanna, mature woman, black hair, long hair, cute, huge ass, bottom heavy, wide hips, huge breast, grey eyes, pink lips, authoritative adult VIP director, perched on the edge of a lounge seat with legs angled to one side, seated, legs angled, playful and confident, intense direct eye contact, ivory bodycon blazer mini dress, deep neckline, nude stiletto pumps, pearl earrings, clothed, focus on legs, legs emphasis, medium_full_shot, eye level, horizontal, legs clearly visible, visual focus on legs, shallow_depth_of_field, background_blur, natural light from large windows, subtle highlights on edges
+
+NEGATIVE
+lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, facial_expressions, broken_chunks, underage, child, teenager, coercion, violence, extra limbs, duplicate person, plain background, white background, grey background, studio background, seamless backdrop, isolated figure, empty background, blank wall, legs out of frame
+
+LoRA
+
+TU > ci sto pensando...ma forse potresti aiutarmi in qualche modo per decidere! le dico mentre lei si toglie le scarpe
+
+📖 Victoria Hale, con un'espressione di divertita sorpresa, si ferma un attimo e ti guarda negli occhi. "Ah, quindi stai considerando la mia proposta!" dice con un tono rassicurante, mentre fa un passo più vicino a te, mantenendo il suo sorriso deciso. "In che modo pensi di avere bisogno di aiuto per prendere questa decisione?"
+
+Victoria Hale si avvicina al protagonista con un sorriso convincente, esprimendo la sua determinazione nel persuaderlo ad acquistare o rifinanziare il resort. Con uno sguardo fiducioso, inizia a descrivere i vantaggi dell'investimento, cercando di far leva sulle opportunità che il resort può offrire.
+POSITIVE
+realistic luxury mediterranean resort, adult sensual atmosphere, elegant cinematic photography, warm and inviting tones, engaging and dynamic, high detail, loc_lobby, morning, natural, luxury, mediterranean, business, score_9, score_8_up, score_7_up, masterpiece, realistic, zatanna, mature woman, black hair, long hair, cute, huge ass, bottom heavy, wide hips, huge breast, grey eyes, pink lips, authoritative adult VIP director, seated, removing one high heel, one leg extended, removing high heel, playful surprise, direct, ivory bodycon blazer mini dress, deep neckline, nude stiletto pumps, pearl earrings, clothed, conversation, focus on feet, feet emphasis, medium_full_shot, eye level, frontal, feet clearly visible, both feet fully in frame, visual focus on feet, crossed legs and feet as primary composition, shallow_depth_of_field, background_blur, soft natural light from large windows, slight, highlighting the subjects
+
+NEGATIVE
+lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, facial_expressions, broken_chunks, underage, child, teenager, coercion, violence, extra limbs, duplicate person, plain background, white background, grey background, studio background, seamless backdrop, isolated figure, empty background, blank wall, cropped feet, feet out of frame, malformed feet, extra toes, missing toes, deformed shoes, obscured feet
+
+TU > lascio a te decidere come...le dico mentre osservo i suoi piedi nudi
+
+📖 "Lascio a te decidere come..." dici mentre osservi i piedi nudi di Victoria. Lei ti guarda con un sorriso intrigante, la sua determinazione rimane evidente. "Spero che tu possa vedere quanto sia vantaggioso questo investimento," risponde, la sua voce carica di persuasione.
+
+
+POSITIVE
+realistic luxury mediterranean resort, adult sensual atmosphere, elegant cinematic photography, warm and inviting tones, elegant and sophisticated, photorealistic, loc_lobby, morning, soft, luxury, mediterranean, adult, score_9, score_8_up, score_7_up, masterpiece, realistic, zatanna, mature woman, black hair, long hair, cute, huge ass, bottom heavy, wide hips, huge breast, grey eyes, pink lips, authoritative adult VIP director, standing with one leg slightly forward, one leg forward, intrigued, looking directly at the player, ivory bodycon blazer mini dress, deep neckline, nude stiletto pumps, pearl earrings, clothed, focus on feet, feet emphasis, medium_full_shot, eye level, frontal, feet clearly visible, both feet fully in frame, visual focus on feet, crossed legs and feet as primary composition, shallow_depth_of_field, background_blur, natural soft light, subtle highlights
+
+NEGATIVE
+lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, facial_expressions, broken_chunks, underage, child, teenager, coercion, violence, extra limbs, duplicate person, plain background, white background, grey background, studio background, seamless backdrop, isolated figure, empty background, blank wall, cropped feet, feet out of frame, malformed feet, extra toes, missing toes, deformed shoes, obscured feet
+
+LoRA
+[{'name': 'Zatanna_-_DC_Animated_Universe.safetensors', 'weight': 0.6}, {'name': 'Expressive_H-000001.safetensors', 'weight': 0.4}, {'name': 'FantasyWorldPonyV2.safetensors', 'weight': 0.3}]

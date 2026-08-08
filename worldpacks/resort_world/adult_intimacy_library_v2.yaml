@@ -1,0 +1,754 @@
+schema_version: 2
+world_id: resort_world
+library_type: adult_intimacy
+
+defaults:
+  adults_only: true
+  consent_required: true
+  fallback_intimacy_id: none
+  strict_unknown_intimacy: true
+
+interactions:
+  # ============================================================
+  # FASE 0: NESSUNA INTERAZIONE
+  # ============================================================
+  none:
+    label: No intimate interaction
+    aliases: [none, nessuna, nulla, no, nothing]
+    tags: []
+    requires: {}
+
+  # ============================================================
+  # FASE 1: TENSIONE E SGUARDO
+  # ============================================================
+  distant_gaze:
+    label: Distant admiring gaze
+    aliases: [distant gaze, sguardo da lontano, osserva, guarda desiderosa]
+    tags: [admiring from distance, lingering look, undressing with eyes, predatory stare]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body]
+
+  eye_contact:
+    label: Intense eye contact
+    aliases: [eye contact, sguardo intenso, fissa negli occhi, occhi negli occhi]
+    tags: [prolonged eye contact, charged gaze, desire in eyes, dilated pupils, lustful stare]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, extreme_close_up]
+
+  lip_bite:
+    label: Lip biting
+    aliases: [lip bite, morde il labbro, labbro tra i denti, gesto provocatorio]
+    tags: [biting lower lip, teasing gesture, sexual invitation, nervous arousal]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, extreme_close_up]
+
+  whisper:
+    label: Whispering in ear
+    aliases: [whisper, sussurra, sussurro all'orecchio, parole sporche]
+    tags: [breath on ear, whispering dirty words, hot breath, earlobe teasing, verbal seduction]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, extreme_close_up]
+
+  # ============================================================
+  # FASE 2: PROSSIMITÀ E CONTATTO INIZIALE
+  # ============================================================
+  close_proximity:
+    label: Close proximity
+    aliases: [very close, molto vicini, si avvicina, vicinanza, entra nello spazio]
+    tags: [close physical proximity, bodies near each other, shared heat, personal space invaded, breath mingling]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, close_detail]
+
+  hand_touch:
+    label: Gentle hand contact
+    aliases: [touching hand, sfiora la mano, tocca la mano, mani unite, accarezza la mano]
+    tags: [gentle hand contact, fingers intertwining, first touch, palm against palm, electric spark]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, close_detail]
+
+  caress_arm:
+    label: Arm caress
+    aliases: [caress arm, accarezza il braccio, sfiora il braccio, mano sul braccio]
+    tags: [slow arm caress, skin under fingers, ascending touch, goosebumps, delicate tracing]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, close_detail]
+
+  caress_thigh:
+    label: Thigh caress
+    aliases: [caress thigh, accarezza la coscia, mano sulla coscia, sfiora la coscia]
+    tags: [hand on inner thigh, ascending caress, skin getting closer, teasing approach, quivering muscle]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, close_detail]
+
+  finger_suck:
+    label: Finger sucking
+    aliases: [finger suck, succhia il dito, dito in bocca, gesto orale]
+    tags: [finger in mouth, sucking digit, oral tease, tongue wrapping, suggestive gesture]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, extreme_close_up]
+
+  # ============================================================
+  # FASE 3: BACI E CONTATTO BOCCA
+  # ============================================================
+  embrace:
+    label: Embrace
+    aliases: [embrace, hug, abbraccio, stringe forte, cerca calore]
+    tags: [embracing, bodies close together, pressed together, feeling heartbeat, arms wrapped tight]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level]
+
+  neck_kiss:
+    label: Neck kissing
+    aliases: [neck kiss, bacia il collo, baci sul collo, assapora il collo, morsicchia il collo]
+    tags: [neck kissing, lips on throat, breath on skin, sensitive zone, sucking neck, leaving mark]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, medium_eye_level]
+
+  earlobe_nibble:
+    label: Earlobe nibbling
+    aliases: [ear nibble, morsicchia il lobo, bacia l'orecchio, linguaccia nell'orecchio]
+    tags: [earlobe between teeth, hot breath in ear, tongue flicking, sensitive stimulation, audible gasp]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, extreme_close_up]
+
+  kiss:
+    label: Kiss
+    aliases: [kiss, bacio, bacia, bacio sulle labbra]
+    tags: [consensual kiss, faces close together, lips meeting, soft pressure, closed mouth kiss]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, close_detail]
+
+  deep_kiss:
+    label: Deep kiss
+    aliases: [deep kiss, bacio profondo, bacio alla francese, lingue intrecciate, bacio umido]
+    tags: [deep passionate kiss, open mouths, tongues meeting, wet kiss, saliva exchange, devouring lips]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, extreme_close_up]
+
+  kiss_down_body:
+    label: Kissing down the body
+    aliases: [kiss down, bacia scendendo, baci sul corpo, labbra sulla pelle]
+    tags: [trail of kisses, descending lips, collarbone to navel, worshipping body, slow descent]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, close_detail]
+
+  # ============================================================
+  # FASE 4: SPOGLIARELLISMO E RIVELAZIONE
+  # ============================================================
+  grinding:
+    label: Grinding against partner
+    aliases: [grind, sfrega, strofina, muove i fianchi, dry humping]
+    tags: [hips rubbing, clothed friction, pelvis against pelvis, rhythmic pressure, teasing through fabric]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, close_detail]
+
+  lap_sit:
+    label: Sitting on lap
+    aliases: [sits on lap, si siede sulle ginocchia, in grembo, a cavalcioni seduta]
+    tags: [sitting on target lap, close body contact, straddled seated, hips pressed, feeling erection through clothes or bare]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [seated_relaxed, seated_edge_of_bed, seated_straddle_chair]
+    camera_hints: [medium_eye_level, close_detail]
+
+  strip_self:
+    label: Self striptease
+    aliases: [strip, spogliarello, si spoglia, toglie i vestiti, si sveste]
+    tags: [removing own clothes, slow reveal, garment by garment, exposed skin, seductive undressing, final piece falling]
+    requires:
+      consent: true
+    camera_hints: [medium_eye_level, full_body, mirror_shot]
+
+  undress_partner:
+    label: Undressing partner
+    aliases: [undress, spoglia, toglie i vestiti, svestire, slaccia, sfila]
+    tags: [removing partner clothes, revealing skin, garment falling, unbuttoning, unzipping, exposed body, anticipation]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body]
+
+  lingerie_reveal:
+    label: Lingerie reveal
+    aliases: [lingerie, intimo, reggiseno, perizoma, body sexy]
+    tags: [revealing lingerie, lace and silk, barely covered, transparent fabric, erotic underwear, garter belt]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body, close_detail]
+
+  naked_reveal:
+    label: Full nudity reveal
+    aliases: [naked, nudo, completamente nuda, senza veli, nudità totale]
+    tags: [fully naked, no clothes, bare skin everywhere, exposed breasts, exposed genitals, vulnerable nudity]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body, close_detail]
+
+  # ============================================================
+  # FASE 5: CONTATTO CORPO A CORPO NUDO
+  # ============================================================
+  skin_on_skin:
+    label: Skin on skin contact
+    aliases: [skin contact, pelle contro pelle, nudi insieme, corpi nudi]
+    tags: [naked bodies touching, flesh against flesh, warm skin contact, no barriers, intimate friction]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, close_detail]
+
+  body_caress:
+    label: Full body caress
+    aliases: [caress body, accarezza il corpo, mani sul corpo, esplora la pelle, mani dappertutto]
+    tags: [hands roaming over body, exploring curves, skin under palms, sensual mapping, no area untouched]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, close_detail]
+
+  breast_caress:
+    label: Breast caress
+    aliases: [breast caress, accarezza il seno, mani sul seno, palpa il seno]
+    tags: [hands on breasts, cupping, squeezing gently, weight in palms, nipples hardening, areola pebbling]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, close_up_breasts]
+
+  breast_kiss:
+    label: Breast attention
+    aliases: [breast kiss, bacia il seno, baci sul seno, succhia il capezzolo, lecca il seno]
+    tags: [mouth on breast, nipple attention, licking, sucking, aroused flesh, tongue circling, nipple between teeth]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, close_up_breasts]
+
+  breast_bite:
+    label: Breast nibbling
+    aliases: [breast bite, morsicchia il seno, morso sul seno, capezzolo tra i denti]
+    tags: [gentle bite on breast, teeth on nipple, pain and pleasure mix, marking skin, intense stimulation]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, close_up_breasts]
+
+  # ============================================================
+  # FASE 6: ATTENZIONE ORALE
+  # ============================================================
+  oral_attention:
+    label: Oral attention on partner
+    aliases: [oral, attenzione orale, bacia l'inguine, lecca, cunnilingus, fellatio, blowjob, pompino]
+    tags: [mouth on genitals, tongue stimulation, oral pleasure, intimate service, wet sounds, slurping, devoted licking]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [lying_on_back, lying_on_back_legs_up, kneeling_neutral, kneeling_forward, seated_legs_spread, standing_legs_apart]
+    camera_hints: [close_detail, close_up_hips, between_legs]
+
+  deep_throat:
+    label: Deep throat
+    aliases: [deep throat, gola profonda, prende tutto in bocca, ingoia fino in fondo]
+    tags: [penis deep in throat, gagging, tears forming, throat bulge, total submission, nose against pelvis]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [kneeling_neutral, lying_on_back, seated_relaxed]
+    camera_hints: [close_detail, extreme_close_up]
+
+  face_sitting:
+    label: Face sitting
+    aliases: [face sit, siede sulla faccia, cavalca la faccia, 69 inverso]
+    tags: [genitals on face, partner smothered, tongue extended, controlling pressure, dominant position, grinding on mouth]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [seated_legs_spread, kneeling_forward, lying_on_back]
+    camera_hints: [close_detail, close_up_hips, between_legs]
+
+  sixty_nine:
+    label: Sixty-nine position
+    aliases: [69, sessantanove, posizione 69, reciproco orale]
+    tags: [mutual oral, simultaneous pleasure, mouth on genitals both ways, inverted bodies, synchronized licking and sucking]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [lying_on_back, lying_on_stomach, lying_side]
+    camera_hints: [medium_eye_level, full_body]
+
+  rimming:
+    label: Anilingus
+    aliases: [rim, lecca il buco, anilingus, bacia il culo, attenzione anale orale]
+    tags: [tongue on anus, rimming, anal oral, probing with tongue, wet circle, intimate taboo]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [doggy_style, lying_on_stomach, standing_bent_over]
+    camera_hints: [close_detail, close_up_buttocks, extreme_close_up]
+
+  # ============================================================
+  # FASE 7: STIMOLAZIONE MANUALE
+  # ============================================================
+  manual_stimulation:
+    label: Manual stimulation
+    aliases: [hand stimulation, stimolazione manuale, tocca l'intimo, masturba, dita, sega]
+    tags: [fingers on genitals, manual stimulation, rubbing, inserting fingers, clitoral circling, stroking shaft]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, close_up_hips]
+
+  fingering:
+    label: Fingering
+    aliases: [finger, dita dentro, penetrazione digitale, dita nella figa, stimola con le dita]
+    tags: [fingers inside vagina, curling motion, g-spot pressure, wet sounds, knuckle deep, rhythmic pumping]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, close_up_hips, extreme_close_up]
+
+  prostate_massage:
+    label: Prostate massage
+    aliases: [prostate, massaggio prostata, dita nel culo, stimola prostata]
+    tags: [finger in anus, prostate stimulation, internal pressure, male g-spot, curling finger, intense male pleasure]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, close_up_buttocks]
+
+  mutual_masturbation:
+    label: Mutual masturbation
+    aliases: [mutual masturbation, si masturbano insieme, si toccano a vicenda, reciproco manuale]
+    tags: [watching each other touch themselves, hands on own genitals, synchronized pleasure, voyeuristic intimacy, exhibition]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body]
+
+  # ============================================================
+  # FASE 8: PENETRAZIONE VAGINALE
+  # ============================================================
+  penetration:
+    label: Sexual penetration
+    aliases: [penetrate, penetrazione, entra dentro, sesso, scopa]
+    tags: [genital penetration, joined bodies, thrusting, deep inside, cock in pussy, connected bodies]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [missionary, doggy_style, cowgirl, reverse_cowgirl, spooning, standing_legs_apart, standing_bent_over, seated_edge_of_bed, lying_on_back, lying_on_back_legs_up]
+    camera_hints: [medium_eye_level, full_body, close_detail]
+
+  missionary:
+    label: Missionary position
+    aliases: [missionary, missionaria, sotto, classico, a pancia in su]
+    tags: [face to face penetration, legs spread or wrapped, deep eye contact, bodies pressed full length, traditional intimacy]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [missionary, lying_on_back, lying_on_back_legs_up]
+    camera_hints: [medium_eye_level, full_body, close_detail]
+
+  riding:
+    label: Riding on top
+    aliases: [ride, cavalca sopra, cowgirl, cavalcata, si muove sopra, donna sopra]
+    tags: [partner on top, riding motion, controlling rhythm, hips bouncing, deep penetration, breasts bouncing, dominant female]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [cowgirl, reverse_cowgirl, seated_straddle_chair]
+    camera_hints: [medium_eye_level, full_body, close_detail]
+
+  from_behind:
+    label: Taken from behind
+    aliases: [from behind, da dietro, doggy, a pecora, piegata, a novanta]
+    tags: [rear penetration, bent over, gripping hips, deep thrusts, dominant position, ass in air, pounding from behind]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [doggy_style, standing_bent_over, spooning, lying_on_stomach]
+    camera_hints: [medium_eye_level, full_body, rear_three_quarter]
+
+  standing_sex:
+    label: Standing penetration
+    aliases: [standing sex, sesso in piedi, contro il muro, sollevata, in piedi]
+    tags: [upright penetration, lifted by partner, against wall, legs wrapped, supported by strength, urgent coupling]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [standing_legs_apart, standing_against_wall, standing_split]
+    camera_hints: [medium_eye_level, full_body, low_full_body]
+
+  spooning_sex:
+    label: Spooning penetration
+    aliases: [spooning, cucchiaio, da dietro sdraiati, posizione cucchiaio]
+    tags: [side lying penetration, bodies curled together, slow gentle thrusts, hand on breast, intimate cuddling sex]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [spooning, lying_side]
+    camera_hints: [medium_eye_level, full_body]
+
+  seated_sex:
+    label: Seated penetration
+    aliases: [seated sex, sesso seduti, sedia, poltrona, sul tavolo]
+    tags: [sitting penetration, partner on lap facing, controlled depth, eye level, furniture sex, desk edge]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [seated_edge_of_bed, seated_straddle_chair, seated_relaxed]
+    camera_hints: [medium_eye_level, full_body]
+
+  # ============================================================
+  # FASE 9: PENETRAZIONE ANALE
+  # ============================================================
+  anal_penetration:
+    label: Anal penetration
+    aliases: [anal, anale, nel culo, da dietro anale, penetrazione anale]
+    tags: [anal sex, cock in ass, tight ring penetration, slow entry, stretching, taboo pleasure, rectal fullness]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [doggy_style, missionary, spooning, cowgirl, standing_bent_over, lying_on_back_legs_up]
+    camera_hints: [close_detail, close_up_buttocks, medium_eye_level, full_body]
+
+  anal_riding:
+    label: Anal riding
+    aliases: [anal ride, cavalca anale, sopra anale, cavalcata anale]
+    tags: [partner on top anal, controlling anal depth, reverse cowgirl anal, bouncing on anal penetration, dominant anal]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [reverse_cowgirl, cowgirl, seated_straddle_chair]
+    camera_hints: [medium_eye_level, full_body, close_up_buttocks]
+
+  double_penetration:
+    label: Double penetration
+    aliases: [dp, doppia penetrazione, doppio, vaginale e anale insieme]
+    tags: [both holes filled, vaginal and anal simultaneously, stretched wide, overwhelming fullness, two partners or toy and cock]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [doggy_style, cowgirl, lying_on_back_legs_up]
+    camera_hints: [medium_eye_level, full_body, close_detail]
+
+  # ============================================================
+  # FASE 10: BDSM LEGGERO E GIOCHI DI POTERE
+  # ============================================================
+  hair_pull:
+    label: Hair pulling
+    aliases: [hair pull, tira i capelli, afferra i capelli, tira la testa]
+    tags: [fist in hair, pulling head back, exposing throat, dominant control, pain pleasure mix, rough handling]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, medium_eye_level]
+
+  choking:
+    label: Light choking
+    aliases: [choke, strozzamento leggero, mano sulla gola, breath play]
+    tags: [hand on throat, light pressure, breath control, dominance display, trusting submission, neck gripping]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, extreme_close_up]
+
+  spanking:
+    label: Spanking
+    aliases: [spank, schiaffo sul culo, sculaccia, palleggia, schiaffeggia]
+    tags: [hand on ass, sharp slap, red mark forming, jiggling flesh, pain turning to pleasure, disciplinary erotic]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, close_up_buttocks, rear_three_quarter]
+
+  bondage_light:
+    label: Light bondage
+    aliases: [tie, lega, manette, legata, immobilizzata, vincolata]
+    tags: [wrists bound, rope or cuffs, immobilized, power exchange, vulnerable, at mercy, restrained pleasure]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body]
+
+  blindfold:
+    label: Blindfolded play
+    aliases: [blindfold, bendata, non vede, oscurata]
+    tags: [eyes covered, heightened senses, anticipation, unknown touch, surrendering control, sensory deprivation]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, medium_eye_level]
+
+  dirty_talk:
+    label: Verbal domination
+    aliases: [dirty talk, parole sporche, ordini, degrado verbale, umiliazione leggera]
+    tags: [verbal commands, degrading words, begging requested, dominant speech, submissive responses, erotic humiliation]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, extreme_close_up]
+
+  # ============================================================
+  # FASE 11: OGGETTI E GIOCATTOLI
+  # ============================================================
+  toy_vibrator:
+    label: Vibrator use
+    aliases: [vibrator, vibratore, giocattolo, stimolatore, magic wand]
+    tags: [vibrator on clitoris, buzzing toy, intense vibration, forced pleasure, toy insertion, remote control]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, close_up_hips]
+
+  toy_dildo:
+    label: Dildo penetration
+    aliases: [dildo, dildo dentro, fallo finto, penetrazione con oggetto]
+    tags: [dildo insertion, artificial cock, deep thrusting, girth stretching, solo or partner use, double ended]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, close_up_hips, between_legs]
+
+  toy_plug:
+    label: Butt plug
+    aliases: [plug, plug anale, tappo, dilatatore anale]
+    tags: [anal plug insertion, flared base visible, stretched anus, wearing during sex, jeweled plug, tail plug]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, close_up_buttocks, extreme_close_up]
+
+  toy_restraints:
+    label: Advanced restraints
+    aliases: [restraints, spreader bar, gabbia, collare, guinzaglio]
+    tags: [spreader bar keeping legs apart, collar and leash, chained, completely immobilized, dungeon equipment]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body]
+
+  # ============================================================
+  # FASE 12: FETISH E FLUIDI
+  # ============================================================
+  foot_play:
+    label: Foot fetish play
+    aliases: [foot, piedi, feticismo dei piedi, lecca i piedi, piedi sul cazzo]
+    tags: [feet worship, toes in mouth, footjob, soles visible, high heels, nylon stockings, arch licking]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, low_full_body]
+
+  cumshot:
+    label: Ejaculation on body
+    aliases: [cum, sborra, sperma, venire fuori, sborrata, faciale]
+    tags: [ejaculation, semen on skin, cum on face, cum on breasts, cum on ass, marking territory, white fluid]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, close_up_breasts, close_up_hips]
+
+  creampie:
+    label: Internal ejaculation
+    aliases: [creampie, sborra dentro, riempie, venire dentro, riempimento interno]
+    tags: [ejaculation inside, cum dripping out, filled hole, breeding, fertile risk, overflowing semen]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, extreme_close_up, close_up_hips]
+
+  squirting:
+    label: Female ejaculation
+    aliases: [squirt, schizza, eiaculazione femminile, fontana, spruzzo]
+    tags: [female ejaculation, clear fluid shooting, gushing, intense orgasm, wet sheets, forceful stream]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, close_up_hips, between_legs]
+
+  # ============================================================
+  # FASE 13: GRUPPO E MULTIPARTNER
+  # ============================================================
+  threesome:
+    label: Threesome
+    aliases: [threesome, trio, tre, ménage à trois, doppio partner]
+    tags: [three bodies, two on one, shared attention, multiple hands, multiple mouths, complex positioning]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body]
+
+  spitroast:
+    label: Spitroast
+    aliases: [spitroast, tra due, in bocca e da dietro, doppia penetrazione orale e anale]
+    tags: [one partner in mouth one from behind, centered partner, dual stimulation, helpless middle, airtight]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [doggy_style, kneeling_forward, standing_bent_over]
+    camera_hints: [medium_eye_level, full_body, rear_three_quarter]
+
+  # ============================================================
+  # FASE 14: CLIMAX E POST
+  # ============================================================
+  climax:
+    label: Mutual climax
+    aliases: [climax, orgasm, venire, raggiunge l'apice, si lascia andare, viene forte]
+    tags: [orgasm, convulsing bodies, moaning, release, shuddering pleasure, simultaneous peak, eyes rolling back, toes curling]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, extreme_close_up, medium_eye_level]
+
+  multiple_orgasms:
+    label: Multiple orgasms
+    aliases: [multiple orgasms, multipli, viene di continuo, orgasmi concatenati]
+    tags: [continuous orgasms, no refractory period, shaking uncontrollably, overstimulated, begging to stop, pleasure torture]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [close_detail, medium_eye_level]
+
+  afterglow:
+    label: Afterglow intimacy
+    aliases: [afterglow, respiro affannoso, abbraccio post, coccole dopo, sdraiati insieme]
+    tags: [post orgasm, sweaty bodies, heavy breathing, tender embrace, satisfied glow, cum mixed sweat, blissful exhaustion]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, close_detail]
+
+  # ============================================================
+  # FASE 15: GIOCHI DI RUOLO
+  # ============================================================
+  roleplay_teacher:
+    label: Teacher student roleplay
+    aliases: [teacher, professoressa, studente, lezione privata, scrivania]
+    tags: [authority figure, desk bending, punishment, ruler, glasses, strict tone, innocent student]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body]
+
+  roleplay_nurse:
+    label: Nurse patient roleplay
+    aliases: [nurse, infermiera, paziente, visita, camice, stetoscopio]
+    tags: [medical examination, white uniform, thermometer, thorough inspection, bedside manner, healing hands]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body]
+
+  roleplay_stranger:
+    label: Stranger encounter
+    aliases: [stranger, sconosciuto, incontro casuale, anonimo, bar, hotel]
+    tags: [anonymous sex, no names, hotel room, bar bathroom, intense fleeting, never see again, primal urgency]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body, voyeur_peek]
+
+  roleplay_captured:
+    label: Captive fantasy
+    aliases: [captive, prigioniera, rapita, sottomessa, schiava, dominazione]
+    tags: [kidnapped fantasy, chains, dark room, interrogation, breaking will, Stockholm syndrome play, total submission]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body, dutch_angle]
+
+  # ============================================================
+  # FASE 16: POSIZIONI AVANZATE E ACROBATICHE
+  # ============================================================
+  piledriver:
+    label: Piledriver position
+    aliases: [piledriver, martello, testa in giù, acrobatico]
+    tags: [extreme angle, legs over head, deep vertical penetration, folded in half, intense depth, contorted body]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [bridge, lying_on_back_legs_up]
+    camera_hints: [medium_eye_level, full_body]
+
+  wheelbarrow:
+    label: Wheelbarrow position
+    aliases: [wheelbarrow, carriola, sollevata per le gambe, in aria]
+    tags: [holding legs like wheelbarrow, walking penetration, suspended lower body, arm strength, unusual angle]
+    requires:
+      consent: true
+      target: player_or_subject
+      compatible_poses: [standing_legs_apart, standing_split]
+    camera_hints: [medium_eye_level, full_body, low_full_body]
+
+  # ============================================================
+  # FASE 17: ESIBIZIONISMO E VOYEURISMO
+  # ============================================================
+  voyeur_watch:
+    label: Being watched
+    aliases: [watched, guardata, spiata, finestra, pubblico]
+    tags: [knowing eyes on them, window sex, audience present, exhibitionist thrill, being observed, shame and arousal]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body, voyeur_peek]
+
+  public_risk:
+    label: Public risky sex
+    aliases: [public, pubblico, rischio, spiaggia, parco, macchina, prova a non farsi beccare]
+    tags: [almost caught, outdoor sex, car backseat, beach night, quiet moaning, adrenaline, clothing half on]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, full_body, voyeur_peek]
+
+  # ============================================================
+  # FASE 18: WATERSPORTS (taboo estremo, sempre con consenso)
+  # ============================================================
+  watersports:
+    label: Watersports play
+    aliases: [watersports, pipi, urina, golden shower, piscia addosso]
+    tags: [urine play, golden shower, warm stream on body, degradation, marking with piss, taboo fluid]
+    requires:
+      consent: true
+      target: player_or_subject
+    camera_hints: [medium_eye_level, close_detail]
+
+rules:
+  never_imply_consent: true
+  never_override_player_choice: true
+  no_explicit_anatomical_action_tags: false
+  no_facial_expression_tags: true

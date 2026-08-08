@@ -1,0 +1,33 @@
+{
+  "project": "EPOS v3.1",
+  "completed_modules": [
+    "domain",
+    "application_orchestrator",
+    "npc_agents",
+    "vst_visual_pipeline",
+    "infrastructure",
+    "worldpack_runtime",
+    "presentation_cli_api",
+    "checkpoint_recovery",
+    "long_term_memory",
+    "context_compression"
+  ],
+  "in_progress": "external live-service verification only",
+  "design_decisions": [
+    "Critical Failure means all rolled dice are 1",
+    "Skills are defined by each Worldpack",
+    "World time advances only on explicit player Advance",
+    "Visual scenes may include only player-local NPCs; no implicit cutaways",
+    "ComfyUI workflow is supplied by the Worldpack/project",
+    "Six LoRA workflow nodes are dynamic runtime slots",
+    "open_end worlds continue beyond authored days using the last authored schedule/outfit as fallback"
+  ],
+  "open_questions": [],
+  "test_status": {
+    "pytest": "green",
+    "compileall": "green",
+    "mypy_strict": "not executable in current environment",
+    "ruff": "not executable in current environment",
+    "live_openai_gemini_comfyui": "requires external credentials/services"
+  }
+}

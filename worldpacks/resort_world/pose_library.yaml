@@ -1,0 +1,307 @@
+schema_version: 2
+world_id: resort_world
+library_type: pose
+
+defaults:
+  fallback_pose_id: standing_neutral
+  strict_unknown_pose: true
+
+poses:
+  # ============================================================
+  # STANDING POSES (originali + nuove)
+  # ============================================================
+  standing_neutral:
+    label: Standing neutral
+    aliases: [standing, in piedi, standing neutral]
+    tags: [standing, balanced stance]
+    body_regions_visible: [face, chest, hands, legs]
+
+  standing_one_leg_forward:
+    label: One leg forward
+    aliases: [one leg forward, una gamba avanti]
+    tags: [standing, one leg forward, natural weight shift]
+    body_regions_visible: [face, chest, hands, hips, legs]
+
+  standing_hip_shift:
+    label: Hip shift
+    aliases: [hip shift, peso su un fianco]
+    tags: [standing, weight shifted to one hip, asymmetrical stance]
+    body_regions_visible: [hips, legs]
+
+  standing_rear_three_quarter:
+    label: Rear three-quarter standing
+    aliases: [rear three quarter, di tre quarti da dietro]
+    tags: [standing, rear three quarter, weight shift]
+    body_regions_visible: [back, hips, buttocks, legs]
+
+  standing_against_wall:
+    label: Standing against wall
+    aliases: [against wall, appoggiata al muro, sul muro]
+    tags: [standing against vertical surface, back to wall, one leg bent, relaxed but posed, vulnerable posture]
+    body_regions_visible: [face, chest, hips, legs]
+
+  standing_legs_apart:
+    label: Standing with legs apart
+    aliases: [legs apart, gambe divaricate, in piedi aperto]
+    tags: [standing, legs spread shoulder width or more, confident stance, hips open, exposed center]
+    body_regions_visible: [hips, legs, face]
+
+  standing_bent_over:
+    label: Bent over standing
+    aliases: [bent over, piegata in avanti, chinata, a novanta]
+    tags: [bent at waist, back horizontal, hands on knees or surface, buttocks elevated and prominent, rear presentation]
+    body_regions_visible: [back, hips, buttocks, legs]
+
+  standing_hand_on_hip:
+    label: Hand on hip
+    aliases: [hand on hip, mano su fianco, posa sicura]
+    tags: [standing, one hand on hip, confident posture, waist emphasized, hip cocked]
+    body_regions_visible: [face, chest, hips, legs]
+
+  # ============================================================
+  # LEANING POSES
+  # ============================================================
+  leaning_surface:
+    label: Leaning on surface
+    aliases: [leaning, appoggiata]
+    tags: [leaning against nearby surface, relaxed posture]
+    body_regions_visible: [face, chest, hips, legs]
+
+  leaning_forward_table:
+    label: Leaning forward on table
+    aliases: [leaning table, appoggiata al tavolo, chinata sul tavolo]
+    tags: [bent over surface, forearms on table, back arched downward, cleavage visible, rear pushed back]
+    body_regions_visible: [chest, back, hips, buttocks, face]
+
+  leaning_back_arch:
+    label: Leaning back with arched spine
+    aliases: [leaning back, appoggiata all'indietro, schiena inarcata]
+    tags: [leaning backward, spine deeply arched, chest thrust forward, neck exposed, vulnerable and open]
+    body_regions_visible: [chest, face, hips, neck]
+
+  # ============================================================
+  # SEATED POSES (originali + nuove)
+  # ============================================================
+  seated_relaxed:
+    label: Seated relaxed
+    aliases: [seated, seduta, seated relaxed]
+    tags: [seated comfortably, relaxed posture]
+    body_regions_visible: [face, chest, hands, hips, legs]
+
+  seated_legs_crossed:
+    label: Seated legs crossed
+    aliases: [crossed legs, gambe accavallate]
+    tags: [seated, crossed legs]
+    body_regions_visible: [hips, legs, feet]
+
+  seated_legs_angled:
+    label: Seated legs angled
+    aliases: [legs angled, gambe di lato]
+    tags: [perched on edge of seat, legs angled to one side]
+    body_regions_visible: [hips, legs, feet]
+
+  seated_one_leg_extended:
+    label: Seated one leg extended
+    aliases: [one leg extended, una gamba distesa]
+    tags: [seated, one leg extended, both feet visible]
+    body_regions_visible: [legs, feet]
+
+  seated_ankles_crossed:
+    label: Seated ankles crossed
+    aliases: [ankles crossed, caviglie incrociate]
+    tags: [seated, ankles crossed, both feet visible]
+    body_regions_visible: [legs, feet]
+
+  seated_legs_spread:
+    label: Seated with legs spread
+    aliases: [legs spread seated, gambe aperte seduta, seduta aperto]
+    tags: [seated, legs spread wide, hips fully open, center visible, inviting posture, no crossing]
+    body_regions_visible: [hips, legs, face]
+
+  seated_on_knees:
+    label: Seated on own knees
+    aliases: [on knees, seduta sui talloni, inginocchiata seduta]
+    tags: [kneeling but seated on heels, back straight or arched, thighs pressed, submissive pose]
+    body_regions_visible: [back, hips, buttocks, face]
+
+  seated_straddle_chair:
+    label: Straddling a chair backwards
+    aliases: [straddle chair, a cavalcioni sulla sedia, sedia al contrario]
+    tags: [seated straddling chair back, legs apart around chair, chest against chair back, hips open]
+    body_regions_visible: [hips, legs, back, face]
+
+  seated_edge_of_bed:
+    label: Seated on edge of bed
+    aliases: [edge of bed, seduta sul bordo del letto, sul bordo]
+    tags: [seated on bed edge, legs dangling or spread, hands on mattress, intimate setting]
+    body_regions_visible: [face, chest, hips, legs]
+
+  # ============================================================
+  # WALKING / MOVEMENT
+  # ============================================================
+  walking_forward:
+    label: Walking forward
+    aliases: [walking, cammina]
+    tags: [walking, natural stride]
+    body_regions_visible: [full_body, legs]
+
+  walking_away:
+    label: Walking away
+    aliases: [walking away, si allontana]
+    tags: [walking away, rear view, natural stride]
+    body_regions_visible: [back, hips, buttocks, legs]
+
+  walking_swaying_hips:
+    label: Walking with swaying hips
+    aliases: [swaying hips, cammina con le anche, fianchi che dondolano]
+    tags: [walking, exaggerated hip sway, seductive gait, hips rolling side to side, confident stride]
+    body_regions_visible: [hips, buttocks, legs, back]
+
+  # ============================================================
+  # TRAINING / STRETCH
+  # ============================================================
+  training_forward_stretch:
+    label: Forward training stretch
+    aliases: [forward stretch, stretching forward, piegata in avanti]
+    tags: [training stretch, torso leaning forward, hips angled toward camera]
+    body_regions_visible: [back, hips, buttocks, legs]
+
+  # ============================================================
+  # KNEELING / CROUCHING
+  # ============================================================
+  kneeling_neutral:
+    label: Kneeling neutral
+    aliases: [kneeling, inginocchiata]
+    tags: [kneeling, upright torso]
+    body_regions_visible: [face, chest, hands, hips]
+
+  kneeling_forward:
+    label: Kneeling forward
+    aliases: [kneeling forward, inginocchiata in avanti, a carponi]
+    tags: [kneeling, torso leaning forward, hands on ground or bed, buttocks elevated, back arched]
+    body_regions_visible: [back, hips, buttocks, chest, face]
+
+  crouching:
+    label: Crouching
+    aliases: [crouching, accovacciata]
+    tags: [crouching, knees bent]
+    body_regions_visible: [hands, hips, legs]
+
+  crawling_on_all_fours:
+    label: Crawling on all fours
+    aliases: [crawling, a gattoni, a carponi, gattoni]
+    tags: [on hands and knees, back arched or flat, buttocks highest point, crawling motion, submissive posture]
+    body_regions_visible: [back, hips, buttocks, legs, face]
+
+  # ============================================================
+  # LYING POSES (originali + nuove)
+  # ============================================================
+  lying_on_back:
+    label: Lying on back
+    aliases: [lying on back, sdraiata sulla schiena]
+    tags: [lying on back, relaxed body alignment]
+    body_regions_visible: [face, chest, legs, feet]
+
+  lying_on_back_legs_up:
+    label: Lying on back with legs raised
+    aliases: [legs up, gambe in aria, sdraiata gambe su]
+    tags: [lying on back, legs raised and bent or straight, hips elevated, center exposed, vulnerable position]
+    body_regions_visible: [hips, legs, buttocks, face]
+
+  lying_on_stomach:
+    label: Lying on stomach
+    aliases: [lying on stomach, sdraiata a pancia in giu]
+    tags: [lying on stomach, torso supported naturally]
+    body_regions_visible: [back, hips, buttocks, legs]
+
+  lying_on_stomach_legs_up:
+    label: Lying on stomach with legs kicked up
+    aliases: [legs kicked up, gambe in su a pancia in giu, sdraiata a pancia in giu gambe piegate]
+    tags: [lying on stomach, legs bent upward and crossed, feet in air, buttocks slightly parted, playful pose]
+    body_regions_visible: [back, hips, buttocks, legs, feet]
+
+  lying_side:
+    label: Lying on side
+    aliases: [lying on side, sdraiata di lato, posa fetale]
+    tags: [lying on side, one leg bent over the other, hips stacked, waist curved, seductive curve]
+    body_regions_visible: [hips, legs, chest, face]
+
+  lying_spooning:
+    label: Spooning position
+    aliases: [spooning, posizione cucchiaio, sdraiata a cucchiaio]
+    tags: [lying on side, knees drawn up, back curved, rear pressed back, intimate side lying]
+    body_regions_visible: [back, hips, buttocks, legs]
+
+  # ============================================================
+  # EXPLICIT / INTIMATE POSES
+  # ============================================================
+  legs_spread_wide:
+    label: Legs spread wide
+    aliases: [legs spread, gambe divaricate, aperto, spread eagle]
+    tags: [legs spread very wide, hips fully open, center completely visible, exposed, inviting, no shame]
+    body_regions_visible: [hips, legs, face]
+
+  doggy_style:
+    label: Doggy style position
+    aliases: [doggy, a pecora, a gattoni da dietro, a novanta]
+    tags: [on hands and knees, back arched downward, buttocks highest point, face down, rear fully presented, ready position]
+    body_regions_visible: [back, hips, buttocks, legs, face]
+
+  missionary:
+    label: Missionary position
+    aliases: [missionary, missionaria, sdraiata a pancia in su gambe aperte]
+    tags: [lying on back, legs spread and bent, knees up, hips tilted, face visible, receptive posture]
+    body_regions_visible: [face, chest, hips, legs]
+
+  cowgirl:
+    label: Cowgirl position
+    aliases: [cowgirl, cavalcata, sopra, a cavallo]
+    tags: [straddling partner, upright torso, hips grinding, hands on partner chest, dominant female posture]
+    body_regions_visible: [face, chest, hips, legs]
+
+  reverse_cowgirl:
+    label: Reverse cowgirl position
+    aliases: [reverse cowgirl, cavalcata inversa, sopra di spalle]
+    tags: [straddling partner facing away, back to camera, hips moving, buttocks visible, rear view riding]
+    body_regions_visible: [back, hips, buttocks, legs]
+
+  standing_split:
+    label: Standing split against wall
+    aliases: [standing split, spaccata in piedi, gamba sollevata alta]
+    tags: [one leg raised high against wall, extreme flexibility, hips open, center exposed, vertical split]
+    body_regions_visible: [hips, legs, face]
+
+  bridge:
+    label: Bridge pose
+    aliases: [bridge, ponte, arco, schiena a ponte]
+    tags: [back arched like bridge, supporting on shoulders and head, pelvis lifted, body bowed upward]
+    body_regions_visible: [chest, hips, back, face]
+
+  # ============================================================
+  # FOCUS SETS (aggiornati con nuove pose)
+  # ============================================================
+focus_sets:
+  face: [standing_neutral, seated_relaxed, kneeling_neutral]
+  eyes: [standing_neutral, seated_relaxed, kneeling_neutral]
+  hands: [standing_neutral, seated_relaxed, kneeling_neutral]
+  chest: [standing_neutral, seated_relaxed, leaning_forward_table, leaning_back_arch]
+  back: [standing_rear_three_quarter, walking_away, training_forward_stretch, lying_on_stomach, crawling_on_all_fours]
+  hips: [standing_hip_shift, seated_legs_angled, standing_rear_three_quarter, standing_legs_apart, seated_legs_spread]
+  buttocks: [standing_rear_three_quarter, walking_away, training_forward_stretch, lying_on_stomach, crawling_on_all_fours, doggy_style, reverse_cowgirl]
+  legs: [standing_one_leg_forward, seated_legs_crossed, seated_legs_angled, standing_legs_apart, standing_split]
+  feet: [seated_legs_crossed, seated_one_leg_extended, seated_ankles_crossed, lying_on_stomach_legs_up]
+  outfit: [standing_one_leg_forward, standing_neutral, standing_hand_on_hip]
+  full_body: [standing_one_leg_forward, walking_forward, standing_legs_apart, crawling_on_all_fours]
+  interaction: [standing_neutral, seated_relaxed, leaning_surface, kneeling_forward]
+
+action_compatibility:
+  shoe_removal: [seated_one_leg_extended, seated_ankles_crossed]
+  drinking: [standing_neutral, seated_relaxed]
+  reading: [seated_relaxed, lying_on_stomach, standing_neutral]
+  stretching: [standing_neutral, training_forward_stretch]
+  arching_back: [standing_neutral, lying_on_back, kneeling_neutral, leaning_surface]
+  sliding_hand_down_body: [standing_neutral, seated_relaxed, lying_on_back, lying_on_stomach]
+  crossing_legs_slowly: [seated_relaxed, seated_edge_of_bed, seated_legs_crossed]
+  looking_up_through_lashes: [kneeling_neutral, seated_relaxed, lying_on_back, crouching]
+  removing_garment: [standing_neutral, seated_relaxed, lying_on_back]
+  gripping_sheet: [lying_on_back, lying_on_stomach, seated_edge_of_bed]

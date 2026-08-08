@@ -1,0 +1,211 @@
+schema_version: 2
+world_id: resort_world
+
+poses:
+  default:
+    - id: relaxed_seated
+      prompt: seated comfortably in a lounge chair
+      tags: [seated, relaxed posture]
+    - id: casual_lean
+      prompt: leaning casually against a nearby surface
+      tags: [leaning, relaxed posture]
+    - id: poised_walk
+      prompt: walking slowly with poised body language
+      tags: [walking, poised]
+    - id: one_leg_forward
+      prompt: standing with one leg slightly forward and weight shifted naturally
+      tags: [one leg forward, weight shift]
+    - id: seductive_stand
+      prompt: standing with one hand on hip and weight shifted to one side, confident and alluring
+      tags: [standing, hand on hip, seductive stance, confident]
+    - id: wet_hair_look
+      prompt: standing with wet hair clinging to shoulders and neck, water droplets on skin
+      tags: [wet hair, water droplets, glistening skin, fresh from shower]
+
+  focus:
+    legs:
+      - id: legs_crossed_seated
+        prompt: seated with legs crossed and lower body clearly presented
+        tags: [seated, crossed legs]
+      - id: legs_angled_seated
+        prompt: perched on the edge of a seat with legs angled to one side
+        tags: [seated, legs angled]
+      - id: ankles_crossed_lean
+        prompt: leaning casually with ankles crossed
+        tags: [leaning, ankles crossed]
+      - id: leg_forward
+        prompt: standing with one leg slightly forward and hips naturally shifted
+        tags: [one leg forward, weight shift]
+      - id: legs_spread_seated
+        prompt: seated with legs spread wide apart, hips open and inviting
+        tags: [seated, legs spread, open posture, inviting]
+      - id: standing_split_visual
+        prompt: standing with one leg raised high against a wall in a vertical split
+        tags: [standing split, flexible, leg raised high]
+
+    feet:
+      - id: feet_crossed_seated
+        prompt: seated with ankles crossed and both feet clearly visible
+        tags: [seated, ankles crossed]
+      - id: feet_extended
+        prompt: seated with one leg extended slightly forward and both feet visible
+        tags: [seated, one leg extended]
+      - id: feet_in_stilettos
+        prompt: close up of feet in high stiletto heels, arch emphasized
+        tags: [stiletto heels, feet, high arch, elegant]
+
+    buttocks:
+      - id: rear_training_stretch
+        prompt: deep forward training stretch with hips angled toward camera
+        tags: [training, forward stretch]
+      - id: rear_three_quarter_shift
+        prompt: standing in rear three-quarter view with weight shifted onto one leg
+        tags: [rear three quarter, weight shift]
+      - id: walking_away
+        prompt: walking slowly away with natural hip movement
+        tags: [walking, rear view]
+      - id: bent_over_surface
+        prompt: bent over a surface with back arched and buttocks prominently presented
+        tags: [bent over, arched back, buttocks prominent]
+      - id: on_all_fours_rear
+        prompt: on hands and knees with back arched and rear highest point
+        tags: [on all fours, rear presentation, arched back]
+
+    hips:
+      - id: hip_shift
+        prompt: standing with weight shifted to one hip
+        tags: [hip shift, asymmetrical stance]
+      - id: seated_hip_angle
+        prompt: seated at an angle with hips turned slightly toward camera
+        tags: [seated, hip angle]
+      - id: hip_roll
+        prompt: standing with one hip cocked high and hand resting on waist
+        tags: [hip cocked, hand on waist, seductive]
+
+    back:
+      - id: rear_turn
+        prompt: turned partly away with back clearly visible
+        tags: [rear three quarter, torso turned]
+      - id: shoulder_turn
+        prompt: standing with torso turned away and one shoulder slightly back
+        tags: [torso turn, rear view]
+      - id: back_arch_nude
+        prompt: lying on stomach with back arched and spine curve visible
+        tags: [back arch, lying on stomach, spine curve]
+
+    chest:
+      - id: upper_body_open
+        prompt: upright posture with shoulders relaxed and upper torso clearly framed
+        tags: [upright posture, shoulders relaxed]
+      - id: cleavage_emphasis
+        prompt: leaning forward slightly with cleavage prominently displayed
+        tags: [cleavage, leaning forward, décolleté]
+      - id: wet_shirt_transparent
+        prompt: wearing a wet transparent shirt where nipples are visible through fabric
+        tags: [wet shirt, transparent, nipples visible, see through]
+
+    hands:
+      - id: hands_visible
+        prompt: relaxed conversational posture with both hands naturally visible
+        tags: [hands visible, conversational posture]
+      - id: hands_in_hair
+        prompt: both hands raised running through hair in a sensual gesture
+        tags: [hands in hair, sensual, hair play]
+      - id: gripping_sheet_visual
+        prompt: hand gripping bedsheet tightly with fingers clenched and tension visible
+        tags: [gripping sheet, tension, clenched fingers]
+
+    face:
+      - id: face_neutral
+        prompt: relaxed neutral head position with face clearly visible
+        tags: [head visible]
+      - id: face_parted_lips
+        prompt: face with lips slightly parted and tongue tip barely visible
+        tags: [parted lips, tongue visible, inviting]
+      - id: face_looking_up
+        prompt: face looking upward through lowered eyelashes with submissive expression
+        tags: [looking up, lowered lashes, submissive gaze]
+
+    eyes:
+      - id: eyes_neutral
+        prompt: relaxed neutral head position with eyes unobstructed
+        tags: [eyes unobstructed]
+      - id: eyes_sultry
+        prompt: eyes half closed with heavy lidded sultry gaze directed at viewer
+        tags: [sultry eyes, half closed, heavy lidded]
+
+    outfit:
+      - id: outfit_full
+        prompt: balanced full-body presentation with outfit unobstructed
+        tags: [full body, outfit visible]
+      - id: outfit_lingerie
+        prompt: full body in lace lingerie set with garter belt and stockings
+        tags: [lingerie, lace, garter belt, stockings]
+      - id: outfit_micro_bikini
+        prompt: full body in micro bikini with minimal fabric coverage
+        tags: [micro bikini, minimal coverage, barely covered]
+
+    full_body:
+      - id: full_body_pose
+        prompt: balanced full-body stance with natural weight distribution
+        tags: [full body, balanced stance]
+      - id: full_body_nude
+        prompt: full body completely nude with hands at sides or covering partially
+        tags: [full body, nude, bare skin]
+      - id: full_body_shower
+        prompt: full body under running water with wet hair and glistening skin
+        tags: [shower, wet body, water running, glistening skin]
+
+    interaction:
+      - id: conversational
+        prompt: relaxed conversational posture oriented toward the other person
+        tags: [conversational posture]
+      - id: intimate_embrace
+        prompt: bodies pressed together in close embrace with arms wrapped around each other
+        tags: [embrace, bodies pressed, intimate]
+      - id: straddling_visual
+        prompt: straddling partner with hands on their chest and hips grinding
+        tags: [straddling, hands on chest, hip movement]
+
+  actions:
+    shoe_removal:
+      - id: shoe_removal_seated
+        prompt: seated while removing one high heel with one leg extended
+        tags: [seated, removing high heel, one leg extended]
+      - id: shoe_removal_standing
+        prompt: standing with one foot raised removing a stiletto heel
+        tags: [standing, removing heel, foot raised]
+
+    arching_back:
+      - id: arch_back_bed
+        prompt: lying on back with spine deeply arched and chest pushed upward
+        tags: [arching back, lying on back, chest up]
+      - id: arch_back_standing
+        prompt: standing with back arched backward and hips thrust forward
+        tags: [arching back, standing, hips thrust]
+
+    sliding_hand_down_body:
+      - id: hand_down_torso
+        prompt: hand sliding slowly down from chest to hip along the body curve
+        tags: [hand sliding, torso, body curve]
+      - id: hand_down_thigh
+        prompt: hand sliding down inner thigh with fingers spread
+        tags: [hand sliding, inner thigh, fingers spread]
+
+    wetting_lips:
+      - id: tongue_on_lips
+        prompt: tongue slowly tracing across upper and lower lips
+        tags: [tongue on lips, slow lick, wet lips]
+
+    removing_garment:
+      - id: remove_robe
+        prompt: sliding a robe off shoulders letting it fall to expose what is underneath
+        tags: [removing robe, shoulders exposed, falling fabric]
+      - id: remove_shirt
+        prompt: pulling a shirt up and over head to reveal bare torso underneath
+        tags: [removing shirt, lifting over head, bare torso revealed]
+
+    gripping_sheet:
+      - id: grip_bed_sheet
+        prompt: fingers tightly gripping wrinkled bedsheet with knuckles white from tension
+        tags: [gripping sheet, wrinkled fabric, white knuckles]

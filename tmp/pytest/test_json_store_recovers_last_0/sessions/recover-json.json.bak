@@ -1,0 +1,119 @@
+{
+  "session_id": "recover-json",
+  "worldpack_id": "default",
+  "turn_number": 0,
+  "time_of_day": "morning",
+  "day": 1,
+  "player": {
+    "entity_id": "player",
+    "name": "Player",
+    "visual_gender": "ambiguous",
+    "outfit": [
+      {
+        "slot": "torso",
+        "item_id": "shirt",
+        "name": "Shirt",
+        "coverage": 1.0,
+        "layer": 0,
+        "material": null,
+        "color": null,
+        "description": null
+      }
+    ],
+    "stats": {
+      "sarissa": 1
+    },
+    "inventory": [],
+    "location_id": "beach",
+    "conditions": [],
+    "knowledge": [],
+    "relationships": {},
+    "notes": null
+  },
+  "npcs": {
+    "npc": {
+      "entity_id": "npc",
+      "name": "Luna",
+      "visual_gender": "ambiguous",
+      "archetype": "scout",
+      "base_prompt": "",
+      "negative_prompt": "",
+      "character_lora": [],
+      "role_prompt": "",
+      "personality": "calm",
+      "speech_style": "plain",
+      "desires": [],
+      "fears": [],
+      "goals": [],
+      "secrets": [],
+      "red_lines": [],
+      "intimate_profile": "",
+      "stats": {
+        "sarissa": 1
+      },
+      "location_id": "beach",
+      "is_present": true,
+      "is_alive": true,
+      "outfit": [
+        {
+          "slot": "torso",
+          "item_id": "shirt",
+          "name": "Shirt",
+          "coverage": 1.0,
+          "layer": 0,
+          "material": null,
+          "color": null,
+          "description": null
+        }
+      ],
+      "conditions": [],
+      "knowledge": [],
+      "known_secrets": [],
+      "false_beliefs": [],
+      "discoveries": [],
+      "short_term_memory": [],
+      "long_term_memory": null,
+      "core_memories": [],
+      "emotional_memory": {},
+      "relationships": {},
+      "intentions": [],
+      "emotional_state": {
+        "joy": 0,
+        "anger": 0,
+        "fear": 0,
+        "trust": 0,
+        "attraction": 0,
+        "sadness": 0,
+        "melancholy": 0
+      },
+      "perceived_events": [],
+      "last_player_action": null,
+      "inbox": [],
+      "outbox": [],
+      "last_action_turn": null
+    }
+  },
+  "locations": {
+    "beach": {
+      "location_id": "beach",
+      "name": "Beach",
+      "description": null,
+      "connected_to": [],
+      "properties": {},
+      "items": [],
+      "npcs_present": []
+    }
+  },
+  "missions": {},
+  "skill_definitions": {},
+  "global_flags": {},
+  "thread_questions": [],
+  "pending_missions": [],
+  "completed_missions": [],
+  "visual_policy": {},
+  "rendering_config": {},
+  "narrative_policy": {},
+  "gameplay_rules": {},
+  "world_phase": "mattina",
+  "history_digest": null
+}

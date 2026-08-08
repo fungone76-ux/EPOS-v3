@@ -1,0 +1,18 @@
+schema_version: 1
+world_id: orbital_colony
+events:
+- id: lab_signal
+  title: Lab Signal
+  day_range:
+  - 1
+  - 1
+  phases:
+  - pomeriggio
+  location_id: lab
+  npc_ids:
+  - unit7
+  trigger:
+    flag_missing: signal_checked
+  choices:
+  - inspect
+  - ignore

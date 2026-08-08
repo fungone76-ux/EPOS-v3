@@ -1,0 +1,10 @@
+{
+  "project": "EPOS v3",
+  "completed_modules": [
+    "domain"
+  ],
+  "in_progress": "infra",
+  "design_decisions": [],
+  "open_questions": [],
+  "test_status": {}
+}

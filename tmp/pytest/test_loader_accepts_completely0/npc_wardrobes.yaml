@@ -1,0 +1,13 @@
+schema_version: 1
+world_id: orbital_colony
+wardrobes:
+  unit7:
+    1:
+      mattina:
+      - maintenance shell
+      pomeriggio:
+      - lab shell
+      sera:
+      - lab shell
+      notte:
+      - maintenance shell
