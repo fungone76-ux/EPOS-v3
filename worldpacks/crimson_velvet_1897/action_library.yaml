@@ -1,0 +1,74 @@
+schema_version: 1
+world_id: crimson_velvet_1897
+library_type: action
+defaults:
+  fallback_action_id: idle_neutral
+actions:
+  idle_neutral:
+    label: Idle neutral
+    aliases: [idle, attende, ferma]
+    tags: [natural standing posture, hands relaxed]
+  speaking_gesture:
+    label: Speaking gesture
+    aliases: [parla, speaking, introduce, presenta]
+    tags: [subtle conversational hand gesture, poised posture]
+  drinking:
+    label: Drinking champagne
+    aliases: [beve, champagne, bicchiere]
+    tags: [holding crystal coupe, taking a measured sip]
+  reading:
+    label: Reading letter
+    aliases: [legge, lettera, documento]
+    tags: [holding unfolded paper, reading document]
+  writing:
+    label: Writing
+    aliases: [scrive, firma, writing]
+    tags: [writing with fountain pen on paper]
+  searching_documents:
+    label: Searching documents
+    aliases: [cerca documenti, archivio, registro]
+    tags: [sorting papers and ledgers, reaching toward archive shelf]
+  performing:
+    label: Stage performance
+    aliases: [canta, spettacolo, performance, palco]
+    tags: [performing on Belle Epoque stage, expressive arm gesture]
+  playing_cards:
+    label: Playing cards
+    aliases: [carte, baccarat, gioco]
+    tags: [handling period playing cards at gaming table]
+  inspecting_object:
+    label: Inspecting object
+    aliases: [esamina, osserva oggetto, inspect]
+    tags: [holding object carefully for close inspection]
+  walking:
+    label: Walking
+    aliases: [cammina, segue, walking]
+    tags: [natural walking stride, period skirt movement]
+  opening_safe:
+    label: Opening safe
+    aliases: [cassaforte, apre la cassaforte]
+    tags: [one hand on antique safe handle, opening heavy safe door]
+  offering_letter:
+    label: Offering letter
+    aliases: [porge lettera, mostra lettera, consegna]
+    tags: [holding out sealed or unfolded letter toward another person]
+  stage_bow:
+    label: Stage bow
+    aliases: [inchino, bow, applausi]
+    tags: [formal theatrical bow, one hand extended]
+  coastal_watch:
+    label: Watching coastline
+    aliases: [guarda il mare, scogliera, osserva barca]
+    tags: [standing against sea wind, observing distant coastline]
+  lantern_signal:
+    label: Lantern signal
+    aliases: [lanterna, segnale]
+    tags: [holding period lantern low, shielding flame with one hand]
+  embracing:
+    label: Embrace
+    aliases: [abbraccia, abbraccio]
+    tags: [mutual standing embrace, bodies close]
+  holding_hands:
+    label: Holding hands
+    aliases: [mano nella mano, stringe la mano]
+    tags: [hands gently clasped between two adults]
