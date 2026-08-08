@@ -2,8 +2,9 @@ from pathlib import Path
 
 import pytest
 
-from epos_v3.presentation.gui_controller import GuiController
 from epos_v3.infrastructure.persistence.json_store import JsonStore
+from epos_v3.infrastructure.worldpack.gameplay import WorldpackGameplay
+from epos_v3.presentation.gui_controller import GuiController
 
 
 WORLD = Path(__file__).parents[2] / "worldpacks" / "resort_world"
@@ -40,6 +41,7 @@ async def test_gui_controller_state_view_is_player_local(tmp_path: Path) -> None
     assert "Fase" in view
     assert "Posizione" in view
     assert "NPC presenti" in view
+    assert "Introduzione" in view
 
 
 def test_gui_append_uses_qtextcursor_moveoperation_end() -> None:
@@ -49,7 +51,7 @@ def test_gui_append_uses_qtextcursor_moveoperation_end() -> None:
         / "epos_v3"
         / "presentation"
         / "gui_app.py"
-    ).read_text()
+    ).read_text(encoding="utf-8")
 
     assert "QTextCursor.MoveOperation.End" in source
     assert "textCursor().End" not in source
@@ -62,7 +64,7 @@ def test_gui_visual_panel_displays_visual_error() -> None:
         / "epos_v3"
         / "presentation"
         / "gui_app.py"
-    ).read_text()
+    ).read_text(encoding="utf-8")
 
     assert "visual_error" in source
     assert "ERRORE VISUALE" in source
@@ -77,6 +79,9 @@ async def test_gui_state_view_shows_other_npc_locations_and_active_missions(tmp_
         session_id="gui-rich-state",
     )
     state = await controller.initialize()
+    state.global_flags["resort_intro_completed"] = True
+    state.global_flags["resort_intro_active"] = False
+    WorldpackGameplay().refresh_state_missions(state)
 
     view = controller.state_view(state)
 
@@ -102,6 +107,9 @@ async def test_gui_state_view_shows_mission_progress(tmp_path: Path) -> None:
         session_id="gui-mission-progress",
     )
     state = await controller.initialize()
+    state.global_flags["resort_intro_completed"] = True
+    state.global_flags["resort_intro_active"] = False
+    WorldpackGameplay().refresh_state_missions(state)
     mission = state.missions["mission_resort_future"]
     mission.objectives[0].completed = True
 
@@ -117,7 +125,7 @@ def test_gui_state_panel_is_scrollable_and_uses_rich_text() -> None:
         / "epos_v3"
         / "presentation"
         / "gui_app.py"
-    ).read_text()
+    ).read_text(encoding="utf-8")
 
     assert "QScrollArea" in source
     assert "setWidgetResizable(True)" in source
